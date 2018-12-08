@@ -97,6 +97,8 @@
         d.style.color = ot.colour;
         d.style.opacity = ot.opa;
         d.style.animationDuration = ti + 's';
+		i.style.wordBreak='keep-all';
+	    i.style.whiteSpace='nowrap';
         d.setAttribute('style', d.style.cssText + '-webkit-animation-duration:' + ti + 's;');
         d.setAttribute('style', d.style.cssText + '-moz-animation-duration:' + ti + 's;');
         d.setAttribute('style', d.style.cssText + '-o-animation-duration:' + ti + 's;');
