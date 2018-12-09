@@ -2,6 +2,9 @@
 -------------------------------
 ![Banner](https://ww2.sinaimg.cn/large/ed039e1fgy1fxzuvu16clj20m808cgpi)  
 
+## What the heck is this?  
+* A simple JS to create some barrages (We also call it 'the bulletscreen' or 'danmu').  
+
 ## How to use ?  
 * 引入JS：  
 ```html  
