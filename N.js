@@ -138,7 +138,7 @@
             d.style.fontSize = lh + 'px';
             d.style.fontWeight = ot.bold[el];
             d.style.color = ot.colour[el];
-            d.style.opacity = ot.opa;
+            d.style.opacity = ot.opa[el];
             d.style.animationDuration = ti + 's';
             i.style.wordBreak = 'keep-all';
             i.style.whiteSpace = 'nowrap';
