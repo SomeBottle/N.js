@@ -1,12 +1,14 @@
-﻿<title>Hello N.js</title>
 <style>
 .p{
-	max-width:70%;
+	max-width:50%;
 }
 </style>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 <div class='p' id='p'><img src='pic.jpg' style='width:100%;'></img></div>
+<h2 id='e1'>弹幕状态：运行</h2>
 <div class='p' id='p2'><img src='pic2.jpg' style='width:100%;'></img></div>
-<script src='./N.min.js'></script>
+<h2 id='e2'>弹幕状态：运行</h2>
+<script src='./N.min.js?233'></script>
 <script>
 $N.x('p');
 $N.p('color','green');
@@ -19,6 +21,7 @@ setTimeout(function(){
 },1200);
 setTimeout(function(){
 	$N.theworld();console.log('The World!');
+	$N.s('e1').innerHTML='弹幕状态：暂停';
 },1200);
 setTimeout(function(){
 	console.log('Switch to p2');
@@ -34,6 +37,7 @@ setTimeout(function(){
 },1800);
 setTimeout(function(){
 	$N.theworld();console.log('The World2!');
+	$N.s('e2').innerHTML='弹幕状态：暂停';
 },3000);
 setTimeout(function(){
 	$N.x('p');
@@ -42,6 +46,7 @@ setTimeout(function(){
 setTimeout(function(){
 	$N.theworld();
 	console.log('Time start to flow');
+	$N.s('e1').innerHTML='弹幕状态：运行';
 },4000);
 setTimeout(function(){
 	console.log('Switch to p2');
@@ -49,15 +54,29 @@ setTimeout(function(){
 },4500);
 setTimeout(function(){
 	$N.theworld();
+	$N.s('e2').innerHTML='弹幕状态：运行';
 	console.log('Time start to flow 2');
 },5000);
 setTimeout(function(){
 	$N.theworld(true);
+	$N.s('e1').innerHTML='弹幕状态：暂停';
+	$N.s('e2').innerHTML='弹幕状态：暂停';
 	console.log('THE WORLD!');
 	console.log('Every container\'s time has been paused.');
 },7000);
 setTimeout(function(){
 	$N.theworld(true);
+	$N.s('e1').innerHTML='弹幕状态：运行';
+	$N.s('e2').innerHTML='弹幕状态：运行';
 	console.log('Time start to flow');
 },10000);
+setTimeout(function(){
+   $N.x('p');   
+   $N.p('color','#F7FE2E');
+   $N.p('bold',700); 
+   $N.p('md','normal');
+   $N.p('opacity',60);
+   $N.p('time',10);
+   $N.c('是谁住在深海的大菠萝里？！');
+},12000);
 </script>
