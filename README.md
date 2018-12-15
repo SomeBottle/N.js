@@ -4,6 +4,9 @@
 
 **可点击↑**
 
+## Compatibility.
+  * The project is using CSS3 for scrolling barrages.Maybe there will be some compatibility problems.
+
 ## What the heck is this?  
   * A simple JS to create some barrages (We also call it 'the bulletscreen' or 'danmu').  
 
