@@ -1,6 +1,8 @@
 # N.js
 -------------------------------
-![Banner](https://ww2.sinaimg.cn/large/ed039e1fgy1fxzuvu16clj20m808cgpi)  
+[![Banner](https://ww2.sinaimg.cn/large/ed039e1fgy1fxzuvu16clj20m808cgpi)](https://somebottle.gitee.io/bottlecos/n.js.mp4)  
+
+**可点击↑**
 
 ## What the heck is this?  
   * A simple JS to create some barrages (We also call it 'the bulletscreen' or 'danmu').  
