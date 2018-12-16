@@ -79,7 +79,9 @@
                         e.parentNode.removeChild(e);
                         clearInterval(o);
                     }
-                }
+                }else{
+					clearInterval(o);/*Delete Timer*/
+				}
             }
             var o = setInterval(function() {
                 pm(ot.s(e));
