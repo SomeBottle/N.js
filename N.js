@@ -7,7 +7,7 @@
     bnum: {},
     /*Bottom-Num*/
     bold: {},
-	/*font weight(100-900)*/
+    /*font weight(100-900)*/
     num: 0,
     /*Main Num*/
     obnum: {},
@@ -22,6 +22,8 @@
     /*Default Running Time*/
     ps: {},
     psall: false,
+    hs: {},
+    hsall: false,
     end: {
         'animation': 'animationend',
         'OAnimation': 'oAnimationEnd',
@@ -168,7 +170,7 @@
                     ot.dnum[el] += 1;
                 }
             } else if (ot.md[el] == 'top') {
-                d.className = 'N-tm N-n';
+                d.className = 'N-tm N-n N-ot' + el;
                 d.style.top = lh * ot.tnum[el] + 'px';
                 if (ot.tnum[el] >= (i.clientHeight / (lh * 2))) {
                     ot.tnum[el] = 0;
@@ -178,7 +180,7 @@
                 ot.center(d);
                 ot.pf(d.id, ti, el);
             } else if (ot.md[el] == 'bottom') {
-                d.className = 'N-tm N-n';
+                d.className = 'N-tm N-n N-bt' + el;
                 d.style.bottom = lh * ot.bnum[el] + 'px';
                 if (ot.bnum[el] >= (i.clientHeight / (lh * 2))) {
                     ot.bnum[el] = 0;
@@ -222,6 +224,29 @@
                 i.removeChild(ot.s('N-' + ot.el + 'pause'));
             }
         }
+    },
+    cdm: function(e) {
+        var ot = this;
+        var k = document.getElementsByClassName(e);
+        for (var d = 0; d < k.length; d++) {
+            k[d].parentNode.removeChild(k[d]);
+        }
+        if (document.getElementsByClassName(e).length > 0) {
+            return ot.cdm(e);
+        }
+    },
+    clear: function(f) {
+        var ot = this;
+        var i = ot.s('N-dm');
+        if (!f) {
+            ot.cdm('N-ob' + ot.el);
+            ot.cdm('N-ot' + ot.el);
+            ot.cdm('N-bt' + ot.el);
+        } else {
+            ot.cdm('N-d');
+            ot.cdm('N-tm');
+        }
+
     }
 };
 $N.i();
