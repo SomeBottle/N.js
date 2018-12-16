@@ -1,20 +1,33 @@
+﻿<title>Hello N.js</title>
 <style>
 .p{
 	max-width:50%;
 }
 </style>
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport" />
+<iframe src="https://ghbtns.com/github-btn.html?user=somebottle&repo=n.js&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe><button onclick='clearp()'>清除p的弹幕</button>&nbsp;<button onclick='clearp2()'>清除p2的弹幕</button>&nbsp;<button onclick='clearall()'>清除所有容器的弹幕</button>
 <div class='p' id='p'><img src='pic.jpg' style='width:100%;'></img></div>
 <h2 id='e1'>弹幕状态：运行</h2>
 <div class='p' id='p2'><img src='pic2.jpg' style='width:100%;'></img></div>
 <h2 id='e2'>弹幕状态：运行</h2>
-<script src='./N.min.js?233'></script>
+<script src='./N.js?233'></script>
 <script>
+function clearp(){
+	$N.x('p');
+	$N.clear();
+}
+function clearp2(){
+	$N.x('p2');
+	$N.clear();
+}
+function clearall(){
+	$N.clear(true);
+}
 $N.x('p');
 $N.p('color','green');
 console.log('Switch to p');
 setTimeout(function(){
-	$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');
+	$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');
 },1000);
 setTimeout(function(){
 	$N.p('md','top');$N.p('color','blue');$N.c('蓝色也不错');$N.p('color','#58ACFA');$N.c('亚可真的太可爱了');
