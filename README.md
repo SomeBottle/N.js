@@ -73,6 +73,16 @@
       ```javascript   
        $N.theworld(true);   
       ``` 
+  * 清除弹幕：
+    * 用法和theworld类似：
+      ```javascript
+      $N.clear();
+      ```
+      清除当前选择容器的弹幕.  
+      ```javascript
+      $N.clear(true);
+      ```
+      清除所有容器的弹幕.  
   * 示例  
   ```html
    <div class='p' id='p'><img src='pic.jpg' style='width:100%;'></img></div>
