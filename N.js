@@ -68,8 +68,8 @@
                 var i = o.s(e);
                 var p = document.createElement('div');
                 p.id = 'N-danmaku' + e;
-                p.style.width = i.offsetWidth + 'px';
-                p.style.height = i.offsetHeight + 'px';
+                p.style.width = '100%';
+                p.style.height = '100%';
                 p.style.top = '0px';
                 p.className = 'N-danmaku';
                 i.appendChild(p);
@@ -126,7 +126,7 @@
             /*Import Main Style*/
             t.appendChild(o);
             document.body.appendChild(t);
-            ot.timer = setInterval(function() {
+            /*ot.timer = setInterval(function() {
                 for (var u in ot.cons) {
                     var es = ot.cons;
                     var nh = ot.s(u).offsetHeight;
@@ -140,7 +140,7 @@
                     }
                 }
             },
-            2000);
+            2000);*/
             console.log('[N]Initialized.');
         }
     },
@@ -199,7 +199,7 @@
                 for (et in ot.end) {
                     if (d.style[et] !== undefined) {
                         break;
-						/*Get the Right Event*/
+                        /*Get the Right Event*/
                     }
                 }
                 d.addEventListener(ot.end[et],
