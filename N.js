@@ -1,7 +1,9 @@
 ﻿var $N = {
-    mcss: '@keyframes Ndm{from{left:120%}to{left:0;transform:translateX(-100%)}}@-webkit-keyframes Ndm{from{left:120%}to{left:0;transform:translateX(-100%)}}@-moz-keyframes Ndm{from{left:120%}to{left:0;transform:translateX(-100%)}}@-o-keyframes Ndm{from{left:120%}to{left:0;transform:translateX(-100%)}}.N-tm{-webkit-text-shadow:#000 0.5px 0 0,#000 0 0.5px 0,#000 -0.5px 0 0,#000 0 -0.5px 0;-moz-text-shadow:#000 0.5px 0 0,#000 0 0.5px 0,#000 -0.5px 0 0,#000 0 -0.5px 0;text-shadow:#000 0.5px 0 0,#000 0 0.5px 0,#000 -0.5px 0 0,#000 0 -0.5px 0;}.N-n{position:absolute}.N-d{position:absolute;animation:Ndm 5s;animation-fill-mode:forwards;animation-timing-function:linear;-webkit-animation-fill-mode:forwards;-webkit-animation-timing-function:linear;-moz-animation-fill-mode:forwards;-moz-animation-timing-function:linear;-o-animation-fill-mode:forwards;-o-animation-timing-function:linear;}',
+    mcss: '@keyframes Ndm{from{left:120%}to{left:0;transform:translateX(-100%)}}@-webkit-keyframes Ndm{from{left:120%}to{left:0;transform:translateX(-100%)}}@-moz-keyframes Ndm{from{left:120%}to{left:0;transform:translateX(-100%)}}@-o-keyframes Ndm{from{left:120%}to{left:0;transform:translateX(-100%)}}.N-tm{-webkit-text-shadow:#000 0.5px 0 0,#000 0 0.5px 0,#000 -0.5px 0 0,#000 0 -0.5px 0;-moz-text-shadow:#000 0.5px 0 0,#000 0 0.5px 0,#000 -0.5px 0 0,#000 0 -0.5px 0;text-shadow:#000 0.5px 0 0,#000 0 0.5px 0,#000 -0.5px 0 0,#000 0 -0.5px 0;}.N-n{position:absolute}.N-d{position:absolute;animation:Ndm 5s;animation-fill-mode:forwards;animation-timing-function:linear;-webkit-animation-fill-mode:forwards;-webkit-animation-timing-function:linear;-moz-animation-fill-mode:forwards;-moz-animation-timing-function:linear;-o-animation-fill-mode:forwards;-o-animation-timing-function:linear;}.N-danmaku{position:absolute;overflow:hidden;}',
     dnum: {},
     /*Scrolling-Num*/
+    cons: {},
+    /*Containers*/
     tnum: {},
     /*Top-Num*/
     bnum: {},
@@ -24,6 +26,8 @@
     psall: false,
     hs: {},
     hsall: false,
+    ini: false,
+    timer: 'none',
     end: {
         'animation': 'animationend',
         'OAnimation': 'oAnimationEnd',
@@ -47,11 +51,27 @@
             o.bold[e] = 'normal';
             o.md[e] = 'normal';
             var statu = 'running';
+            if (!o.cons[e]) {
+                var i = o.s(e);
+                o.cons[e] = {};
+                o.cons[e].height = i.offsetHeight;
+                o.cons[e].width = i.offsetWidth;
+            }
             if (!o.s('N-ob' + e)) {
                 var i = o.s('N-dm');
                 var p = document.createElement('style');
                 p.id = 'N-ob' + e;
                 p.innerHTML = '.N-ob' + e + '{animation-play-state:' + statu + ';-webkit-animation-play-state:' + statu + ';-moz-animation-play-state:' + statu + ';-o-animation-play-state:' + statu + ';}';
+                i.appendChild(p);
+            }
+            if (!o.s('N-danmaku' + e)) {
+                var i = o.s(e);
+                var p = document.createElement('div');
+                p.id = 'N-danmaku' + e;
+                p.style.width = i.offsetWidth + 'px';
+                p.style.height = i.offsetHeight + 'px';
+                p.style.top = '0px';
+                p.className = 'N-danmaku';
                 i.appendChild(p);
             }
         }
@@ -79,9 +99,10 @@
                         e.parentNode.removeChild(e);
                         clearInterval(o);
                     }
-                }else{
-					clearInterval(o);/*Delete Timer*/
-				}
+                } else {
+                    clearInterval(o);
+                    /*Delete Timer*/
+                }
             }
             var o = setInterval(function() {
                 pm(ot.s(e));
@@ -94,15 +115,34 @@
         return document.getElementById(e);
     },
     i: function() {
-        /*Initial Work*/
-        var t = document.createElement('div');
-        t.id = 'N-dm';
-        var o = document.createElement('style');
-        o.innerHTML = this.mcss;
-        /*Import Main Style*/
-        t.appendChild(o);
-        document.body.appendChild(t);
-        console.log('[N]Initialized.');
+        var ot = this;
+        if (!ot.ini) {
+            ot.ini = true;
+            /*Initial Work*/
+            var t = document.createElement('div');
+            t.id = 'N-dm';
+            var o = document.createElement('style');
+            o.innerHTML = ot.mcss;
+            /*Import Main Style*/
+            t.appendChild(o);
+            document.body.appendChild(t);
+            ot.timer = setInterval(function() {
+                for (var u in ot.cons) {
+                    var es = ot.cons;
+                    var nh = ot.s(u).offsetHeight;
+                    var nw = ot.s(u).offsetWidth;
+                    if (es[u].height !== nh || es[u].width !== nw) {
+                        es[u].height = nh;
+                        es[u].width = nw;
+                        var a = document.getElementById('N-danmaku' + u);
+                        a.style.height = nh;
+                        a.style.width = nw;
+                    }
+                }
+            },
+            2000);
+            console.log('[N]Initialized.');
+        }
     },
     p: function(pt, val) {
         /*Set Properties*/
@@ -131,6 +171,7 @@
         /*Create*/
         var ot = this;
         var el = ot.el;
+        var dm = ot.s('N-danmaku' + el);
         if (el !== 'none' && ot.s(el)) {
             var e = el;
             var ti = ot.wt[el];
@@ -151,7 +192,6 @@
             d.setAttribute('style', d.style.cssText + '-o-animation-duration:' + ti + 's;');
             d.id = 'N-d' + ot.num;
             i.style.position = 'relative';
-            i.style.overflow = 'hidden';
             if (ot.md[el] == 'normal') {
                 d.style.top = lh * ot.dnum[el] + 'px';
                 d.className = 'N-tm N-d N-ob' + el;
@@ -159,11 +199,12 @@
                 for (et in ot.end) {
                     if (d.style[et] !== undefined) {
                         break;
+						/*Get the Right Event*/
                     }
                 }
                 d.addEventListener(ot.end[et],
                 function() {
-                    i.removeChild(d);
+                    dm.removeChild(d);
                 });
                 /*Listen to CSS3*/
                 if (ot.dnum[el] >= (i.clientHeight / lh * 0.8)) {
@@ -194,7 +235,7 @@
             }
             ot.num += 1;
             ot.obnum[el] += 1;
-            i.appendChild(d);
+            dm.appendChild(d);
         } else {
             console.log('[N]Empty Element.');
         }
