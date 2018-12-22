@@ -28,10 +28,9 @@
    $N.x(div id);  
   ```  
    &nbsp;例如 **$N.x('container')** 便指定了操纵目标是id为container的div.  
-   &nbsp;**PS:这个DIV在之后CSS属性会有变更：**
+   &nbsp;**PS:这个DIV在之后CSS定位属性会有变更：**
   ```css
-   position:relative;
-   overflow:hidden;
+   position:relative;  
   ```  
   * 设置**该div内**发送弹幕的属性：  
   ```javascript   
