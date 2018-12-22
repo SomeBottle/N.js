@@ -1,17 +1,40 @@
-﻿<title>Hello N.js</title>
-<style>
+﻿<html>
+ <head>
+  <title>Hello N.js</title> 
+  <style>
 .p{
 	max-width:50%;
+	transition:ease 1s;
 }
-</style>
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport" />
-<iframe src="https://ghbtns.com/github-btn.html?user=somebottle&repo=n.js&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe><button onclick='clearp()'>清除p的弹幕</button>&nbsp;<button onclick='clearp2()'>清除p2的弹幕</button>&nbsp;<button onclick='clearall()'>清除所有容器的弹幕</button>
-<div class='p' id='p'><img src='pic.jpg' style='width:100%;'></img></div>
-<h2 id='e1'>弹幕状态：运行</h2>
-<div class='p' id='p2'><img src='pic2.jpg' style='width:100%;'></img></div>
-<h2 id='e2'>弹幕状态：运行</h2>
-<script src='./N.min.js?2333'></script>
-<script>
+</style> 
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport" /> 
+ </head>
+ <body>
+  <iframe src="https://ghbtns.com/github-btn.html?user=somebottle&amp;repo=n.js&amp;type=star&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+  <button onclick="clearp()">清除p的弹幕</button>&nbsp;
+  <button onclick="clearp2()">清除p2的弹幕</button>&nbsp;
+  <button onclick="clearall()">清除所有容器的弹幕</button>&nbsp;
+  <button onclick="movep()">移动p1</button> 
+  <div class="p" id="p">
+   <img src="pic.jpg" style="width:100%;" />
+  </div> 
+  <h2 id="e1">P1弹幕状态：运行</h2> 
+  <div class="p" id="p2">
+   <img src="pic2.jpg" style="width:100%;" />
+  </div> 
+  <h2 id="e2">P2弹幕状态：运行</h2> 
+  <script src="./N.min.js"></script> 
+  <script>
+function random(n){
+return Math.floor(Math.random()*parseInt(n))+1;
+}
+function movep(){
+var c=document.getElementById('p');
+var a=document.body.clientWidth-c.offsetWidth;
+var b=document.body.clientHeight-c.offsetHeight;
+c.style.marginLeft=random(a);
+c.style.marginTop=random(b);
+}
 function clearp(){
 	$N.x('p');
 	$N.clear();
@@ -93,3 +116,5 @@ setTimeout(function(){
    $N.c('是谁住在深海的大菠萝里？！');
 },12000);
 </script>
+ </body>
+</html>
