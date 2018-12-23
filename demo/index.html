@@ -6,6 +6,11 @@
 	max-width:50%;
 	transition:ease 1s;
 }
+.fd{
+position:absolute;
+right:0;
+z-index:100;
+}
 </style> 
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport" /> 
  </head>
@@ -15,9 +20,11 @@
   <button onclick="clearp2()">清除p2的弹幕</button>&nbsp;
   <button onclick="clearall()">清除所有容器的弹幕</button>&nbsp;
   <button onclick="movep()">移动p1</button> 
+  <div class='fd' id='fd'>
   <div class="p" id="p">
    <img src="pic.jpg" style="width:100%;" />
   </div> 
+  </div>
   <h2 id="e1">P1弹幕状态：运行</h2> 
   <div class="p" id="p2">
    <img src="pic2.jpg" style="width:100%;" />
@@ -34,6 +41,7 @@ var a=document.body.clientWidth-c.offsetWidth;
 var b=document.body.clientHeight-c.offsetHeight;
 c.style.marginLeft=random(a);
 c.style.marginTop=random(b);
+c.style.width=random(1000)+300+'px';
 }
 function clearp(){
 	$N.x('p');
@@ -49,7 +57,10 @@ function clearall(){
 $N.x('p');
 $N.p('color','green');
 console.log('Switch to p');
+function a(){
 setTimeout(function(){
+    $N.p('time',5);
+    $N.p('color','#00FF40');
 	$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');
 },1000);
 setTimeout(function(){
@@ -115,6 +126,9 @@ setTimeout(function(){
    $N.p('time',10);
    $N.c('是谁住在深海的大菠萝里？！');
 },12000);
+}
+a();
+setInterval(a,12000);
 </script>
  </body>
 </html>
