@@ -42,8 +42,9 @@
    | color | 16进制颜色码 | 颜色 |
    | opacity | 0~100 | 透明度0%~100% |
    | time | 秒为单位的时间 | 设置一条弹幕的生命时间（调整速度） |
-   | md | normal,top,bottom | 设置弹幕的位置，normal为滚动，top和bottom分别为顶部、底部 |
+   | md | normal,top,bottom,random | 设置弹幕的位置，normal为滚动,random是随机行滚动,top和bottom分别为顶部、底部 |
    | bold | normal,100~900 | 设置弹幕css的font-weight(加粗)，normal则为400 |
+   | size | normal,0.5~2.0 | 设置弹幕尺寸倍数 |
 
    例如设置在该div生成的弹幕颜色为蕾姆色: **$N.p('color','#91BEF0')**  
 
@@ -82,6 +83,35 @@
       $N.clear(true);
       ```
       清除所有容器的弹幕.  
+      
+  * 弹幕列表功能：
+    1. 创建列表：
+      ```javascript
+      $N.createlist(ListId);
+      //listid可以是任何英文数字组合，不要出现奇怪的符号
+      ```
+    2. 删除列表:  
+      ```javascript
+      $N.dellist(ListId);
+      ```
+    3. 手动填装:   
+      ```javascript
+      $N.adtl(DanmakuData,MediaTime,Listid);
+      ```
+      其中DanmakuData: 
+      ```javascript
+       {
+  	     x: 'm',
+  	     color: '#5882FA',
+  	     opacity: 100,
+  	     time: 5,
+  	     md: 'normal',
+  	     bold: 200,
+  	     size: 1,
+  	     text: '灵能百分百赛高！'
+       }
+      ```
+      
   * 示例  
   ```html
    <div class='p' id='p'><img src='pic.jpg' style='width:100%;'></img></div>
