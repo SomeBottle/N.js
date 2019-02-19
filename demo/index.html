@@ -1,5 +1,5 @@
 ﻿<html>
- <head>
+ <head> 
   <title>Hello N.js</title> 
   <style>
 .p{
@@ -13,23 +13,26 @@ z-index:100;
 }
 </style> 
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport" /> 
- </head>
- <body>
-  <iframe src="https://ghbtns.com/github-btn.html?user=somebottle&amp;repo=n.js&amp;type=star&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
-  <button onclick="clearp()">清除p的弹幕</button>&nbsp;
-  <button onclick="clearp2()">清除p2的弹幕</button>&nbsp;
-  <button onclick="clearall()">清除所有容器的弹幕</button>&nbsp;
+ </head> 
+ <body> 
+  <iframe src="https://ghbtns.com/github-btn.html?user=somebottle&amp;repo=n.js&amp;type=star&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe> 
+  <button onclick="clearp()">清除p的弹幕</button>&nbsp; 
+  <button onclick="clearp2()">清除p2的弹幕</button>&nbsp; 
+  <button onclick="clearall()">清除所有容器的弹幕</button>&nbsp; 
   <button onclick="movep()">移动p1</button> 
-  <div class='fd' id='fd'>
-  <div class="p" id="p">
-   <img src="pic.jpg" style="width:100%;" />
+  <div class="fd" id="fd"> 
+   <div class="p" id="p"> 
+    <img src="pic.jpg" style="width:100%;" /> 
+   </div> 
   </div> 
-  </div>
   <h2 id="e1">P1弹幕状态：运行</h2> 
-  <div class="p" id="p2">
-   <img src="pic2.jpg" style="width:100%;" />
+  <div class="p" id="p2"> 
+   <img src="pic2.jpg" style="width:100%;" /> 
   </div> 
   <h2 id="e2">P2弹幕状态：运行</h2> 
+  <p><a href="demo2.html"></a></p>
+  <h2><a href="demo2.html">Go to DEMO2</a></h2>
+  <p></p> 
   <script src="./N.min.js"></script> 
   <script>
 function random(n){
@@ -61,9 +64,11 @@ function a(){
 setTimeout(function(){
     $N.p('time',5);
     $N.p('color','#00FF40');
+	$N.p('size',1.4);
 	$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');$N.c('原谅色赛高');
 },1000);
 setTimeout(function(){
+    $N.p('size',1);
 	$N.p('md','top');$N.p('color','blue');$N.c('蓝色也不错');$N.p('color','#58ACFA');$N.c('亚可真的太可爱了');
 },1200);
 setTimeout(function(){
@@ -125,10 +130,11 @@ setTimeout(function(){
    $N.p('opacity',60);
    $N.p('time',10);
    $N.c('是谁住在深海的大菠萝里？！');
+   $N.p('opacity',100);
 },12000);
 }
 a();
-setInterval(a,12000);
-</script>
+setInterval(a,22000);
+</script>  
  </body>
 </html>
