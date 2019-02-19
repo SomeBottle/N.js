@@ -12,13 +12,13 @@
     /*font weight(100-900)*/
     num: 0,
     /*Main Num*/
-	hitbox:{},
-	/*碰撞检测*/
+    hitbox: {},
+    /*碰撞检测*/
     obnum: {},
     /*Barrage Num of different containers*/
     colour: {},
     /*Default Color*/
-	ftsize: {},
+    ftsize: {},
     /*Default FontSize*/
     opa: {},
     /*Default Opacity*/
@@ -29,7 +29,7 @@
     ps: {},
     psall: false,
     hs: {},
-	list: {},
+    list: {},
     hsall: false,
     ini: false,
     timer: 'none',
@@ -45,7 +45,7 @@
         var o = this;
         if (o.s(e)) {
             o.el = e;
-			o.hitbox[e]=[];
+            o.hitbox[e] = [];
             o.ps[e] = false;
             o.colour[e] = '#FFF';
             o.opa[e] = 1;
@@ -160,7 +160,7 @@
         } else if (pt == 'time') {
             o.wt[o.el] = val;
         } else if (pt == 'md') {
-            if (['normal', 'top', 'bottom','random'].indexOf(val) !== -1) {
+            if (['normal', 'top', 'bottom', 'random'].indexOf(val) !== -1) {
                 o.md[o.el] = val;
             }
         } else if (pt == 'bold') {
@@ -194,9 +194,9 @@
             var t = document.createTextNode(txt);
             d.appendChild(t);
             var lh = 5 * (i.clientWidth / 180);
-			if(ot.ftsize[el]!==undefined&&ot.ftsize[el]!==1){
-				lh=lh*parseFloat(ot.ftsize[el]);
-			}
+            if (ot.ftsize[el] !== undefined && ot.ftsize[el] !== 1) {
+                lh = lh * parseFloat(ot.ftsize[el]);
+            }
             d.style.fontSize = lh + 'px';
             d.style.fontWeight = ot.bold[el];
             d.style.color = ot.colour[el];
@@ -209,26 +209,28 @@
             d.setAttribute('style', d.style.cssText + '-o-animation-duration:' + ti + 's;');
             d.id = 'N-d' + ot.num;
             i.style.position = 'relative';
-            if (ot.md[el] == 'normal'||ot.md[el] == 'random') {
-				var tophit=Math.floor(i.clientHeight / lh * 0.8);/*碰撞头*/
-				var maxline=tophit+1;
+            if (ot.md[el] == 'normal' || ot.md[el] == 'random') {
+                var tophit = Math.floor(i.clientHeight / lh * 0.8);
+                /*碰撞头*/
+                var maxline = tophit + 1;
                 d.style.top = lh * ot.dnum[el] + 'px';
-				function rdu(obj){
-					var r=Math.floor(Math.random() * maxline) + 1;
-					if(obj.hitbox[obj.el].indexOf(r)!==-1){
-						return rdu(obj);
-					}else{
-						obj.hitbox[obj.el][(obj.hitbox[obj.el].length+1)]=r;
-						return r;
-					}
-				}
-				if(ot.md[el] == 'random'){/*Random Lines防止碰撞*/
-				    if(ot.hitbox[el].length>maxline){
-						ot.hitbox[el]=[];
-					}
-				    var line=rdu(ot);
-					d.style.top = lh * line + 'px';
-				}
+                function rdu(obj) {
+                    var r = Math.floor(Math.random() * maxline) + 1;
+                    if (obj.hitbox[obj.el].indexOf(r) !== -1) {
+                        return rdu(obj);
+                    } else {
+                        obj.hitbox[obj.el][(obj.hitbox[obj.el].length + 1)] = r;
+                        return r;
+                    }
+                }
+                if (ot.md[el] == 'random') {
+                    /*Random Lines防止碰撞*/
+                    if (ot.hitbox[el].length > maxline) {
+                        ot.hitbox[el] = [];
+                    }
+                    var line = rdu(ot);
+                    d.style.top = lh * line + 'px';
+                }
                 d.className = 'N-tm N-d N-ob' + el;
                 var et;
                 for (et in ot.end) {
@@ -241,7 +243,7 @@
                 function() {
                     dm.removeChild(d);
                 });
-				ot.dnum[el] += 1;
+                ot.dnum[el] += 1;
                 /*Listen to CSS3*/
                 if (ot.dnum[el] >= tophit) {
                     ot.dnum[el] = 0;
@@ -325,130 +327,143 @@
         }
 
     },
-	createlist: function(l) {/*List id*/
-		var o=this;
-		if(o.list[l]==undefined||o.list[l]==null){
-		   o.list[l]={};
-		   o.list[l]['d']={};
-		   o.list[l]['id']=0;
-		   console.log('[N]Created List:'+l);
-		}
-	},
-	dellist:function(l){
-		var o=this;
-		if(o.list[l]!==undefined||o.list[l]!==null){
-		   delete o.list[l];
-		   console.log('[N]Deleted List:'+l);
-		}else{
-		   console.log('[N]Failed to delete List:'+l);
-		}
-	},
-	json:function(j,l){/*通过json填装弹幕列表(json,listid)*/
-	var o=this;
-		var jt=JSON.parse(j);
-		var xpu=jt.x;
-		var clu=jt.color;
-		var opu=jt.opacity;
-		var tmu=jt.time;
-		var mdu=jt.md;
-		var bdu=jt.bold;
-		var szu=jt.size;/*初始化设置*/
-		var dmlist=jt.danmaku;
-		for(var i in dmlist){
-			var p=dmlist[i];
-			if(p.x!==undefined){
-				xpu=p.x;
-			}
-			if(p.color!==undefined){
-				clu=p.color;
-			}
-			if(p.opacity!==undefined){
-				opu=p.opacity;
-			}
-			if(p.time!==undefined){
-				tmu=p.time;
-			}
-			if(p.md!==undefined){
-				mdu=p.md;
-			}
-			if(p.bold!==undefined){
-				bdu=p.bold;
-			}
-			if(p.size!==undefined){
-				szu=p.size;
-			}
-		o.adtl({
-          x:xpu,
-	      color:clu,
-	      opacity:opu,
-	      time:tmu,
-	      md:mdu,
-	      bold:bdu,
-	      size:szu,
-	      text:p.text
-        },p.ts,l);
-		}
-	},
-	adtl:function(d,t,l){/*Add Danmaku To List (danmu,time,listid)返回添加的弹幕id*/
-		var o=this;
-		if(o.list[l]!==undefined||o.list[l]!==null){
-		    if(o.list[l][t]==undefined||o.list[l][t]==null){
-				o.list[l][t]={};
-			}
-		   var lt=Object.keys(o.list[l][t]).length;
-		   var rt=o.list[l]['id'];
-		   o.list[l]['d'][rt]={/*索引*/
-			   tm:t,
-               dm:lt			   
-		   };
-		   o.list[l][t][lt]={
-			 ct:d['x'],/*Container*/  
-			 cl:d['color'],/*Color*/
-			 op:d['opacity'],/*Opacity*/
-			 tm:d['time'],/*Running time*/
-			 md:d['md'],/*Danmaku mode*/
-			 bd:d['bold'],
-			 sz:d['size'],
-			 tx:d['text']
-		   };
-		   return rt;
-		   o.list[l]['id']+=1;
-		}else{
-		   console.log('[N]Failed to add danmaku to List:not exists');
-		}
-	},
-	rdfl:function(d,l){/*Remove Danmaku From List(danmuid,listid)*/
-		var o=this;
-		if(o.list[l]!==undefined||o.list[l]!==null){
-			var t=o.list[l]['d'][d].tm;
-			var di=o.list[l]['d'][d].dm;
-			if(o.list[l][t][di]!==undefined){
-			   delete o.list[l][t][di];
-			}
-		}else{
-		   console.log('[N]Failed to delete:not exists');
-		}
-	},
-	lc:function(t,l){/*Create from list(time,listid)*/
-	var o=this;
-		if(o.list[l]!==undefined||o.list[l]!==null){
-			if(o.list[l][t]!==undefined){
-			var ls=o.list[l][t];
-			for(var i in ls){
-				if(o.el!==ls[i].ct){
-				o.x(ls[i].ct);
-				}
-				o.p('color',ls[i].cl);
-				o.p('opacity',ls[i].op);
-				o.p('time',ls[i].tm);
-				o.p('md',ls[i].md);
-				o.p('bold',ls[i].bd);
-				o.p('size',ls[i].sz);
-				o.c(ls[i].tx);
-			}
-			}
-		}
-	}
+    createlist: function(l) {
+        /*List id*/
+        var o = this;
+        if (o.list[l] == undefined || o.list[l] == null) {
+            o.list[l] = {};
+            o.list[l]['d'] = {};
+            o.list[l]['id'] = 0;
+            console.log('[N]Created List:' + l);
+        }
+    },
+    dellist: function(l) {
+        var o = this;
+        if (o.list[l] !== undefined || o.list[l] !== null) {
+            delete o.list[l];
+            console.log('[N]Deleted List:' + l);
+        } else {
+            console.log('[N]Failed to delete List:' + l);
+        }
+    },
+    json: function(j, l) {
+        /*通过json填装弹幕列表(json,listid)*/
+        var o = this;
+        var jt = JSON.parse(j);
+        var xpu = jt.x;
+        var clu = jt.color;
+        var opu = jt.opacity;
+        var tmu = jt.time;
+        var mdu = jt.md;
+        var bdu = jt.bold;
+        var szu = jt.size;
+        /*初始化设置*/
+        var dmlist = jt.danmaku;
+        for (var i in dmlist) {
+            var p = dmlist[i];
+            if (p.x !== undefined) {
+                xpu = p.x;
+            }
+            if (p.color !== undefined) {
+                clu = p.color;
+            }
+            if (p.opacity !== undefined) {
+                opu = p.opacity;
+            }
+            if (p.time !== undefined) {
+                tmu = p.time;
+            }
+            if (p.md !== undefined) {
+                mdu = p.md;
+            }
+            if (p.bold !== undefined) {
+                bdu = p.bold;
+            }
+            if (p.size !== undefined) {
+                szu = p.size;
+            }
+            o.adtl({
+                x: xpu,
+                color: clu,
+                opacity: opu,
+                time: tmu,
+                md: mdu,
+                bold: bdu,
+                size: szu,
+                text: p.text
+            },
+            p.ts, l);
+        }
+    },
+    adtl: function(d, t, l) {
+        /*Add Danmaku To List (danmu,time,listid)返回添加的弹幕id*/
+        var o = this;
+        if (o.list[l] !== undefined || o.list[l] !== null) {
+            if (o.list[l][t] == undefined || o.list[l][t] == null) {
+                o.list[l][t] = {};
+            }
+            var lt = Object.keys(o.list[l][t]).length;
+            var rt = o.list[l]['id'];
+            o.list[l]['d'][rt] = {
+                /*索引*/
+                tm: t,
+                dm: lt
+            };
+            o.list[l][t][lt] = {
+                ct: d['x'],
+                /*Container*/
+                cl: d['color'],
+                /*Color*/
+                op: d['opacity'],
+                /*Opacity*/
+                tm: d['time'],
+                /*Running time*/
+                md: d['md'],
+                /*Danmaku mode*/
+                bd: d['bold'],
+                sz: d['size'],
+                tx: d['text']
+            };
+            o.list[l]['id'] = parseInt(o.list[l]['id']) + 1;
+            return rt;
+        } else {
+            console.log('[N]Failed to add danmaku to List:not exists');
+        }
+    },
+    rdfl: function(d, l) {
+        /*Remove Danmaku From List(danmuid,listid)*/
+        var o = this;
+        if (o.list[l] !== undefined || o.list[l] !== null) {
+            var t = o.list[l]['d'][d].tm;
+            var di = o.list[l]['d'][d].dm;
+            if (o.list[l][t][di] !== undefined) {
+                delete o.list[l][t][di];
+            }
+        } else {
+            console.log('[N]Failed to delete:not exists');
+        }
+    },
+    lc: function(t, l) {
+        /*Create from list(time,listid)*/
+        var o = this;
+        if (o.list[l] !== undefined || o.list[l] !== null) {
+            if (o.list[l][t] !== undefined) {
+                var ls = o.list[l][t];
+                for (var i in ls) {
+                    if (o.el !== ls[i].ct) {
+                        o.x(ls[i].ct);
+                    }
+                    o.p('color', ls[i].cl);
+                    o.p('opacity', ls[i].op);
+                    o.p('time', ls[i].tm);
+                    o.p('md', ls[i].md);
+                    o.p('bold', ls[i].bd);
+                    o.p('size', ls[i].sz);
+                    o.c(ls[i].tx);
+                }
+            }
+        }
+    }
 };
 $N.i();
 /*N.js -SomeBottle*/
