@@ -13,7 +13,7 @@
 ## How to use ?  
   * 引入JS：  
   ```html  
-   <script src='./bueue.min.js' charset='UTF-8'></script>  
+   <script src='./N.min.js' charset='UTF-8'></script>  
   ```  
   * 在页面中创建div，申明id：  
   ```html  
