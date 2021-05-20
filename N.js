@@ -41,21 +41,21 @@
     },
     /*CSS3 Animation Ending Events For Different Browsers*/
     md: {},
-    x: function(e) {
+    x: function (e) {
         var o = this;
         if (o.s(e)) {
             o.el = e;
-            o.hitbox[e] = [];
-            o.ps[e] = false;
-            o.colour[e] = '#FFF';
-            o.opa[e] = 1;
-            o.wt[e] = 5;
-            o.dnum[e] = 0;
-            o.tnum[e] = 0;
-            o.bnum[e] = 0;
-            o.obnum[e] = 0;
-            o.bold[e] = 'normal';
-            o.md[e] = 'normal';
+            o.hitbox[e] = o.hitbox[e] || [];/*2021.5.20，在json读取模式下每次切换容器时这里所有配置值会归零，这样改解决了这个问题*/
+            o.ps[e] = o.ps[e] || false;
+            o.colour[e] = o.colour[e] || '#FFF';
+            o.opa[e] = o.opa[e] || 1;
+            o.wt[e] = o.wt[e] || 5;
+            o.dnum[e] = o.dnum[e] || 0;
+            o.tnum[e] = o.tnum[e] || 0;
+            o.bnum[e] = o.bnum[e] || 0;
+            o.obnum[e] = o.obnum[e] || 0;
+            o.bold[e] = o.bold[e] || 'normal';
+            o.md[e] = o.md[e] || 'normal';
             var statu = 'running';
             if (!o.cons[e]) {
                 var i = o.s(e);
@@ -82,7 +82,7 @@
             }
         }
     },
-    center: function(e) {
+    center: function (e) {
         /*Set to center*/
         var i = e;
         i.style.left = '50%';
@@ -91,10 +91,10 @@
         i.setAttribute('style', i.style.cssText + '-moz-transform:translateX(-50%);');
         i.setAttribute('style', i.style.cssText + '-o-transform:translateX(-50%);');
     },
-    pf: function(e, t, c) {
+    pf: function (e, t, c) {
         /*Count for no-scrolling danmus*/
         var ot = this;
-        setTimeout(function() {
+        setTimeout(function () {
             var it = t;
             function pm(e) {
                 if (e !== null && e !== undefined) {
@@ -110,17 +110,17 @@
                     /*Delete Timer*/
                 }
             }
-            var o = setInterval(function() {
+            var o = setInterval(function () {
                 pm(ot.s(e));
             },
-            1000);
+                1000);
         },
-        10);
+            10);
     },
-    s: function(e) {
+    s: function (e) {
         return document.getElementById(e);
     },
-    i: function() {
+    i: function () {
         var ot = this;
         if (!ot.ini) {
             ot.ini = true;
@@ -150,7 +150,7 @@
             console.log('[N]Initialized.');
         }
     },
-    p: function(pt, val) {
+    p: function (pt, val) {
         /*Set Properties*/
         var o = this;
         if (pt == 'color') {
@@ -181,7 +181,7 @@
             }
         }
     },
-    c: function(txt) {
+    c: function (txt) {
         /*Create*/
         var ot = this;
         var el = ot.el;
@@ -240,9 +240,9 @@
                     }
                 }
                 d.addEventListener(ot.end[et],
-                function() {
-                    dm.removeChild(d);
-                });
+                    function () {
+                        dm.removeChild(d);
+                    });
                 ot.dnum[el] += 1;
                 /*Listen to CSS3*/
                 if (ot.dnum[el] >= tophit) {
@@ -276,7 +276,7 @@
             console.log('[N]Empty Element.');
         }
     },
-    theworld: function(f) {
+    theworld: function (f) {
         var ot = this;
         var i = ot.s('N-dm');
         var statu = 'paused';
@@ -304,7 +304,7 @@
             }
         }
     },
-    cdm: function(e) {
+    cdm: function (e) {
         var ot = this;
         var k = document.getElementsByClassName(e);
         for (var d = 0; d < k.length; d++) {
@@ -314,7 +314,7 @@
             return ot.cdm(e);
         }
     },
-    clear: function(f) {
+    clear: function (f) {
         var ot = this;
         var i = ot.s('N-dm');
         if (!f) {
@@ -327,7 +327,7 @@
         }
 
     },
-    createlist: function(l) {
+    createlist: function (l) {
         /*List id*/
         var o = this;
         if (o.list[l] == undefined || o.list[l] == null) {
@@ -337,7 +337,7 @@
             console.log('[N]Created List:' + l);
         }
     },
-    dellist: function(l) {
+    dellist: function (l) {
         var o = this;
         if (o.list[l] !== undefined || o.list[l] !== null) {
             delete o.list[l];
@@ -346,7 +346,7 @@
             console.log('[N]Failed to delete List:' + l);
         }
     },
-    json: function(j, l) {
+    json: function (j, l) {
         /*通过json填装弹幕列表(json,listid)*/
         var o = this;
         var jt = JSON.parse(j);
@@ -392,10 +392,10 @@
                 size: szu,
                 text: p.text
             },
-            p.ts, l);
+                p.ts, l);
         }
     },
-    adtl: function(d, t, l) {
+    adtl: function (d, t, l) {
         /*Add Danmaku To List (danmu,time,listid)返回添加的弹幕id*/
         var o = this;
         if (o.list[l] !== undefined || o.list[l] !== null) {
@@ -430,7 +430,7 @@
             console.log('[N]Failed to add danmaku to List:not exists');
         }
     },
-    rdfl: function(d, l) {
+    rdfl: function (d, l) {
         /*Remove Danmaku From List(danmuid,listid)*/
         var o = this;
         if (o.list[l] !== undefined || o.list[l] !== null) {
@@ -443,7 +443,7 @@
             console.log('[N]Failed to delete:not exists');
         }
     },
-    lc: function(t, l) {
+    lc: function (t, l) {
         /*Create from list(time,listid)*/
         var o = this;
         if (o.list[l] !== undefined || o.list[l] !== null) {
