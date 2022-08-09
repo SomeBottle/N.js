@@ -1,18 +1,18 @@
 ﻿var $N = {
     mcss: '@keyframes Ndm{from{left:120%}to{left:0;transform:translateX(-100%)}}@-webkit-keyframes Ndm{from{left:120%}to{left:0;transform:translateX(-100%)}}@-moz-keyframes Ndm{from{left:120%}to{left:0;transform:translateX(-100%)}}@-o-keyframes Ndm{from{left:120%}to{left:0;transform:translateX(-100%)}}.N-tm{-webkit-text-shadow:#000 0.5px 0 0,#000 0 0.5px 0,#000 -0.5px 0 0,#000 0 -0.5px 0;-moz-text-shadow:#000 0.5px 0 0,#000 0 0.5px 0,#000 -0.5px 0 0,#000 0 -0.5px 0;text-shadow:#000 0.5px 0 0,#000 0 0.5px 0,#000 -0.5px 0 0,#000 0 -0.5px 0;}.N-n{position:absolute}.N-d{position:absolute;animation:Ndm 5s;animation-fill-mode:forwards;animation-timing-function:linear;-webkit-animation-fill-mode:forwards;-webkit-animation-timing-function:linear;-moz-animation-fill-mode:forwards;-moz-animation-timing-function:linear;-o-animation-fill-mode:forwards;-o-animation-timing-function:linear;}.N-danmaku{position:absolute;overflow:hidden;}',
-    dnum: {},
+    scrollNum: {},
     /*Scrolling-Num*/
-    cons: {},
+    containers: {},
     /*Containers*/
-    tnum: {},
+    topNum: {},
     /*Top-Num*/
-    bnum: {},
+    bottomNum: {},
     /*Bottom-Num*/
     bold: {},
     /*font weight(100-900)*/
     num: 0,
     /*Main Num*/
-    hitbox: {},
+    hitBox: {},
     /*碰撞检测*/
     obnum: {},
     /*Barrage Num of different containers*/
@@ -42,36 +42,36 @@
     /*CSS3 Animation Ending Events For Different Browsers*/
     md: {},
     x: function (e) {
-        var o = this;
-        if (o.s(e)) {
-            o.el = e;
-            o.hitbox[e] = o.hitbox[e] || [];/*2021.5.20，在json读取模式下每次切换容器时这里所有配置值会归零，这样改解决了这个问题*/
-            o.ps[e] = o.ps[e] || false;
-            o.colour[e] = o.colour[e] || '#FFF';
-            o.opa[e] = o.opa[e] || 1;
-            o.wt[e] = o.wt[e] || 5;
-            o.dnum[e] = o.dnum[e] || 0;
-            o.tnum[e] = o.tnum[e] || 0;
-            o.bnum[e] = o.bnum[e] || 0;
-            o.obnum[e] = o.obnum[e] || 0;
-            o.bold[e] = o.bold[e] || 'normal';
-            o.md[e] = o.md[e] || 'normal';
+        var that = this;
+        if (that.s(e)) {
+            that.el = e;
+            that.hitBox[e] = that.hitBox[e] || [];/*2021.5.20，在json读取模式下每次切换容器时这里所有配置值会归零，这样改解决了这个问题*/
+            that.ps[e] = that.ps[e] || false;
+            that.colour[e] = that.colour[e] || '#FFF';
+            that.opa[e] = that.opa[e] || 1;
+            that.wt[e] = that.wt[e] || 5;
+            that.scrollNum[e] = that.scrollNum[e] || 0;
+            that.topNum[e] = that.topNum[e] || 0;
+            that.bottomNum[e] = that.bottomNum[e] || 0;
+            that.obnum[e] = that.obnum[e] || 0;
+            that.bold[e] = that.bold[e] || 'normal';
+            that.md[e] = that.md[e] || 'normal';
             var statu = 'running';
-            if (!o.cons[e]) {
-                var i = o.s(e);
-                o.cons[e] = {};
-                o.cons[e].height = i.offsetHeight;
-                o.cons[e].width = i.offsetWidth;
+            if (!that.containers[e]) {
+                var i = that.s(e);
+                that.containers[e] = {};
+                that.containers[e].height = i.offsetHeight;
+                that.containers[e].width = i.offsetWidth;
             }
-            if (!o.s('N-ob' + e)) {
-                var i = o.s('N-dm');
+            if (!that.s('N-scroll' + e)) {
+                var i = that.s('N-dm');
                 var p = document.createElement('style');
-                p.id = 'N-ob' + e;
-                p.innerHTML = '.N-ob' + e + '{animation-play-state:' + statu + ';-webkit-animation-play-state:' + statu + ';-moz-animation-play-state:' + statu + ';-o-animation-play-state:' + statu + ';}';
+                p.id = 'N-scroll' + e;
+                p.innerHTML = '.N-scroll' + e + '{animation-play-state:' + statu + ';-webkit-animation-play-state:' + statu + ';-moz-animation-play-state:' + statu + ';-o-animation-play-state:' + statu + ';}';
                 i.appendChild(p);
             }
-            if (!o.s('N-danmaku' + e)) {
-                var i = o.s(e);
+            if (!that.s('N-danmaku' + e)) {
+                var i = that.s(e);
                 var p = document.createElement('div');
                 p.id = 'N-danmaku' + e;
                 p.style.width = '100%';
@@ -183,37 +183,37 @@
     },
     c: function (txt) {
         /*Create*/
-        var ot = this;
-        var el = ot.el;
-        var dm = ot.s('N-danmaku' + el);
-        if (el !== 'none' && ot.s(el)) {
-            var e = el;
-            var ti = ot.wt[el];
-            var i = ot.s(e);
-            var d = document.createElement('div');
-            var t = document.createTextNode(txt);
-            d.appendChild(t);
-            var lh = 5 * (i.clientWidth / 180);
-            if (ot.ftsize[el] !== undefined && ot.ftsize[el] !== 1) {
-                lh = lh * parseFloat(ot.ftsize[el]);
+        var that = this;
+        var element = that.el;
+        var dm = that.s('N-danmaku' + element);
+        if (element !== 'none' && that.s(element)) {
+            var element = element;
+            var life = that.wt[element];
+            var container = that.s(element);
+            var newDiv = document.createElement('div');
+            var newText = document.createTextNode(txt);
+            newDiv.appendChild(newText);
+            var lh = 5 * (container.clientWidth / 180);
+            if (that.ftsize[element] !== undefined && that.ftsize[element] !== 1) {
+                lh = lh * parseFloat(that.ftsize[element]);
             }
-            d.style.fontSize = lh + 'px';
-            d.style.fontWeight = ot.bold[el];
-            d.style.color = ot.colour[el];
-            d.style.opacity = ot.opa[el];
-            d.style.animationDuration = ti + 's';
-            i.style.wordBreak = 'keep-all';
-            i.style.whiteSpace = 'nowrap';
-            d.setAttribute('style', d.style.cssText + '-webkit-animation-duration:' + ti + 's;');
-            d.setAttribute('style', d.style.cssText + '-moz-animation-duration:' + ti + 's;');
-            d.setAttribute('style', d.style.cssText + '-o-animation-duration:' + ti + 's;');
-            d.id = 'N-d' + ot.num;
-            i.style.position = 'relative';
-            if (ot.md[el] == 'normal' || ot.md[el] == 'random') {
-                var tophit = Math.floor(i.clientHeight / lh * 0.8);
+            newDiv.style.fontSize = lh + 'px';
+            newDiv.style.fontWeight = that.bold[element];
+            newDiv.style.color = that.colour[element];
+            newDiv.style.opacity = that.opa[element];
+            newDiv.style.animationDuration = life + 's';
+            container.style.wordBreak = 'keep-all';
+            container.style.whiteSpace = 'nowrap';
+            newDiv.setAttribute('style', newDiv.style.cssText + '-webkit-animation-duration:' + life + 's;');
+            newDiv.setAttribute('style', newDiv.style.cssText + '-moz-animation-duration:' + life + 's;');
+            newDiv.setAttribute('style', newDiv.style.cssText + '-o-animation-duration:' + life + 's;');
+            newDiv.id = 'N-d' + that.num;
+            container.style.position = 'relative';
+            if (that.md[element] == 'normal' || that.md[element] == 'random') {
+                var tophit = Math.floor(container.clientHeight / lh * 0.8);
                 /*碰撞头*/
                 var maxline = tophit + 1;
-                d.style.top = lh * ot.dnum[el] + 'px';
+                newDiv.style.top = lh * that.scrollNum[element] + 'px';
                 function rdu(obj) {
                     var r = Math.floor(Math.random() * maxline) + 1;
                     if (obj.hitbox[obj.el].indexOf(r) !== -1) {
@@ -223,55 +223,55 @@
                         return r;
                     }
                 }
-                if (ot.md[el] == 'random') {
+                if (that.md[element] == 'random') {
                     /*Random Lines防止碰撞*/
-                    if (ot.hitbox[el].length > maxline) {
-                        ot.hitbox[el] = [];
+                    if (that.hitBox[element].length > maxline) {
+                        that.hitBox[element] = [];
                     }
-                    var line = rdu(ot);
-                    d.style.top = lh * line + 'px';
+                    var line = rdu(that);
+                    newDiv.style.top = lh * line + 'px';
                 }
-                d.className = 'N-tm N-d N-ob' + el;
+                newDiv.className = 'N-tm N-d N-scroll' + element;
                 var et;
-                for (et in ot.end) {
-                    if (d.style[et] !== undefined) {
+                for (et in that.end) {
+                    if (newDiv.style[et] !== undefined) {
                         break;
                         /*Get the Right Event*/
                     }
                 }
-                d.addEventListener(ot.end[et],
+                newDiv.addEventListener(that.end[et],
                     function () {
-                        dm.removeChild(d);
+                        dm.removeChild(newDiv);
                     });
-                ot.dnum[el] += 1;
+                that.scrollNum[element] += 1;
                 /*Listen to CSS3*/
-                if (ot.dnum[el] >= tophit) {
-                    ot.dnum[el] = 0;
+                if (that.scrollNum[element] >= tophit) {
+                    that.scrollNum[element] = 0;
                 }
-            } else if (ot.md[el] == 'top') {
-                d.className = 'N-tm N-n N-ot' + el;
-                d.style.top = lh * ot.tnum[el] + 'px';
-                if (ot.tnum[el] >= (i.clientHeight / (lh * 2))) {
-                    ot.tnum[el] = 0;
+            } else if (that.md[element] == 'top') {
+                newDiv.className = 'N-tm N-n N-ot' + element;
+                newDiv.style.top = lh * that.topNum[element] + 'px';
+                if (that.topNum[element] >= (container.clientHeight / (lh * 2))) {
+                    that.topNum[element] = 0;
                 } else {
-                    ot.tnum[el] += 1;
+                    that.topNum[element] += 1;
                 }
-                ot.center(d);
-                ot.pf(d.id, ti, el);
-            } else if (ot.md[el] == 'bottom') {
-                d.className = 'N-tm N-n N-bt' + el;
-                d.style.bottom = lh * ot.bnum[el] + 'px';
-                if (ot.bnum[el] >= (i.clientHeight / (lh * 2))) {
-                    ot.bnum[el] = 0;
+                that.center(newDiv);
+                that.pf(newDiv.id, life, element);
+            } else if (that.md[element] == 'bottom') {
+                newDiv.className = 'N-tm N-n N-bt' + element;
+                newDiv.style.bottom = lh * that.bottomNum[element] + 'px';
+                if (that.bottomNum[element] >= (container.clientHeight / (lh * 2))) {
+                    that.bottomNum[element] = 0;
                 } else {
-                    ot.bnum[el] += 1;
+                    that.bottomNum[element] += 1;
                 }
-                ot.center(d);
-                ot.pf(d.id, ti, el);
+                that.center(newDiv);
+                that.pf(newDiv.id, life, element);
             }
-            ot.num += 1;
-            ot.obnum[el] += 1;
-            dm.appendChild(d);
+            that.num += 1;
+            that.obnum[element] += 1;
+            dm.appendChild(newDiv);
         } else {
             console.log('[N]Empty Element.');
         }
@@ -296,7 +296,7 @@
                 ot.ps[ot.el] = true;
                 var p = document.createElement('style');
                 p.id = 'N-' + ot.el + 'pause';
-                p.innerHTML = '.N-ob' + ot.el + '{animation-play-state:' + statu + ';-webkit-animation-play-state:' + statu + ';-moz-animation-play-state:' + statu + ';-o-animation-play-state:' + statu + ';}';
+                p.innerHTML = '.N-scroll' + ot.el + '{animation-play-state:' + statu + ';-webkit-animation-play-state:' + statu + ';-moz-animation-play-state:' + statu + ';-o-animation-play-state:' + statu + ';}';
                 i.appendChild(p);
             } else {
                 ot.ps[ot.el] = false;
@@ -318,7 +318,7 @@
         var ot = this;
         var i = ot.s('N-dm');
         if (!f) {
-            ot.cdm('N-ob' + ot.el);
+            ot.cdm('N-scroll' + ot.el);
             ot.cdm('N-ot' + ot.el);
             ot.cdm('N-bt' + ot.el);
         } else {

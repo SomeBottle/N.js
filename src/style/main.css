@@ -1,0 +1,58 @@
+/* 正向滚动动画*/
+@keyframes Ndm-forward {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: 0;
+        transform: translateX(-100%);
+    }
+}
+
+/* 逆向滚动动画*/
+@keyframes Ndm-reversed {
+    from {
+        right: 100%;
+    }
+
+    to {
+        right: 0;
+        transform: translateX(100%);
+    }
+}
+
+/* 弹幕描边效果*/
+.N-outline {
+    text-shadow: #000 0.5px 0 0, #000 0 0.5px 0, #000 -0.5px 0 0, #000 0 -0.5px 0;
+}
+
+/* 一条滚动弹幕的样式*/
+.N-scroll {
+    position: absolute;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+/* 正向滚动动画，和N-scroll联用*/
+.N-scroll-forward {
+    animation: Ndm-forward 5s;
+}
+
+/* 逆向滚动动画，和N-scroll联用*/
+.N-scroll-reversed {
+    animation: Ndm-reversed 5s;
+}
+
+/* 滚动弹幕动画播放的样式*/
+.N-scroll-playing {
+    animation-play-state: running;
+}
+
+/* 弹幕浮层样式*/
+.N-dmLayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
