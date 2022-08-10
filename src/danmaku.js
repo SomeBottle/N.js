@@ -1,6 +1,6 @@
 'use strict';
 import * as utils from "./utils.js";
-import hitBox from "./hitBox.js";
+import hitBox from "./hitbox.js";
 import { danmakuDefaultAttrs } from "./configs.js";
 
 export default class Danmaku {
@@ -24,7 +24,9 @@ export default class Danmaku {
             'mid_scroll': 0, // 中间滚动弹幕
             'mid_hanging': 0, // 中间悬浮弹幕
             'reversed_scroll': 0, // 反向滚动弹幕
-            'reversed_mid_scroll': 0 // 反向中间滚动弹幕
+            'reversed_mid_scroll': 0, // 反向中间滚动弹幕
+            'random': 0, // 随机高度的滚动弹幕
+            'reversed_random': 0 // 随机高度的反向滚动弹幕
         };
         // 记录当前发送的弹幕样式和属性
         this.currentAttrs = danmakuDefaultAttrs;
@@ -83,10 +85,10 @@ export default class Danmaku {
             'opacity': (dmAttrs['opacity'] * 0.01), // 弹幕透明度
             'word-break': 'keep-all', // 弹幕不换行
             'white-space': 'pre', // 保留空格
-            'animation-duration': `${life}s`, // 弹幕动画时间
-            '-webkit-animation-duration': `${life}s`,
-            '-moz-animation-duration': `${life}s`,
-            '-o-animation-duration': `${life}s`
+            'animation-duration': `${life}ms`, // 弹幕动画时间
+            '-webkit-animation-duration': `${life}ms`,
+            '-moz-animation-duration': `${life}ms`,
+            '-o-animation-duration': `${life}ms`
         });
         // 如果开了描边，添加样式组
         if (dmAttrs['outline']) {
@@ -95,21 +97,34 @@ export default class Danmaku {
         }
         // 设定弹幕自定义样式（放在这里，可以覆盖上面的样式）
         utils.styling(newDm, dmAttrs['custom_css']);
+        // 先把新弹幕加入到弹幕层中，但是opacity为0，这样hitBox的方法才能获取到弹幕的长宽
+        this.dmLayer.appendChild(newDm);
         // 根据不同弹幕类型，进行不同处理
         switch (dmAttrs['type']) {
-            case 'scroll': { // 普通滚动弹幕
-                // 通过hitBox获得下一条滚动弹幕的距离顶部的位置
-                let dmTop = this.hitBox.nextScrollPos(newDm, dmAttrs, reversed);
+            case 'scroll':  // 普通滚动弹幕
+            case 'random':  // 随机高度滚动弹幕
+            case 'midscroll':  // 中间滚动弹幕
+                newDm.classList.add(
+                    'N-scroll-playing', // 动画播放样式
+                    dmAttrs['reverse'] ? 'N-scroll-reversed' : 'N-scroll-forward', // 正向还是逆向
+                    'N-scroll' // 滚动样式
+                );
                 break;
-            }
+            case 'top':  // 顶部弹幕
+            case 'bottom':  // 底部弹幕
+            case 'midhang':  // 中间弹幕
+                newDm.classList.add('N-hanging'); // 悬停样式
+                break;
         }
+        // 让碰撞模块来设定弹幕在容器中的位置
+        this.hitBox.setDanmakuPos(newDm, dmAttrs);
     }
     /**
      * 设置接下来发送的弹幕的属性
      * @param {String|Object} kbj 属性名或者属性对象
      * @param {String} value 如果kbj是属性名，这一项就是属性名对应的值
      */
-    attr(kbj, value = null) {
+    attrs(kbj, value = null) {
         if (kbj instanceof Object) { // 如果是对象
             for (let key in kbj) {
                 this.currentAttrs[key] = kbj[key];

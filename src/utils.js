@@ -48,6 +48,24 @@ function output(text) {
 }
 
 /**
+ * 取两个数之间的随机数 [from,to)
+ * @param {Number} from 
+ * @param {Number} to 
+ * @returns {Number}
+ */
+function rand(from, to) {
+    return Math.random() * (to - from) + from;
+}
+
+/**
+ * 获得时间戳
+ * @returns {Number} 毫秒级时间戳
+ */
+function timestamp() {
+    return new Date().getTime();
+}
+
+/**
  * 通过容器的宽度计算弹幕的字体大小
  * @param {Element} container 容器元素 
  * @returns 弹幕大小(px)
@@ -67,4 +85,11 @@ export const cssEndEvents = {
     'WebkitAnimation': 'webkitAnimationEnd'
 }
 
-export { styling, animStyleLayer, output, danmakuHeight };
+export {
+    styling,
+    animStyleLayer,
+    output,
+    danmakuHeight,
+    rand,
+    timestamp
+};
