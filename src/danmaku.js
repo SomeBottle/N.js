@@ -181,22 +181,26 @@ export default class Danmaku {
         }
     }
     /**
-     * 设置弹幕在屏幕上覆盖的面积占比
+     * 设置弹幕在屏幕上(自起点)生成的[最小高度,最大高度]
      * @param {String|Object} types 属性名或者属性对象
-     * @param {String} value 如果kbj是属性名，这一项就是属性名对应的值
+     * @param {Array} value 如果kbj是属性名，这一项就是属性名对应的范围
+     * @note value类似于[min,max]
      */
-    cover(types, value = null) {
-        let coverAttrs = this.hitBox.currentCoverAttrs;
+    range(types, value = null) {
+        let maxHeight = this.hitBox.danmakuMaxHeight,
+            minHeight = this.hitBox.danmakuMinHeight;
         if (types instanceof Object) { // 如果是对象
             for (let key in types) {
-                if (typeof coverAttrs[key] !== 'undefined') {
-                    coverAttrs[key] = types[key];
+                if (typeof maxHeight[key] !== 'undefined') {
+                    minHeight[key] = types[key][0];
+                    maxHeight[key] = types[key][1];
                     // 刷新相应的弹幕碰撞集
                     this.hitBox.refreshHitSets(key);
                 }
             }
-        } else if (typeof coverAttrs[types] !== 'undefined') {
-            coverAttrs[types] = value;
+        } else if (typeof maxHeight[types] !== 'undefined') {
+            minHeight[types] = value[0];
+            maxHeight[types] = value[1];
             // 刷新相应的弹幕碰撞集
             this.hitBox.refreshHitSets(types);
         } else {

@@ -13,8 +13,16 @@ export const danmakuDefaultAttrs = {
     'custom_css': {} // 自定义css样式，这里可以覆盖上面size,weight,color这些样式
 };
 
-// 弹幕在容器中最多占用多大百分比的面积（和碰撞集/attrs[type]相对应）
-export const danmakuMaxAccountFor = {
+// 弹幕在容器中至少生成在距起点多高的位置（百分比）（和碰撞集/attrs[type]相对应）
+export const danmakuMinHeight = {
+    'top': 0,
+    'bottom': 0,
+    'scroll': 0,
+    'random': 0
+}
+
+// 弹幕在容器中至多生成在距起点多高的位置（百分比）（和碰撞集/attrs[type]相对应）
+export const danmakuMaxHeight = {
     'top': 70,
     'bottom': 70,
     'scroll': 100,
