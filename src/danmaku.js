@@ -129,10 +129,33 @@ export default class Danmaku {
             for (let key in kbj) {
                 this.currentAttrs[key] = kbj[key];
             }
-        } else if (this.currentAttrs[kbj]) {
+        } else if (typeof this.currentAttrs[kbj] !== 'undefined') {
             this.currentAttrs[kbj] = value;
         } else {
-            utils.output(`Error: attribute not found: `, kbj);
+            utils.output(`Error: Danmaku attribute not found: `, kbj);
+        }
+    }
+    /**
+     * 设置弹幕在屏幕上覆盖的面积占比
+     * @param {String|Object} types 属性名或者属性对象
+     * @param {String} value 如果kbj是属性名，这一项就是属性名对应的值
+     */
+    cover(types, value = null) {
+        let coverAttrs = this.hitBox.currentCoverAttrs;
+        if (types instanceof Object) { // 如果是对象
+            for (let key in types) {
+                if (typeof coverAttrs[key] !== 'undefined') {
+                    coverAttrs[key] = types[key];
+                    // 刷新相应的弹幕碰撞集
+                    this.hitBox.refreshHitSets(key);
+                }
+            }
+        } else if (typeof coverAttrs[types] !== 'undefined') {
+            coverAttrs[types] = value;
+            // 刷新相应的弹幕碰撞集
+            this.hitBox.refreshHitSets(types);
+        } else {
+            utils.output(`Error: Danmaku type not found: `, types);
         }
     }
 }

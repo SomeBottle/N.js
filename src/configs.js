@@ -12,3 +12,11 @@ export const danmakuDefaultAttrs = {
     'life': 5000, // 弹幕生命时长（毫秒）
     'custom_css': {} // 自定义css样式，这里可以覆盖上面size,weight,color这些样式
 };
+
+// 弹幕在容器中最多占用多大百分比的面积（和碰撞集/attrs[type]相对应）
+export const danmakuMaxAccountFor = {
+    'top': 70,
+    'bottom': 70,
+    'scroll': 100,
+    'random': 100
+}
