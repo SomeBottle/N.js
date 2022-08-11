@@ -125,18 +125,46 @@ export default class Danmaku {
                     'N-scroll' // 滚动样式
                 );
                 // 添加到运动监视
-                this.monitor.newScroll(newDm, callback);
+                this.monitor.newScroll(newDm, dmAttrs['type'], reversed, callback);
                 break;
             case 'top':  // 顶部弹幕
             case 'bottom':  // 底部弹幕
             case 'midhang':  // 中间弹幕
                 newDm.classList.add('N-hanging'); // 悬停样式
                 // 添加到生命监视
-                this.monitor.newHang(newDm, dmAttrs['life'], callback);
+                this.monitor.newHang(newDm, dmAttrs['type'], dmAttrs['life'], callback);
                 break;
         }
         // 让碰撞模块来设定弹幕在容器中的位置
         this.hitBox.setDanmakuPos(newDm, dmAttrs);
+    }
+    /**
+     * 清空容器中所有弹幕
+     * @param {String} type 类型: 同attrs中的，还可以传入all，代表所有类型
+     * @param {Boolean} reversed 是否为逆向弹幕，还可以传入all，代表所有方向
+     * @note 不传入参数则清空所有弹幕，type和reversed可以传入'all'
+     */
+    clear(type = '', reversed = 'all') {
+        switch (type) {
+            case 'random':
+            case 'scroll':
+            case 'midscroll':
+                this.monitor.clearScrolling(type, reversed);
+                break;
+            case 'top':
+            case 'bottom':
+            case 'midhang':
+                this.monitor.clearHanging(type);
+                break;
+            case 'all':
+                this.monitor.clearScrolling(type, reversed);
+                this.monitor.clearHanging(type);
+                break;
+            default:
+                this.monitor.clearScrolling();
+                this.monitor.clearHanging();
+                break;
+        }
     }
     /**
      * 暂停容器内所有弹幕
