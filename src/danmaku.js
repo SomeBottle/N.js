@@ -2,6 +2,7 @@
 import * as utils from "./utils.js";
 import HitBox from "./hitbox.js";
 import Monitor from "./monitor.js";
+import List from "./list.js";
 import { danmakuDefaultAttrs } from "./configs.js";
 
 export default class Danmaku {
@@ -54,6 +55,8 @@ export default class Danmaku {
         this.hitBox = new HitBox(dmLayer);
         // 为容器添加一个弹幕监视实例
         this.monitor = new Monitor();
+        // 为容器绑定列表方法
+        this.list = new List(dmLayer);
     }
     /**
      * 创建一条弹幕
@@ -64,7 +67,7 @@ export default class Danmaku {
         if (this.dmLayer.offsetWidth <= 0 || this.dmLayer.parentNode === null) {
             // 检查发现弹幕层不存在，不进行创建
             utils.output('Warning: Danmaku layer not found.');
-            return;
+            return this;
         }
         // 暂存当前弹幕属性
         let dmAttrs = this.currentAttrs,
@@ -137,6 +140,7 @@ export default class Danmaku {
         }
         // 让碰撞模块来设定弹幕在容器中的位置
         this.hitBox.setDanmakuPos(newDm, dmAttrs);
+        return this; // 链式语法
     }
     /**
      * 清空容器中所有弹幕
@@ -172,6 +176,7 @@ export default class Danmaku {
                 this.monitor.clearHanging();
                 break;
         }
+        return this;
     }
     /**
      * 暂停容器内所有弹幕
@@ -185,6 +190,7 @@ export default class Danmaku {
             // 标记为暂停
             this.state = 'paused';
         }
+        return this;
     }
     /**
      * 恢复容器内所有弹幕
@@ -198,6 +204,7 @@ export default class Danmaku {
             // 标记为播放
             this.state = 'running';
         }
+        return this;
     }
     /**
      * 设置接下来发送的弹幕的属性
@@ -214,6 +221,7 @@ export default class Danmaku {
         } else {
             utils.output(`Error: Danmaku attribute not found: `, kbj);
         }
+        return this;
     }
     /**
      * 设置弹幕在屏幕上(自起点)生成的[最小高度,最大高度]
@@ -241,5 +249,6 @@ export default class Danmaku {
         } else {
             utils.output(`Error: Danmaku type not found: `, types);
         }
+        return this;
     }
 }
