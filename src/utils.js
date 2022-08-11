@@ -77,6 +77,54 @@ function danmakuHeight(container) {
     return dmHeight > 5 ? dmHeight : 5; // 最小5px
 }
 
+class PTimer {
+    /**
+     * 可暂停的倒计时器
+     * @param {Function} callback 回调函数 
+     * @param {Number} time 倒计时时间（毫秒）
+     */
+    constructor(callback, time) {
+        // 记录状态
+        this.state = 'running';
+        // 记录回调函数
+        this.callback = callback;
+        // 核心计时器
+        this.timer = setTimeout(this.finished.bind(this), time);
+        // 计时器开始时间
+        this.start = timestamp();
+        // 计时器剩余时间(每次暂停后更新)
+        this.remaining = time;
+    }
+    /**
+     * 倒计时结束后的回调函数
+     */
+    finished() {
+        this.state = 'done'; // 标记状态：已完成
+        this.callback();
+    }
+    /**
+     * 暂停倒计时
+     */
+    pause() {
+        if (this.state == 'running') {
+            this.state = 'paused';
+            clearTimeout(this.timer);
+            this.remaining -= (timestamp() - this.start);
+        }
+    }
+    /**
+     * 继续倒计时
+     */
+    resume() {
+        if (this.remaining > 0 && this.state == 'paused') {
+            // 如果还有剩余时间
+            this.state = 'running';
+            this.start = timestamp();
+            this.timer = setTimeout(this.finished.bind(this), this.remaining);
+        }
+    }
+}
+
 // CSS动画终止对应的事件
 export const cssEndEvents = {
     'animation': 'animationend',
@@ -91,5 +139,6 @@ export {
     output,
     danmakuHeight,
     rand,
-    timestamp
+    timestamp,
+    PTimer
 };

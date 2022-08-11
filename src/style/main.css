@@ -56,6 +56,12 @@
     animation-play-state: running;
 }
 
+/* 滚动弹幕动画暂停的样式*/
+.N-scroll-paused,
+.N-scroll-paused>.N-scroll {
+    animation-play-state: paused;
+}
+
 /* 弹幕浮层样式*/
 .N-dmLayer {
     position: absolute;

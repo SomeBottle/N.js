@@ -1,6 +1,7 @@
 'use strict';
 import * as utils from "./utils.js";
-import hitBox from "./hitbox.js";
+import HitBox from "./hitbox.js";
+import Monitor from "./monitor.js";
 import { danmakuDefaultAttrs } from "./configs.js";
 
 export default class Danmaku {
@@ -31,19 +32,28 @@ export default class Danmaku {
         // 记录当前发送的弹幕样式和属性
         this.currentAttrs = danmakuDefaultAttrs;
         // 本容器弹幕状态(running/paused)
-        this.status = 'running';
+        this.state = 'running';
         // 修改容器本身position
         utils.styling(target, 'position', 'relative');
         // 创建容器的弹幕层
-        const dmLayer = document.createElement('div');
-        utils.styling(dmLayer, ['width', 'height', 'top', 'left'], ['100%', '100%', '0px', '0px']);
-        // 弹幕层class名为N-dmLayer
-        dmLayer.className = 'N-dmLayer';
-        // 将弹幕层添加到容器中
-        target.appendChild(dmLayer);
+        let dmLayer;
+        if (target.querySelector('.N-dmLayer')) {
+            // 弹幕层已经存在
+            dmLayer = target.querySelector('.N-dmLayer');
+        } else {
+            // 弹幕层不存在，就创建一个
+            dmLayer = document.createElement('div');
+            utils.styling(dmLayer, ['width', 'height', 'top', 'left'], ['100%', '100%', '0px', '0px']);
+            // 弹幕层class名为N-dmLayer
+            dmLayer.className = 'N-dmLayer';
+            // 将弹幕层添加到容器中
+            target.appendChild(dmLayer);
+        }
         this.dmLayer = dmLayer;
         // 给容器生成一个弹幕碰撞箱实例
-        this.hitBox = new hitBox(dmLayer);
+        this.hitBox = new HitBox(dmLayer);
+        // 为容器添加一个弹幕监视实例
+        this.monitor = new Monitor();
     }
     /**
      * 创建一条弹幕
@@ -51,6 +61,11 @@ export default class Danmaku {
      * @param {Function} callback 该条弹幕消失后的回调函数（可以不传入）
      */
     create(text, callback = null) {
+        if (this.dmLayer.offsetWidth <= 0 || this.dmLayer.parentNode === null) {
+            // 检查发现弹幕层不存在，不进行创建
+            utils.output('Warning: Danmaku layer not found.');
+            return;
+        }
         // 暂存当前弹幕属性
         let dmAttrs = this.currentAttrs,
             // 创建一个新的div作为弹幕
@@ -106,18 +121,48 @@ export default class Danmaku {
             case 'midscroll':  // 中间滚动弹幕
                 newDm.classList.add(
                     'N-scroll-playing', // 动画播放样式
-                    dmAttrs['reverse'] ? 'N-scroll-reversed' : 'N-scroll-forward', // 正向还是逆向
+                    reversed ? 'N-scroll-reversed' : 'N-scroll-forward', // 正向还是逆向
                     'N-scroll' // 滚动样式
                 );
+                // 添加到运动监视
+                this.monitor.newScroll(newDm, callback);
                 break;
             case 'top':  // 顶部弹幕
             case 'bottom':  // 底部弹幕
             case 'midhang':  // 中间弹幕
                 newDm.classList.add('N-hanging'); // 悬停样式
+                // 添加到生命监视
+                this.monitor.newHang(newDm, dmAttrs['life'], callback);
                 break;
         }
         // 让碰撞模块来设定弹幕在容器中的位置
         this.hitBox.setDanmakuPos(newDm, dmAttrs);
+    }
+    /**
+     * 暂停容器内所有弹幕
+     */
+    theWorld() {
+        if (this.state == 'running') {
+            // 暂停所有滚动弹幕
+            this.dmLayer.classList.add('N-scroll-paused');
+            // 暂停所有悬停弹幕
+            this.monitor.pauseHanging();
+            // 标记为暂停
+            this.state = 'paused';
+        }
+    }
+    /**
+     * 恢复容器内所有弹幕
+     */
+    resume() {
+        if (this.state == 'paused') {
+            // 恢复所有滚动弹幕
+            this.dmLayer.classList.remove('N-scroll-paused');
+            // 恢复所有悬停弹幕
+            this.monitor.resumeHanging();
+            // 标记为播放
+            this.state = 'running';
+        }
     }
     /**
      * 设置接下来发送的弹幕的属性
