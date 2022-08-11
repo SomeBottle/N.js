@@ -140,9 +140,10 @@ export default class Danmaku {
     }
     /**
      * 清空容器中所有弹幕
-     * @param {String} type 类型: 同attrs中的，还可以传入all，代表所有类型
+     * @param {String} type 类型: 同attrs中的
      * @param {Boolean} reversed 是否为逆向弹幕，还可以传入all，代表所有方向
-     * @note 不传入参数则清空所有弹幕，type和reversed可以传入'all'
+     * @note 不传入参数则清空所有弹幕，type和reversed可以传入'all'，代表所有
+     * @note type还可以传入'scrolling'，代表所有滚动弹幕；'hanging'，代表所有悬停弹幕
      */
     clear(type = '', reversed = 'all') {
         switch (type) {
@@ -157,8 +158,14 @@ export default class Danmaku {
                 this.monitor.clearHanging(type);
                 break;
             case 'all':
-                this.monitor.clearScrolling(type, reversed);
-                this.monitor.clearHanging(type);
+                this.monitor.clearScrolling('all', reversed);
+                this.monitor.clearHanging('all');
+                break;
+            case 'scrolling':
+                this.monitor.clearScrolling('all', reversed);
+                break;
+            case 'hanging':
+                this.monitor.clearHanging();
                 break;
             default:
                 this.monitor.clearScrolling();
