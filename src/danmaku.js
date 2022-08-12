@@ -30,8 +30,8 @@ export default class Danmaku {
             'random': 0, // 随机高度的滚动弹幕
             'reversed_random': 0 // 随机高度的反向滚动弹幕
         };
-        // 记录当前发送的弹幕样式和属性
-        this.currentAttrs = danmakuDefaultAttrs;
+        // 初始化当前发送的弹幕样式和属性
+        this.resetStyles();
         // 本容器弹幕状态(running/paused)
         this.state = 'running';
         // 修改容器本身position
@@ -56,14 +56,35 @@ export default class Danmaku {
         // 为容器添加一个弹幕监视实例
         this.monitor = new Monitor();
         // 为容器绑定列表方法
-        this.list = new List(dmLayer);
+        this.list = new List(dmLayer, this);
+    }
+    /**
+     * 重置容器发送弹幕的样式
+     * @note 恢复成configs.js的配置
+     */
+    resetStyles() {
+        // 迫真深复制对象
+        this.currentAttrs = Object.assign({}, danmakuDefaultAttrs);
+        this.currentAttrs['custom_css'] = Object.assign({}, this.currentAttrs['custom_css']);
+        return this;
+    }
+    /**
+     * 重置弹幕生成范围
+     * @note 恢复成configs.js的配置
+     */
+    resetRange() {
+        this.hitBox.resetHitSets();
+        return this;
     }
     /**
      * 创建一条弹幕
      * @param {*} text 弹幕文本 
+     * @param {Function} created 在弹幕刚创建后调用的函数(可以不传入)
      * @param {Function} callback 该条弹幕消失后的回调函数（可以不传入）
+     * @note hook(刚创建的弹幕元素,弹幕唯一id)
+     * @note callback第一个参数会传入弹幕id
      */
-    create(text, callback = null) {
+    create(text, created = null, callback = null) {
         if (this.dmLayer.offsetWidth <= 0 || this.dmLayer.parentNode === null) {
             // 检查发现弹幕层不存在，不进行创建
             utils.output('Warning: Danmaku layer not found.');
@@ -117,6 +138,8 @@ export default class Danmaku {
         utils.styling(newDm, dmAttrs['custom_css']);
         // 先把新弹幕加入到弹幕层中，但是opacity为0，这样hitBox的方法才能获取到弹幕的长宽
         this.dmLayer.appendChild(newDm);
+        // 弹幕唯一ID
+        let dmSerial = null;
         // 根据不同弹幕类型，进行不同处理
         switch (dmAttrs['type']) {
             case 'scroll':  // 普通滚动弹幕
@@ -128,53 +151,68 @@ export default class Danmaku {
                     'N-scroll' // 滚动样式
                 );
                 // 添加到运动监视
-                this.monitor.newScroll(newDm, dmAttrs['type'], reversed, callback);
+                dmSerial = this.monitor.newScroll(newDm, dmAttrs['type'], reversed, callback);
                 break;
             case 'top':  // 顶部弹幕
             case 'bottom':  // 底部弹幕
             case 'midhang':  // 中间弹幕
                 newDm.classList.add('N-hanging'); // 悬停样式
                 // 添加到生命监视
-                this.monitor.newHang(newDm, dmAttrs['type'], dmAttrs['life'], callback);
+                dmSerial = this.monitor.newHang(newDm, dmAttrs['type'], dmAttrs['life'], callback);
                 break;
         }
         // 让碰撞模块来设定弹幕在容器中的位置
         this.hitBox.setDanmakuPos(newDm, dmAttrs);
+        // 刚创建后调用函数
+        if (created)
+            created(newDm, dmSerial);
         return this; // 链式语法
     }
     /**
-     * 清空容器中所有弹幕
+     * 清空容器中部分弹幕
      * @param {String} type 类型: 同attrs中的
-     * @param {Boolean} reversed 是否为逆向弹幕，还可以传入all，代表所有方向
+     * @param {Boolean|String} reversed 是否为逆向弹幕，还可以传入all，代表所有方向
      * @note 不传入参数则清空所有弹幕，type和reversed可以传入'all'，代表所有
      * @note type还可以传入'scrolling'，代表所有滚动弹幕；'hanging'，代表所有悬停弹幕
      */
-    clear(type = '', reversed = 'all') {
+    clearSome(type = '', reversed = 'all') {
         switch (type) {
             case 'random':
             case 'scroll':
             case 'midscroll':
-                this.monitor.clearScrolling(type, reversed);
+                this.monitor.clearSomeScrolling(type, reversed);
                 break;
             case 'top':
             case 'bottom':
             case 'midhang':
-                this.monitor.clearHanging(type);
+                this.monitor.clearSomeHanging(type);
                 break;
             case 'all':
-                this.monitor.clearScrolling('all', reversed);
-                this.monitor.clearHanging('all');
+                this.monitor.clearSomeScrolling('all', reversed);
+                this.monitor.clearSomeHanging('all');
                 break;
             case 'scrolling':
-                this.monitor.clearScrolling('all', reversed);
+                this.monitor.clearSomeScrolling('all', reversed);
                 break;
             case 'hanging':
-                this.monitor.clearHanging();
+                this.monitor.clearSomeHanging();
                 break;
             default:
-                this.monitor.clearScrolling();
-                this.monitor.clearHanging();
+                this.monitor.clearSomeScrolling();
+                this.monitor.clearSomeHanging();
                 break;
+        }
+        return this;
+    }
+    /**
+     * 按id清除弹幕，如果不传入id，会直接调用clearSome删除所有
+     * @param {Number} id 弹幕ID
+     */
+    clear(id = null) {
+        if (id) {
+            this.monitor.clearSingle(id);
+        } else {
+            this.clearSome();
         }
         return this;
     }
@@ -186,7 +224,7 @@ export default class Danmaku {
             // 暂停所有滚动弹幕
             this.dmLayer.classList.add('N-scroll-paused');
             // 暂停所有悬停弹幕
-            this.monitor.pauseHanging();
+            this.monitor.pauseAllHanging();
             // 标记为暂停
             this.state = 'paused';
         }
@@ -200,7 +238,7 @@ export default class Danmaku {
             // 恢复所有滚动弹幕
             this.dmLayer.classList.remove('N-scroll-paused');
             // 恢复所有悬停弹幕
-            this.monitor.resumeHanging();
+            this.monitor.resumeAllHanging();
             // 标记为播放
             this.state = 'running';
         }

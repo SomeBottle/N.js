@@ -2,51 +2,66 @@
 // 这一部分单独拿出来写 - 50me3ottIe
 'use strict';
 import { styling, rand, timestamp } from "./utils.js";
-import { danmakuMaxAccountFor } from "./configs.js";
+import { danmakuMaxHeight, danmakuMinHeight } from "./configs.js";
 
-export default class hitBox {
+export default class HitBox {
     /**
      * 构造函数
      * @param {Element} dmLayer 弹幕层元素
      */
     constructor(dmLayer) {
         this.target = dmLayer;
-        this.currentCoverAttrs = danmakuMaxAccountFor;
-        // 弹幕碰撞集，每个数组中弹幕按空间关系进行排序
+        // 弹幕空间集，每个数组中弹幕按空间关系进行排序
         this.hitSets = {
             'top': [], // 顶部弹幕
             'bottom': [], // 底部弹幕
-            'scroll': [], // 普通滚动弹幕
-            'random': [] // 随机高度的滚动弹幕
+            'scroll': [] // 普通滚动弹幕
         };
-        this.refreshHitSets(); // 初始化碰撞集
+        this.resetHitSets(); // 初始化空间集
     }
     /**
-     * 获得对应类型弹幕最大能覆盖的高度
+     * 恢复弹幕生成范围为默认配置(configs.js内的)，并刷新空间集
+     */
+    resetHitSets() {
+        this.danmakuMinHeight = danmakuMinHeight;
+        this.danmakuMaxHeight = danmakuMaxHeight;
+        this.refreshHitSets(); // 刷新空间集
+    }
+    /**
+     * 获得对应类型弹幕至少要生成的高度
      * @param {String} type 
      * @returns 高度(px)
      */
-    getMaxCover(type) {
-        let layerHeight = this.target.offsetHeight; // 获得弹幕层高度
-        return (this.currentCoverAttrs[type] * 0.01) * layerHeight;
+    getMinHeight(type) {
+        return (this.danmakuMinHeight[type] * 0.01) * this.target.offsetHeight;
     }
     /**
-     * 刷新弹幕碰撞集
+     * 获得对应类型弹幕最大能生成的高度
+     * @param {String} type 
+     * @returns 高度(px)
+     */
+    getMaxHeight(type) {
+        return (this.danmakuMaxHeight[type] * 0.01) * this.target.offsetHeight;
+    }
+    /**
+     * 刷新弹幕空间集
      * @param {String} type 刷新的类型
      * @note 当type不传入或者留空时，刷新所有类型
      */
     refreshHitSets(type = '') {
+        // 忽略随机弹幕
+        if (type == 'random') return;
         let that = this,
             refresh = (type) => {
                 that.hitSets[type].length = 0;
                 that.hitSets[type][0] = {
-                    'from': 0,
-                    'to': that.getMaxCover(type),
+                    'from': that.getMinHeight(type),
+                    'to': that.getMaxHeight(type),
                     'available': true, // 可用
                     'dm': null // 弹幕相关
                 }
             };
-        // 刷新弹幕碰撞集
+        // 刷新弹幕空间集
         if (type) {
             refresh(type);
             return;
@@ -95,8 +110,9 @@ export default class hitBox {
      */
     danmakuRandom(newDm) {
         let layerHeight = this.target.offsetHeight, // 弹幕层高度
-            maxTop = layerHeight - newDm.offsetHeight; // 最大top值
-        return rand(0, maxTop);
+            minTop = this.getMinHeight('random'), // 最小高度
+            maxTop = this.getMaxHeight('random') - newDm.offsetHeight; // 最大高度
+        return rand(minTop, maxTop);
     }
     /**
      * 获得下一条弹幕的距离起点的高度(px)
@@ -112,7 +128,7 @@ export default class hitBox {
             hitSet = this.hitSets[attrs['type']],
             verticalSpace = attrs['vertical_space'], // 弹幕纵向间距
             calcHeight = -1; // 计算出的高度
-        // 遍历滚动碰撞集
+        // 遍历滚动空间集
         for (let i = 0, len = hitSet.length; i < len; i++) {
             let space = hitSet[i]; // 获得当前遍历到的空间
             if (space['available']) { // 空间是空闲的
@@ -133,7 +149,7 @@ export default class hitBox {
                         'reversed': attrs['reverse'], // 弹幕是否反向
                         'element': newDm // 弹幕元素
                     }
-                    // 切割后剩余的空间，重新加入碰撞集
+                    // 切割后剩余的空间，重新加入空间集
                     freeSlice['from'] = newFrom;
                     hitSet.splice(i + 1, 0, freeSlice);
                 }
@@ -153,7 +169,7 @@ export default class hitBox {
                             releaseFlag = dmElement.offsetLeft > 0;
                         } else {
                             // 正向滚动（从右往左）
-                            // (距左边距离+弹幕宽度<弹幕层宽度)，说明弹幕已经全部露出屏幕，可以从碰撞集中释放
+                            // (距左边距离+弹幕宽度<弹幕层宽度)，说明弹幕已经全部露出屏幕，可以从空间集中释放
                             releaseFlag = (dmElement.offsetLeft + dmElement.offsetWidth < layerWidth);
                         }
                         break;
@@ -176,25 +192,25 @@ export default class hitBox {
                     if (prevSpace['available'] && nextSpace['available']) {
                         // 如果前一个空间和后一个空间都是空闲的，就合并这三个空间
                         prevSpace['to'] = nextSpace['to'];
-                        // 从碰撞集中移除被合并的空间
+                        // 从空间集中移除被合并的空间
                         hitSet.splice(i, 2);
                         i--; // 遍历索引回退一位
-                        len -= 2; // 碰撞集长度减2
+                        len -= 2; // 空间集长度减2
                     } else if (prevSpace['available']) {
                         // 如果只有前一个空间是空闲的，就合并这两个空间
                         prevSpace['to'] = space['to'];
-                        // 从碰撞集中移除被合并的空间
+                        // 从空间集中移除被合并的空间
                         hitSet.splice(i, 1);
                         i--; // 遍历索引回退一位
-                        len--; // 碰撞集长度减1
+                        len--; // 空间集长度减1
                     } else if (nextSpace['available']) {
                         // 如果只有后一个空间是空闲的，就合并这两个空间
                         space['to'] = nextSpace['to'];
                         space['available'] = true;
                         space['dm'] = null;
-                        // 从碰撞集中移除被合并的空间
+                        // 从空间集中移除被合并的空间
                         hitSet.splice(i + 1, 1);
-                        len--; // 碰撞集长度减1
+                        len--; // 空间集长度减1
                     } else {
                         // 无可邻接的空间，就直接释放这个空间
                         space['available'] = true;
@@ -203,16 +219,16 @@ export default class hitBox {
                 }
             }
         }
-        // 如果循环结束，仍然找不到合适的位置投放弹幕，说明这一刻屏幕上爆满了，就重置碰撞集
+        // 如果循环结束，仍然找不到合适的位置投放弹幕，说明这一刻屏幕上爆满了，就重置空间集
         if (calcHeight === -1) {
             if (!retry) { // 避免死递归
-                // 刷新碰撞集，这样就有空间了 
+                // 刷新空间集，这样就有空间了 
                 this.refreshHitSets(attrs['type']);
                 // 重试计算高度
                 return this.danmakuAnchor(newDm, attrs, true);
             } else {
                 // 重试了，还是算不出来，就默认为0
-                // 这种情况一般是设置弹幕允许覆盖的面积过小，导致碰撞集中没有空间
+                // 这种情况一般是设置弹幕允许覆盖的面积过小，导致空间集中没有空间
                 calcHeight = 0;
             }
         }
