@@ -77,6 +77,18 @@ function danmakuHeight(container) {
     return dmHeight > 5 ? dmHeight : 5; // 最小5px
 }
 
+/**
+ * 检查对象中是否包含Keys中所有键
+ * @param {Object} obj 检查对象
+ * @param {Array} keys 键名组成的数组
+ */
+function ownProperties(obj, keys) {
+    for (let i = 0, len = keys.length; i < len; i++) {
+        if (!obj.hasOwnProperty(keys[i])) return false;
+    }
+    return true;
+}
+
 class PTimer {
     /**
      * 可暂停的倒计时器
@@ -140,5 +152,6 @@ export {
     danmakuHeight,
     rand,
     timestamp,
-    PTimer
+    PTimer,
+    ownProperties
 };
