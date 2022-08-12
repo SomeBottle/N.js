@@ -22,7 +22,7 @@ class List {
      */
     uncertainty(time) {
         if (this.usingList) {
-            if (time > 0)
+            if (time >= 0)
                 this.usingList['uncertainty'] = time;
             else
                 output('Uncertainty should be a positive number');

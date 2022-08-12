@@ -220,7 +220,7 @@ export default class Danmaku {
      * 暂停容器内所有弹幕
      * @param {Number} id 弹幕ID，如果传入，则单独暂停该弹幕
      */
-    theWorld(id = null) {
+    pause(id = null) {
         if (id) {
             this.monitor.pauseSingle(id);
             return this;
