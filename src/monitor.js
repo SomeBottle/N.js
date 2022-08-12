@@ -61,6 +61,7 @@ class DanmakuData {
      * @returns {Boolean} 是否暂停成功
      */
     pause() {
+        let target = this.element;
         switch (this.category) {
             case 'hanging':
                 // 暂停计时器
@@ -81,6 +82,7 @@ class DanmakuData {
      * @returns {Boolean} 是否恢复成功
      */
     resume() {
+        let target = this.element;
         switch (this.category) {
             case 'hanging':
                 // 暂停计时器

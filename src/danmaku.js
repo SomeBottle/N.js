@@ -218,8 +218,13 @@ export default class Danmaku {
     }
     /**
      * 暂停容器内所有弹幕
+     * @param {Number} id 弹幕ID，如果传入，则单独暂停该弹幕
      */
-    theWorld() {
+    theWorld(id = null) {
+        if (id) {
+            this.monitor.pauseSingle(id);
+            return this;
+        }
         if (this.state == 'running') {
             // 暂停所有滚动弹幕
             this.dmLayer.classList.add('N-scroll-paused');
@@ -232,8 +237,13 @@ export default class Danmaku {
     }
     /**
      * 恢复容器内所有弹幕
+     * @param {Number} id 弹幕ID，如果传入，则单独恢复该弹幕（前提：是单独被暂停了）
      */
-    resume() {
+    resume(id = null) {
+        if (id) {
+            this.monitor.resumeSingle(id);
+            return this;
+        }
         if (this.state == 'paused') {
             // 恢复所有滚动弹幕
             this.dmLayer.classList.remove('N-scroll-paused');
