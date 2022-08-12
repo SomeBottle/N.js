@@ -1,6 +1,6 @@
 {
   "name": "n-danmaku",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "SomeBottle's danmaku package",
   "main": "index.js",
   "scripts": {
