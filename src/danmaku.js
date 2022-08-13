@@ -18,18 +18,6 @@ export default class Danmaku {
         }
         // 记录操纵的容器（如果传入的是字符串，则认为是容器的ID）
         this.target = target;
-        // 弹幕计数器(包括各种弹幕分别的数量)
-        this.dmCounters = {
-            'scroll': 0, // 普通滚动弹幕
-            'top': 0, // 顶部弹幕
-            'bottom': 0, // 底部弹幕
-            'mid_scroll': 0, // 中间滚动弹幕
-            'mid_hanging': 0, // 中间悬浮弹幕
-            'reversed_scroll': 0, // 反向滚动弹幕
-            'reversed_mid_scroll': 0, // 反向中间滚动弹幕
-            'random': 0, // 随机高度的滚动弹幕
-            'reversed_random': 0 // 随机高度的反向滚动弹幕
-        };
         // 初始化当前发送的弹幕样式和属性
         this.resetStyles();
         // 本容器弹幕状态(running/paused)
@@ -57,6 +45,14 @@ export default class Danmaku {
         this.monitor = new Monitor();
         // 为容器绑定列表方法
         this.list = new List(dmLayer, this);
+    }
+    /**
+     * 获得容器弹幕统计信息
+     */
+    get statistics() {
+        let report = this.monitor.statistics();
+        report['global_state'] = this.state;
+        return report;
     }
     /**
      * 重置容器发送弹幕的样式
@@ -160,6 +156,11 @@ export default class Danmaku {
                 // 添加到生命监视
                 dmSerial = this.monitor.newHang(newDm, dmAttrs['type'], dmAttrs['life'], callback);
                 break;
+            default:
+                // 未知弹幕类型
+                utils.output('Error: Unknown danmaku type.', 3);
+                this.dmLayer.removeChild(newDm);
+                return this;
         }
         // 让碰撞模块来设定弹幕在容器中的位置
         this.hitBox.setDanmakuPos(newDm, dmAttrs);

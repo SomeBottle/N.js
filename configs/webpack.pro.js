@@ -18,13 +18,25 @@ module.exports = {
                 test: /\.css$/,
                 use: [
                     'style-loader',
-                    'css-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 1
+                        }
+                    },
                     {
                         loader: 'postcss-loader',
                         options: {
                             postcssOptions: {
                                 plugins: [
-                                    require('autoprefixer')
+                                    require('autoprefixer'),
+                                    require('cssnano')({
+                                        preset: ['default', {
+                                            discardComments: {
+                                                removeAll: true,
+                                            }
+                                        }]
+                                    })
                                 ]
                             },
                         },
@@ -33,6 +45,9 @@ module.exports = {
                 ]
             }
         ]
+    },
+    optimization: {
+        minimize: true
     },
     mode: "production"
 };

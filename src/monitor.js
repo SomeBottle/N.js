@@ -3,6 +3,11 @@
 
 import { cssEndEvents, output, PTimer, matchProperties } from "./utils.js";
 
+// 暂停滚动弹幕的class
+const scrollPauseClass = 'N-scroll-paused';
+// 继续播放滚动弹幕的class
+const scrollPlayClass = 'N-scroll-playing';
+
 // 监视器中储存的单条弹幕数据及方法
 class DanmakuData {
     /**
@@ -69,8 +74,8 @@ class DanmakuData {
                 return true;
             case 'scrolling':
                 // 元素替换上暂停class
-                if (target.classList.contains('N-scroll-playing')) {
-                    target.classList.replace('N-scroll-playing', 'N-scroll-paused');
+                if (target.classList.contains(scrollPlayClass)) {
+                    target.classList.replace(scrollPlayClass, scrollPauseClass);
                     return true;
                 }
                 break;
@@ -90,8 +95,8 @@ class DanmakuData {
                 return true;
             case 'scrolling':
                 // 元素替换上运行class
-                if (target.classList.contains('N-scroll-paused')) {
-                    target.classList.replace('N-scroll-paused', 'N-scroll-playing');
+                if (target.classList.contains(scrollPauseClass)) {
+                    target.classList.replace(scrollPauseClass, scrollPlayClass);
                     return true;
                 }
                 break;
@@ -123,8 +128,77 @@ class Monitor {
         // 正在监视的滚动弹幕
         this.scrolling = [];
     }
+    /**
+     * 获得当前的弹幕情况
+     * @returns {Object} 
+     */
     statistics() {
-
+        // 统计报告
+        let report = {
+            'total': 0, // 弹幕总数
+            'garbages': 0, // 弹幕垃圾总数
+            // 滚动类弹幕
+            'scrolling': {
+                'total': 0, // 总滚动弹幕数
+                'reversed': 0, // 反向滚动弹幕数
+                'garbages': 0, // 滚动弹幕垃圾数
+                'scroll': {
+                    'total': 0, // 滚动弹幕数
+                    'reversed': 0, // 反向滚动弹幕数
+                    'garbages': 0
+                },
+                'random': {
+                    'total': 0, // 随机弹幕总数
+                    'reversed': 0, // 反向滚动随机弹幕数
+                    'garbages': 0
+                },
+                'midscroll': {
+                    'total': 0, // 中部滚动弹幕总数
+                    'reversed': 0, // 反向滚动中部滚动弹幕数
+                    'garbages': 0
+                }
+            },
+            'hanging': {
+                'total': 0, // 总悬停弹幕数
+                'garbages': 0, // 悬停弹幕垃圾数
+                'top': {
+                    'total': 0, // 顶部悬停弹幕数
+                    'garbages': 0
+                },
+                'bottom': {
+                    'total': 0, // 底部悬停弹幕数
+                    'garbages': 0
+                },
+                'midhang': {
+                    'total': 0, // 中部悬停弹幕数
+                    'garbages': 0
+                }
+            }
+        };
+        // 遍历所有弹幕
+        for (let id in this.allDanmaku) {
+            let dmObj = this.allDanmaku[id],
+                // 分类: hanging/scrolling
+                category = dmObj.category,
+                // 弹幕类型,同attrs内的设置
+                type = dmObj.type;
+            // 检查弹幕是否还有效
+            if (!dmObj.finished) {
+                report['total']++;
+                report[category]['total']++;
+                report[category][type]['total']++;
+                if (dmObj.reversed) {
+                    report['scrolling']['reversed']++;
+                    report['scrolling'][type]['reversed']++;
+                }
+            } else {
+                // 无效弹幕就是残留垃圾
+                report['garbages']++;
+                report[category]['garbages']++;
+                report[category][type]['garbages']++;
+            }
+        }
+        return report;
     }
     /**
      * 垃圾回收，清除掉hanging/scrolling中已经完成的弹幕

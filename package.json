@@ -24,6 +24,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.8",
     "css-loader": "^6.7.1",
+    "cssnano": "^5.1.13",
     "postcss-loader": "^7.0.1",
     "style-loader": "^3.3.1",
     "webpack": "^5.74.0",
@@ -31,10 +32,8 @@
     "webpack-dev-server": "^4.9.3"
   },
   "browserslist": [
-    "last 10 Chrome versions",
-    "last 5 Firefox versions",
-    "last 5 Opera versions",
-    "Safari >= 6",
-    "IE >= 10"
+    "> 1%",
+    "last 3 versions",
+    "not ie <= 10"
   ]
 }
