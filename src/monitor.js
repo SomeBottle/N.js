@@ -176,7 +176,7 @@ class Monitor {
         }
         // 找不到对应的事件，浏览器过时了
         if (!endEvent) {
-            output('Oops, your browser is outdated.');
+            output('Oops, your browser is outdated.', 3);
             return;
         }
         // 弹幕消失后的处理
@@ -308,7 +308,7 @@ class Monitor {
             return dmObj.revoke(true);
         } else {
             // 弹幕不存在
-            output(`DanmakuID:${id} not found.`);
+            output(`DanmakuID:${id} not found.`, 2);
             return false;
         }
     }
@@ -325,7 +325,7 @@ class Monitor {
             return dmObj.pause();
         } else {
             // 弹幕不存在
-            output(`DanmakuID:${id} not found.`);
+            output(`DanmakuID:${id} not found.`, 2);
             return false;
         }
     }
@@ -342,7 +342,7 @@ class Monitor {
             return dmObj.resume();
         } else {
             // 弹幕不存在
-            output(`DanmakuID:${id} not found.`);
+            output(`DanmakuID:${id} not found.`, 2);
             return false;
         }
     }

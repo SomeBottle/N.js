@@ -5,7 +5,7 @@ export const danmakuDefaultAttrs = {
     'scale': 1, // 文字放大尺寸(倍数，只有size为null时有效，比如0.5, 2)
     'opacity': 100, // 透明度（0-100%）
     'weight': 'normal', // 字体粗细，这一项同css的font-weight
-    'vertical_space': 2, // 弹幕纵向间距(px)，对random弹幕不起效
+    'bottom_space': 2, // 弹幕底部的间距(px)，对random弹幕不起效
     'outline': true, // 是否自动添加黑色描边
     'reverse': false, // 是否逆向滚动(仅支持random/scroll/midscroll这类滚动类型)
     'type': 'scroll', // 弹幕类型，random / scroll / top / bottom / midscroll / midhang

@@ -126,14 +126,14 @@ export default class HitBox {
         let layerWidth = this.target.offsetWidth, // 弹幕层高度
             newDmHeight = newDm.offsetHeight,
             hitSet = this.hitSets[attrs['type']],
-            verticalSpace = attrs['vertical_space'], // 弹幕纵向间距
+            bottomSpace = attrs['bottom_space'], // 弹幕底部间距
             calcHeight = -1; // 计算出的高度
         // 遍历滚动空间集
         for (let i = 0, len = hitSet.length; i < len; i++) {
             let space = hitSet[i]; // 获得当前遍历到的空间
             if (space['available']) { // 空间是空闲的
                 let spaceHeight = space['to'] - space['from'], // 空间高度
-                    newlyOccupied = newDmHeight + verticalSpace; // 新弹幕占用的高度
+                    newlyOccupied = newDmHeight + bottomSpace; // 新弹幕占用的高度
                 // 如果新弹幕还没分配出去(calcHeight=-1)，且有空间能塞得下新弹幕
                 if (calcHeight === -1 && spaceHeight >= newlyOccupied) {
                     let freeSlice = Object.assign({}, space), // 切割后剩余的空间

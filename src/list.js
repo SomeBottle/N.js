@@ -25,10 +25,47 @@ class List {
             if (time >= 0)
                 this.usingList['uncertainty'] = time;
             else
-                output('Uncertainty should be a positive number');
+                output('Uncertainty should be a positive number', 2);
         } else {
-            output('Use one list first.');
+            output('Use one list first.', 2);
             return null;
+        }
+    }
+    /**
+     * 往正在操纵(use)的列表中装载弹幕
+     * @param {Array} danmakuArr 装载的弹幕数组
+     * @returns {Boolean} 是否装载成功
+     */
+    load(danmakuArr) {
+        /* 弹幕对象形如
+        [
+            {
+                time: 0, // 弹幕出现的时刻(ms)
+                text: '', // 弹幕内容
+                reset_styles: false, // 是否在设置样式前重置样式，否则继承之前的样式
+                styles: {...}, // 弹幕样式
+                created: ... 同Danmaku.create的创建后回调
+                callback: ... 同Danmaku.create的弹幕结束后回调
+            },
+            ...
+        ]
+         */
+        let list = this.usingList;
+        if (list) {
+            for (let i = 0, len = danmakuArr.length; i < len; i++) {
+                let dmData = danmakuArr[i],
+                    time = dmData['time'];
+                if (time) { // 保证有时间
+                    delete dmData['time']; // 移除时间字段
+                    // 调用添加弹幕
+                    this.addDm(dmData, time);
+                }
+            }
+            output('Successfully loaded.');
+            return true;
+        } else {
+            output('Use one list first.', 2);
+            return false;
         }
     }
     /**
@@ -51,6 +88,9 @@ class List {
                 if (currentTime == time) {
                     // 如果能相等，那当然最好了！
                     meet.push(currentSerial); // 记录此弹幕代号
+                    // 为了后续偏差处理，找到后让start和end于mid交叉一下
+                    start = mid + 1;
+                    end = mid - 1;
                     break;
                 } else if (currentTime < time) {
                     start = mid + 1;
@@ -93,7 +133,7 @@ class List {
                 );
             }
         } else {
-            output('Use one list first.');
+            output('Use one list first.', 2);
         }
     }
     /**
@@ -116,11 +156,11 @@ class List {
         if (list) {
             // 检验参数是否符合要求
             if (!(dmData instanceof Object && typeof time == 'number' && time >= 0)) {
-                output('Invalid parameters!');
+                output('Invalid parameters!', 3);
                 return null;
             }
             if (!dmData.hasOwnProperty('text')) {
-                output('Lack of necessary properties in danmakuData!');
+                output('Lack of necessary properties in danmakuData!', 3);
                 return null;
             }
             // 生成列表中的弹幕代号
@@ -148,7 +188,7 @@ class List {
             list['dmSerial']++;
             return serial; // 返回弹幕代号
         } else {
-            output('Use one list first.');
+            output('Use one list first.', 2);
             return null;
         }
     }
@@ -173,7 +213,7 @@ class List {
                 return true;
             }
         } else {
-            output('Use one list first.');
+            output('Use one list first.', 2);
         }
         return false;
     }
@@ -186,7 +226,7 @@ class List {
             // 引用赋值
             this.usingList = this.lists[listName];
         } else {
-            output(`List ${listName} not found!`);
+            output(`List ${listName} not found!`, 3);
         }
     }
     /**
@@ -206,7 +246,7 @@ class List {
                 dmSerial: 0
             }
         } else {
-            output(`List ${listName} already exists!`);
+            output(`List ${listName} already exists!`, 3);
         }
     }
     /**
@@ -217,7 +257,7 @@ class List {
         if (this.lists[listName]) {
             delete this.lists[listName];
         } else {
-            output(`List ${listName} not found!`);
+            output(`List ${listName} not found!`, 3);
         }
     }
 }

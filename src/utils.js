@@ -41,10 +41,21 @@ function animStyleLayer(selector, playState) {
 
 /**
  * 在控制台带前缀输出内容
- * @param {*} text 输出内容
+ * @param {String} text 输出内容
+ * @param {Number} type 消息种类
+ * @note type可选1/2/3代表普通/警告/错误
  */
-function output(text) {
-    console.log(`[N.js-Danmaku]`, text);
+function output(text, type = 1) {
+    let styles = '';
+    switch (type) {
+        case 2:
+            styles = 'color:#F5DA81';
+            break;
+        case 3:
+            styles = 'color:#FE2E2E;font-weight:bold';
+            break;
+    }
+    console.log(`[N.js-Danmaku]%c ${text}`, styles);
 }
 
 /**

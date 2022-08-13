@@ -13,7 +13,7 @@ export default class Danmaku {
     constructor(container) {
         const target = (container instanceof Element) ? container : document.querySelector(`#${container}`);
         if (!target) {
-            utils.output('Error: container element not found');
+            utils.output('Error: container element not found', 3);
             return null;
         }
         // 记录操纵的容器（如果传入的是字符串，则认为是容器的ID）
@@ -87,7 +87,7 @@ export default class Danmaku {
     create(text, created = null, callback = null) {
         if (this.dmLayer.offsetWidth <= 0 || this.dmLayer.parentNode === null) {
             // 检查发现弹幕层不存在，不进行创建
-            utils.output('Warning: Danmaku layer not found.');
+            utils.output('Warning: Danmaku layer not found.', 2);
             return this;
         }
         // 暂存当前弹幕属性
@@ -163,6 +163,8 @@ export default class Danmaku {
         }
         // 让碰撞模块来设定弹幕在容器中的位置
         this.hitBox.setDanmakuPos(newDm, dmAttrs);
+        // 设置新弹幕的id
+        newDm.id = `N-danmaku-${dmSerial}`;
         // 刚创建后调用函数
         if (created)
             created(newDm, dmSerial);
@@ -267,7 +269,7 @@ export default class Danmaku {
         } else if (typeof this.currentAttrs[kbj] !== 'undefined') {
             this.currentAttrs[kbj] = value;
         } else {
-            utils.output(`Error: Danmaku attribute not found: `, kbj);
+            utils.output(`Error: Danmaku attribute not found: ${kbj}`, 3);
         }
         return this;
     }
@@ -295,7 +297,7 @@ export default class Danmaku {
             // 刷新相应的弹幕碰撞集
             this.hitBox.refreshHitSets(types);
         } else {
-            utils.output(`Error: Danmaku type not found: `, types);
+            utils.output(`Error: Danmaku type not found: ${types}`, 3);
         }
         return this;
     }
