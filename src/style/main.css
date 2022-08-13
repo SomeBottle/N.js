@@ -56,7 +56,7 @@
     animation-play-state: running;
 }
 
-/* 滚动弹幕动画暂停的样式*/
+/* 滚动弹幕动画暂停的样式，这个样式既可以附在弹幕层div上，亦可以附在每条弹幕div上*/
 .N-scroll-paused,
 .N-scroll-paused>.N-scroll {
     animation-play-state: paused;

@@ -1,7 +1,7 @@
 // 弹幕运动监视模块
 'use strict';
 
-import { cssEndEvents, output, PTimer } from "./utils.js";
+import { cssEndEvents, output, PTimer, matchProperties } from "./utils.js";
 
 // 监视器中储存的单条弹幕数据及方法
 class DanmakuData {
@@ -122,6 +122,9 @@ class Monitor {
         this.hanging = [];
         // 正在监视的滚动弹幕
         this.scrolling = [];
+    }
+    statistics() {
+
     }
     /**
      * 垃圾回收，清除掉hanging/scrolling中已经完成的弹幕
@@ -290,6 +293,33 @@ class Monitor {
                 dmItem.revoke(true);
                 // 从悬停列表中移除
                 hangingList.splice(i, 1);
+                i--;
+                len--;
+            }
+        }
+    }
+    /**
+     * 按照CSS样式清除弹幕
+     * @param {Object} styles CSS样式组成的对象 
+     */
+    clearStyled(styles) {
+        // 获得两种弹幕列表
+        let hangingList = this.hanging,
+            scrollingList = this.scrolling;
+        // 先检查悬停弹幕
+        for (let i = 0, len = hangingList.length; i < len; i++) {
+            if (matchProperties(hangingList[i]['element'].style, styles)) {
+                hangingList[i].revoke(true);
+                hangingList.splice(i, 1);
+                i--;
+                len--;
+            }
+        }
+        // 再检查滚动弹幕
+        for (let i = 0, len = scrollingList.length; i < len; i++) {
+            if (matchProperties(scrollingList[i]['element'].style, styles)) {
+                scrollingList[i].revoke(true);
+                scrollingList.splice(i, 1);
                 i--;
                 len--;
             }

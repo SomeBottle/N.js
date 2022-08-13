@@ -207,6 +207,14 @@ export default class Danmaku {
         return this;
     }
     /**
+     * 按照CSS样式清除弹幕
+     * @param {Object} styles CSS样式组成的对象 
+     * @note 这个方法实际上是monitor中方法的套皮
+     */
+    clearStyled(styles) {
+        this.monitor.clearStyled(styles);
+    }
+    /**
      * 按id清除弹幕，如果不传入id，会直接调用clearSome删除所有
      * @param {Number} id 弹幕ID
      */

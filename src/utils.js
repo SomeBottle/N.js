@@ -59,6 +59,21 @@ function output(text, type = 1) {
 }
 
 /**
+ * 比对对象的部分属性是否存在且相等
+ * @param {Object} origin 目标对象
+ * @param {Object} compare 待比较属性组成的对象
+ * @returns {Boolean} 是否相等
+ */
+function matchProperties(origin, compare) {
+    for (let key in compare) {
+        if (!origin[key] || origin[key] !== compare[key]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+/**
  * 取两个数之间的随机数 [from,to)
  * @param {Number} from 
  * @param {Number} to 
@@ -86,18 +101,6 @@ function danmakuHeight(container) {
     // 为什么要这样算捏，我只能说是凭感觉的 - SomeBottle
     let dmHeight = (container.offsetWidth / 180) * 5;
     return dmHeight > 5 ? dmHeight : 5; // 最小5px
-}
-
-/**
- * 检查对象中是否包含Keys中所有键
- * @param {Object} obj 检查对象
- * @param {Array} keys 键名组成的数组
- */
-function ownProperties(obj, keys) {
-    for (let i = 0, len = keys.length; i < len; i++) {
-        if (!obj.hasOwnProperty(keys[i])) return false;
-    }
-    return true;
 }
 
 class PTimer {
@@ -164,5 +167,5 @@ export {
     rand,
     timestamp,
     PTimer,
-    ownProperties
+    matchProperties
 };
