@@ -1,0 +1,44 @@
+body {
+    margin: 0 1em;
+}
+
+.container {
+    max-width: 870px;
+    margin: 0 auto;
+}
+
+.hljs {
+    padding: 0 !important;
+}
+
+nav>h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #585858;
+}
+
+.markdown-body {
+    margin: 1em 0;
+}
+
+.markdown-body del {
+    color: #BDBDBD;
+}
+
+.danmaku-container {
+    position: relative;
+    border: 2px dashed #A4A4A4;
+    margin-bottom: 10px;
+    max-width: 100%;
+}
+
+.small {
+    width: 500px;
+    height: 100px;
+}
+
+.big {
+    width: 500px;
+    height: 281px;
+}

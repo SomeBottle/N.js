@@ -11,7 +11,7 @@ export default class Danmaku {
      * @param {String|Element} container 元素或者元素ID 
      */
     constructor(container) {
-        const target = (container instanceof Element) ? container : document.querySelector(`#${container}`);
+        const target = (container instanceof Element) ? container : document.getElementById(container);
         if (!target) {
             utils.output('Error: container element not found', 3);
             return null;
