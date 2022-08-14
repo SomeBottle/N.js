@@ -33,7 +33,7 @@ export default class HitBox {
      * @returns 高度(px)
      */
     getMinHeight(type) {
-        return (this.danmakuMinHeight[type] * 0.01) * this.target.offsetHeight;
+        return (this.danmakuMinHeight[type] * 0.01) * this.target.getBoundingClientRect().height;
     }
     /**
      * 获得对应类型弹幕最大能生成的高度
@@ -41,7 +41,7 @@ export default class HitBox {
      * @returns 高度(px)
      */
     getMaxHeight(type) {
-        return (this.danmakuMaxHeight[type] * 0.01) * this.target.offsetHeight;
+        return (this.danmakuMaxHeight[type] * 0.01) * this.target.getBoundingClientRect().height;
     }
     /**
      * 刷新弹幕空间集
@@ -54,9 +54,10 @@ export default class HitBox {
         let that = this,
             refresh = (type) => {
                 that.hitSets[type].length = 0;
+                // 空间集需要提高一下精度，乘100后取整，精确到小数点后两位
                 that.hitSets[type][0] = {
-                    'from': that.getMinHeight(type),
-                    'to': that.getMaxHeight(type),
+                    'from': Math.floor(that.getMinHeight(type) * 100),
+                    'to': Math.floor(that.getMaxHeight(type) * 100),
                     'available': true, // 可用
                     'dm': null // 弹幕相关
                 }
@@ -125,7 +126,7 @@ export default class HitBox {
     danmakuAnchor(newDm, attrs, retry = false) {
         // 之所以用getBoundingClientRect，是因为offsetLeft会受CSS transform影响
         let dmLayerRect = this.target.getBoundingClientRect(), // 弹幕层具体位置信息
-            newDmHeight = Math.floor(newDm.getBoundingClientRect().height), // 往下取整
+            newDmHeight = newDm.getBoundingClientRect().height, // 往下取整
             hitSet = this.hitSets[attrs['type']],
             bottomSpace = attrs['bottom_space'], // 弹幕底部间距
             calcHeight = -1; // 计算出的高度
@@ -133,15 +134,16 @@ export default class HitBox {
         for (let i = 0, len = hitSet.length; i < len; i++) {
             let space = hitSet[i]; // 获得当前遍历到的空间
             if (space['available']) { // 空间是空闲的
-                let spaceHeight = space['to'] - space['from'], // 空间高度
-                    newlyOccupied = newDmHeight + bottomSpace; // 新弹幕占用的高度
+                // 为什么要+1呢? 0-9，实际上是10个单位的空间，9-0+1
+                let spaceHeight = space['to'] - space['from'] + 1, // 空间高度
+                    newlyOccupied = Math.floor((newDmHeight + bottomSpace) * 100); // 新弹幕占用的空间（*100是为了提高精度）
                 // 如果新弹幕还没分配出去(calcHeight=-1)，且有空间能塞得下新弹幕
                 if (calcHeight === -1 && spaceHeight >= newlyOccupied) {
                     let freeSlice = Object.assign({}, space), // 切割后剩余的空间
                         // 新的切割后的空闲块from值
                         newFrom = space['from'] + newlyOccupied;
                     // 空间足够放下弹幕，空间开始的高度就是新弹幕的高度
-                    calcHeight = space['from'];
+                    calcHeight = space['from'] / 100; // 除100还原精度
                     space['to'] = newFrom - 1; // 更新被占用空间的to值
                     space['available'] = false;
                     space['dm'] = { // 记录弹幕信息
@@ -220,6 +222,11 @@ export default class HitBox {
                         space['available'] = true;
                         space['dm'] = null;
                     }
+                    /* 这里为什么要再回退一位呢？因为在上面释放/邻接出了空闲空间后，索引是指向这个空闲空间的，接下来的一次迭代就是从下一个空间开始了，而忽略了这个刚刚释放的空闲空间！
+                        因此，每当释放空间工作完成后，需要再次回退一位索引
+                        - SomeBottle
+                     */
+                    i--; // 遍历索引回退一位
                 }
             }
         }
