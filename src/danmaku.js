@@ -9,8 +9,9 @@ export default class Danmaku {
     /**
      * 以容器元素为单位构造弹幕实例
      * @param {String|Element} container 元素或者元素ID 
+     * @param {String} prefix 弹幕标识的前缀
      */
-    constructor(container) {
+    constructor(container, prefix = '') {
         const target = (container instanceof Element) ? container : document.getElementById(container);
         if (!target) {
             utils.output('Error: container element not found', 3);
@@ -18,6 +19,8 @@ export default class Danmaku {
         }
         // 记录操纵的容器（如果传入的是字符串，则认为是容器的ID）
         this.target = target;
+        // 弹幕标识的前缀
+        this.prefix = prefix;
         // 初始化当前发送的弹幕样式和属性
         this.resetStyles();
         // 本容器弹幕状态(running/paused)
@@ -164,8 +167,10 @@ export default class Danmaku {
         }
         // 让碰撞模块来设定弹幕在容器中的位置
         this.hitBox.setDanmakuPos(newDm, dmAttrs);
-        // 设置新弹幕的id
-        newDm.id = `N-danmaku-${dmSerial}`;
+        // 设置新弹幕的id（前提是设定了前缀）
+        if (this.prefix) {
+            newDm.id = `N-danmaku-${this.prefix}-${dmSerial}`;
+        }
         // 刚创建后调用函数
         if (created)
             created(newDm, dmSerial);

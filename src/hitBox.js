@@ -123,8 +123,9 @@ export default class HitBox {
      * @note 本方法只处理scroll, top, bottom这三类弹幕
      */
     danmakuAnchor(newDm, attrs, retry = false) {
-        let layerWidth = this.target.offsetWidth, // 弹幕层高度
-            newDmHeight = newDm.offsetHeight,
+        // 之所以用getBoundingClientRect，是因为offsetLeft会受CSS transform影响
+        let dmLayerRect = this.target.getBoundingClientRect(), // 弹幕层具体位置信息
+            newDmHeight = Math.floor(newDm.getBoundingClientRect().height), // 往下取整
             hitSet = this.hitSets[attrs['type']],
             bottomSpace = attrs['bottom_space'], // 弹幕底部间距
             calcHeight = -1; // 计算出的高度
@@ -159,24 +160,27 @@ export default class HitBox {
                     life = space['dm']['life'], // 弹幕生命期
                     scrollReversed = space['dm']['reversed'], // 弹幕是否反向滚动
                     dmElement = space['dm']['element'], // 弹幕元素
+                    dmElementRect = dmElement.getBoundingClientRect(), // 弹幕元素具体位置信息(防止受transform影响)
                     releaseFlag = false; // 是否释放这条弹幕的空间
                 switch (attrs['type']) {
                     case 'scroll':
                         // 对滚动弹幕来说，如果已经全部露出屏幕，就可以释放空间了
                         if (scrollReversed) {
                             // 逆向滚动（从左往右）
-                            // (距左边距离>0)，说明弹幕此时全部露出屏幕
-                            releaseFlag = dmElement.offsetLeft > 0;
+                            // (弹幕距文档左边距离-弹幕层距文档左边距离>0)，说明弹幕此时全部露出屏幕
+                            releaseFlag = (dmElementRect.left - dmLayerRect.left > 0);
                         } else {
                             // 正向滚动（从右往左）
-                            // (距左边距离+弹幕宽度<弹幕层宽度)，说明弹幕已经全部露出屏幕，可以从空间集中释放
-                            releaseFlag = (dmElement.offsetLeft + dmElement.offsetWidth < layerWidth);
+                            // (弹幕距文档左边距离+弹幕宽度<弹幕层宽度+弹幕层距文档左边距离)，说明弹幕已经全部露出屏幕，可以从空间集中释放
+                            releaseFlag = (
+                                dmElementRect.left + dmElementRect.width < dmLayerRect.width + dmLayerRect.left
+                            );
                         }
                         break;
                     case 'top':
                     case 'bottom':
                         // 对顶部弹幕来说，如果自创建时间起已经超过生命期，就可以释放空间了
-                        releaseFlag = (timestamp() - createTime > life);
+                        releaseFlag = (timestamp() - createTime >= life);
                         break;
 
                 }
