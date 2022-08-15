@@ -50,12 +50,24 @@ nav>h1 {
     margin: 1em 0;
 }
 
+
 .markdown-body .header-anchor {
     color: #b7b7b7;
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.markdown-body .title:hover>.header-anchor {
+    opacity: 1;
 }
 
 .markdown-body del {
     color: #BDBDBD;
+}
+
+.markdown-body hr {
+    height: .15em;
+    opacity: 0.5
 }
 
 .danmaku-container {
@@ -67,10 +79,25 @@ nav>h1 {
 
 .small {
     width: 500px;
-    height: 100px;
+    height: 200px;
 }
 
 .big {
-    width: 500px;
+    width: 600px;
     height: 281px;
+}
+
+footer {
+    text-align: left;
+    margin: 2em 0;
+}
+
+footer p {
+    color: #AFAFAF;
+    margin-bottom: 5px;
+}
+
+footer span {
+    font-size: .7em;
+    color: #B8B8B8;
 }

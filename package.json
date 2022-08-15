@@ -4,8 +4,8 @@
   "description": "SomeBottle's danmaku package",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-cli serve --config configs/webpack.dev.js",
-    "build": "webpack-cli --config configs/webpack.pro.js"
+    "dev": "webpack-cli serve --config webpack/webpack.dev.js",
+    "build": "webpack-cli --config webpack/webpack.pro.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,13 @@
     "url": "https://github.com/SomeBottle/N.js/issues"
   },
   "homepage": "https://github.com/SomeBottle/N.js#readme",
+  "files": [
+    "README.md",
+    "LICENSE",
+    "dist/*",
+    "src/*",
+    "webpack/*"
+  ],
   "devDependencies": {
     "autoprefixer": "^10.4.8",
     "css-loader": "^6.7.1",
