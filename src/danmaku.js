@@ -22,7 +22,7 @@ export default class Danmaku {
         // 弹幕标识的前缀
         this.prefix = prefix;
         // 初始化当前发送的弹幕样式和属性
-        this.resetStyles();
+        this.resetAttrs();
         // 本容器弹幕状态(running/paused)
         this.state = 'running';
         // 修改容器本身position
@@ -61,7 +61,7 @@ export default class Danmaku {
      * 重置容器发送弹幕的样式
      * @note 恢复成configs.js的配置
      */
-    resetStyles() {
+    resetAttrs() {
         // 迫真深复制对象
         this.currentAttrs = Object.assign({}, danmakuDefaultAttrs);
         this.currentAttrs['custom_css'] = Object.assign({}, this.currentAttrs['custom_css']);

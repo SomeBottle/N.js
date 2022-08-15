@@ -46,12 +46,12 @@ function trigger_demo_1() {
 function trigger_demo_2(step) {
     switch (step) {
         case 1:
-            demo_2.resetStyles()
+            demo_2.resetAttrs()
                 .attrs('size', '2em')
                 .create('Woah~我超大的啦~');
             break;
         case 2:
-            demo_2.resetStyles()
+            demo_2.resetAttrs()
                 .attrs('size', '2em')
                 .create('Woah~我超大的啦~')
                 .attrs('weight', 'bold')
@@ -59,13 +59,13 @@ function trigger_demo_2(step) {
                 .create('大~粗~蓝~的~弹~幕~');
             break;
         case 3:
-            demo_2.resetStyles()
+            demo_2.resetAttrs()
                 .attrs('opacity', 20)
                 .attrs('color', '#2EFE2E')
                 .create('原谅我这么绿~');
             break;
         case 4:
-            demo_2.resetStyles()
+            demo_2.resetAttrs()
                 .attrs({
                     outline: false,
                     color: '#FE9A2E',
@@ -76,7 +76,7 @@ function trigger_demo_2(step) {
                 }).create('蜜柑色~🍊');
             break;
         case 5:
-            demo_2.resetStyles()
+            demo_2.resetAttrs()
                 .attrs({
                     size: '1.5em',
                     custom_css: {
@@ -85,42 +85,42 @@ function trigger_demo_2(step) {
                 }).create('2333333333');
             break;
         case 6:
-            demo_2.resetStyles()
+            demo_2.resetAttrs()
                 .attrs({
                     size: '1.2em',
                     type: 'random'
                 }).create('随机弹幕~');
             break;
         case 7:
-            demo_2.resetStyles()
+            demo_2.resetAttrs()
                 .attrs({
                     size: '1.2em',
                     type: 'top'
                 }).create('顶部悬停弹幕');
             break;
         case 8:
-            demo_2.resetStyles()
+            demo_2.resetAttrs()
                 .attrs({
                     size: '1.2em',
                     type: 'bottom'
                 }).create('底部悬停弹幕');
             break;
         case 9:
-            demo_2.resetStyles()
+            demo_2.resetAttrs()
                 .attrs({
                     size: '1.2em',
                     type: 'midhang'
                 }).create('中部悬停弹幕');
             break;
         case 10:
-            demo_2.resetStyles()
+            demo_2.resetAttrs()
                 .attrs({
                     size: '1.2em',
                     type: 'midscroll'
                 }).create('中部滚动弹幕');
             break;
         case 11:
-            demo_2.resetStyles()
+            demo_2.resetAttrs()
                 .attrs({
                     size: '1.2em',
                     type: 'scroll',
@@ -128,7 +128,7 @@ function trigger_demo_2(step) {
                 }).create('逆向滚动弹幕');
             break;
         case 12:
-            demo_2.resetStyles()
+            demo_2.resetAttrs()
                 .attrs({
                     size: '1.2em',
                     type: 'scroll',

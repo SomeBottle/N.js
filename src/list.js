@@ -121,7 +121,7 @@ class List {
                     danmaku = this.danmaku;
                 // 重置样式（如果需要的话）
                 if (dmData['reset_styles'])
-                    danmaku.resetStyles();
+                    danmaku.resetAttrs();
                 // 应用当前弹幕样式（如果有的话）
                 if (dmData['styles'])
                     danmaku.attrs(dmData['styles']);

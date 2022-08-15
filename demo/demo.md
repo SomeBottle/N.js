@@ -47,14 +47,14 @@ demo_ins.attrs('weight', 'bold')
     .create('大~粗~蓝~的~弹~幕~');
 ```
 
-### 重置样式
+### 重置弹幕属性
 
-坏了！咱记不住之前的样式是咋样的了！没关系，咱们其实可以**重置**样式为初始状态。<del>其实上面的示例为了保证效果，在源码中是重置了样式的</del>  
+坏了！咱记不住之前的样式是咋样的了！没关系，咱们其实可以**重置**属性(包括样式)为初始状态。<del>其实上面的示例为了保证效果，在源码中是进行了重置的</del>  
 
 在样式重置后，迎面而来的是<a href='javascript:void(0);' onclick="trigger_demo_2(3)">一条20%透明的绿色弹幕</a>：
 
 ```javascript
-demo_ins.resetStyles() // 重置样式
+demo_ins.resetAttrs() // 重置弹幕属性
     .attrs('opacity', 20)
     .attrs('color', '#2EFE2E')
     .create('原谅我这么绿~');
@@ -177,5 +177,16 @@ demo_ins.attrs({
 
 ## 限定弹幕生成范围
 
+<!--Demo_3-->
+
+<div class="danmaku-container big" id="demo-3"></div>
+
+弹幕量很多时，我们观赏原内容的体验会下降。<del>更不谈有些视频中存在着遮挡字幕的弹幕</del>
+
+因此，`N.js`有一个限定弹幕生成范围的功能，可以通过`NDanmaku`对象的`range`方法来进行设置：  
+
+
+
+当然，弹幕生成范围和弹幕属性一样能够通过一个方法进行**重置**：```resetRange()```
 
 ## create的回调函数
