@@ -9,9 +9,10 @@ export default class Danmaku {
     /**
      * 以容器元素为单位构造弹幕实例
      * @param {String|Element} container 元素或者元素ID 
+     * @param {String|Number} zIndex 弹幕层的z-index
      * @param {String} prefix 弹幕标识的前缀
      */
-    constructor(container, prefix = '') {
+    constructor(container, zIndex = 'auto', prefix = '') {
         const target = (container instanceof Element) ? container : document.getElementById(container);
         if (!target) {
             utils.output('Error: container element not found', 3);
@@ -41,6 +42,8 @@ export default class Danmaku {
             // 将弹幕层添加到容器中
             target.appendChild(dmLayer);
         }
+        // 更改弹幕层深度
+        utils.styling(dmLayer, 'z-index', zIndex);
         this.dmLayer = dmLayer;
         // 给容器生成一个弹幕碰撞箱实例
         this.hitBox = new HitBox(dmLayer);

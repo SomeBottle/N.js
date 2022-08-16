@@ -32,6 +32,8 @@
     position: absolute;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
+    pointer-events: auto;
+    /* 弹幕仍然能成为鼠标事件的目标*/
 }
 
 /* 一条中间悬停弹幕的样式*/
@@ -39,6 +41,8 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    pointer-events: auto;
+    /* 弹幕仍然能成为鼠标事件的目标*/
 }
 
 /* 正向滚动动画，和N-scroll联用*/
@@ -68,4 +72,6 @@
     top: 0;
     left: 0;
     overflow: hidden;
+    pointer-events: none;
+    /* 穿透点击事件*/
 }
