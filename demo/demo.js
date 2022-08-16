@@ -50,16 +50,21 @@ fetch('./demo.md').then(resp => resp.text())
                     'life': 4000
                 })
                 .create('普通滚动弹幕')
-                .create('逆向滚动弹幕')
                 .attrs({
                     'reverse': true,
                     'life': 6000,
                     'color': 'blue'
                 })
+                .create('逆向滚动弹幕')
+                .attrs({
+                    'reverse': true,
+                    'type': 'random',
+                    'color': 'red'
+                })
                 .create('逆向滚动的随机弹幕')
                 .attrs({
                     'type': 'midscroll',
-                    'color': '#FFF'
+                    'color': 'white'
                 })
                 .create('逆向的中部滚动弹幕')
                 .attrs('reverse', false)
@@ -67,6 +72,15 @@ fetch('./demo.md').then(resp => resp.text())
                 .create('滚动的随机弹幕')
                 .attrs('type', 'midscroll')
                 .create('中部滚动弹幕')
+                .attrs('type', 'top')
+                .create('顶部悬停弹幕')
+                .attrs('color', 'green')
+                .create('顶部悬停绿色弹幕')
+                .attrs({
+                    'type': 'bottom',
+                    'color': 'orange'
+                })
+                .create('底部悬停弹幕')
         }, 5000);
     });
 
@@ -247,3 +261,42 @@ function trigger_demo_5(step) {
     scroll2demo(document.getElementById('demo-5'));
 }
 
+function trigger_demo_6(step) {
+    setTimeout(() => {
+        switch (step) {
+            case 1:
+                demo_6.clear();
+                break;
+            case 2:
+                demo_6.clearSome();
+                break;
+            case 3:
+                demo_6.clearSome('all', true);
+                break;
+            case 4:
+                demo_6.clearSome('scrolling', true);
+                break;
+            case 5:
+                demo_6.clearSome('hanging');
+                break;
+            case 6:
+                demo_6.clearSome('midscroll', true);
+                break;
+            case 7:
+                demo_6.clearSome('random');
+                break;
+            case 8:
+                demo_6.clearStyled({
+                    'color': 'blue',
+                    'font-size': '1.2em'
+                });
+                break;
+            case 9:
+                demo_6.clearStyled({
+                    'color': '!white'
+                });
+                break;
+        }
+    }, 500);
+    scroll2demo(document.getElementById('demo-6'));
+}

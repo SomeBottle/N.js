@@ -315,10 +315,103 @@ demo_ins.attrs('size', '1.2em')
 
 <del>弹幕的非自然死亡</del>
 
-> 注：以下的演示在被触发后都会延迟一秒再清除相应弹幕，以便观察。
+> 注：以下的演示在被触发后都会**延迟半秒**再清除相应弹幕，以便观察。
 
 ### 清理所有弹幕
 
+```javascript
+demo_ins.clear();
+```
+
+<a href='javascript:void(0);' onclick="trigger_demo_6(1)">点此</a>查看效果
+
+### 清理指定ID的弹幕
+
+```javascript
+demo_ins.clear(danmakuId);
+```
+
+### 清理部分弹幕
+
+```javascript
+demo_ins.clearSome([type = '', [reversed = 'all']])
+// type - 弹幕类型，可选值：all / scrolling / hanging / ...其他attrs可设置的类型
+// reversed - 待清理的是不是逆向运行的弹幕（仅对滚动弹幕起效）
+```
+
+* 不传入任意参数，则<a href='javascript:void(0);' onclick="trigger_demo_6(2)">清理所有弹幕</a>  
+    <del>其实`clear()`不传入参数时就是调用`clearSome()`</del>
+
+    ```javascript
+    demo_ins.clearSome();
+    ```
+
+* 第一个参数传入`'all'`，第二个参数传入`true`，<a href='javascript:void(0);' onclick="trigger_demo_6(3)">清除所有逆向滚动的弹幕和所有悬停弹幕</a>
+
+    ```javascript
+    demo_ins.clearSome('all', true);
+    ```
+
+* 第一个参数传入`'scrolling'`，第二个参数传入`true`，<a href='javascript:void(0);' onclick="trigger_demo_6(4)">清除所有逆向滚动的弹幕</a>
+
+    ```javascript
+    demo_ins.clearSome('scrolling', true);
+    ```
+
+* 第一个参数传入`'hanging'`，则<a href='javascript:void(0);' onclick="trigger_demo_6(5)">清除所有悬停弹幕</a>
+
+    ```javascript
+    demo_ins.clearSome('hanging');
+    ```
+
+* 第一个参数传入`'midscroll'`，第二个参数传入`true`，则<a href='javascript:void(0);' onclick="trigger_demo_6(6)">清除所有逆向且在中间滚动的弹幕</a>
+
+    ```javascript
+    demo_ins.clearSome('midsroll', true);
+    ```
+
+* 第一个参数传入`'random'`，则<a href='javascript:void(0);' onclick="trigger_demo_6(7)">清除所有随机滚动弹幕</a>
+
+    ```javascript
+    demo_ins.clearSome('random');
+    ```
+
+* 以此类推...
+
+### 清除带有指定样式的弹幕
+
+> 注：这个方式可能**不太稳定**
+
+```javascript
+demo_ins.clearStyled(styles);
+```
+
+向第一个参数传入一个**包含CSS样式键值对的对象**即可。
+
+比如清除所有颜色为**蓝色**，且字体大小为**1.2em**的<a href='javascript:void(0);' onclick="trigger_demo_6(8)">弹幕</a>：
+
+```javascript
+demo_ins.clearStyled({
+    'color': 'blue',
+    'font-size': '1.2em'
+});
+```
+
+> 之所以不稳定，是因为每次清除时传入的样式要保证和**目标弹幕的样式完全一致**。
+
+------
+
+另外，这个方法在匹配弹幕的时候还支持逻辑取反，只需要在样式值的**前面加上一个`!`即可**。  
+
+比如，我要清除**所有不是白色的弹幕**，可以这样写（<a href='javascript:void(0);' onclick="trigger_demo_6(9)">点我查看效果</a>）：
+
+```javascript
+demo_ins.clearStyled({
+    'color': '!white' // 默认情况下弹幕样式的color值为'white'
+    // 值得注意的是，一旦设置为了十六进制或者rgb值，这样就没效果了
+    // 所以才说clearStyled不太稳定
+});
+```
 
 
-## 简单的弹幕列表
+## 弹幕-时间列表
