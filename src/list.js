@@ -17,7 +17,7 @@ class List {
         this.usingList = null;
     }
     /**
-     * 设置正在操纵(use)的列表的时间不确定度(ms)
+     * 设置正在操纵(use)的列表的时刻不确定度(ms)
      * @param {Number} time 
      */
     uncertainty(time) {
@@ -55,8 +55,8 @@ class List {
             for (let i = 0, len = danmakuArr.length; i < len; i++) {
                 let dmData = danmakuArr[i],
                     time = dmData['time'];
-                if (time) { // 保证有时间
-                    delete dmData['time']; // 移除时间字段
+                if (time) { // 保证有时刻
+                    delete dmData['time']; // 移除时刻字段
                     // 调用添加弹幕
                     this.addDm(dmData, time);
                 }
@@ -75,7 +75,7 @@ class List {
     tick(time) {
         let list = this.usingList,
             timeLine = list.timeLine, // 时间线
-            uncertainty = list.uncertainty; // 时间不确定度(ms)
+            uncertainty = list.uncertainty; // 时刻不确定度(ms)
         if (list) {
             // 利用二分查找找出这个时刻需要创建的弹幕
             let start = 0,
@@ -83,7 +83,7 @@ class List {
                 meet = []; // 符合时刻(及其偏差±ms要求的弹幕代号)
             while (start <= end) {
                 let mid = Math.floor((start + end) / 2),
-                    currentTime = timeLine[mid][0], // 获得当前搜寻项的时间
+                    currentTime = timeLine[mid][0], // 获得当前搜寻项的时刻
                     currentSerial = timeLine[mid][1]; // 获得当前搜寻项的弹幕代号
                 if (currentTime == time) {
                     // 如果能相等，那当然最好了！
@@ -101,13 +101,13 @@ class List {
             // 搜索完后还要考虑偏差
             let leftDest = time - uncertainty, // 左边的新边界
                 rightDest = time + uncertainty; // 右边的新边界
-            // 继续右移start指针，把时间不确定范围内的弹幕都找出来
+            // 继续右移start指针，把时刻不确定范围内的弹幕都找出来
             for (let len = timeLine.length;
                 start < len && timeLine[start][0] <= rightDest;
                 start++) {
                 meet.push(timeLine[start][1]);
             }
-            // 继续左移end指针，把时间不确定范围内的弹幕都找出来
+            // 继续左移end指针，把时刻不确定范围内的弹幕都找出来
             for (; end >= 0 && timeLine[end][0] >= leftDest; end--) {
                 // 这里用unshift是为了确保弹幕载入的顺序
                 meet.unshift(timeLine[end][1]);
@@ -240,7 +240,7 @@ class List {
                 timeLine: new Array(),
                 // 和时间线索引相对应的弹幕列表
                 danmakuLine: new Object(),
-                // 时间不确定度(ms)，默认±0.2s
+                // 时刻不确定度(ms)，默认±0.2s
                 uncertainty: 200,
                 // 本列表中的弹幕序列号
                 dmSerial: 0

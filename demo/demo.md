@@ -414,4 +414,82 @@ demo_ins.clearStyled({
 ```
 
 
-## 弹幕-时间列表
+## 弹幕-时刻列表
+
+<!--Demo_7-->
+
+<div class="danmaku-container tiny" id="demo-7"></div>
+
+弹幕往往是和媒体搭配在一起的，在这种场景下，弹幕出现在媒体播放的不同时刻处。  
+
+为了方便实现这种应用，`N.js`自带简单的**弹幕-时刻列表**功能。
+
+具体的使用方法见README，这里简单演示一下**根据媒体时刻创建弹幕**。
+
+### 根据时刻创建弹幕
+
+先创建列表，加入几条弹幕：
+
+```javascript
+demo_ins.list.new('test'); // 新建名为'test'的列表
+demo_ins.list.use('test'); // 切换到'test'列表
+demo_ins.list.addDm({
+    text: '这是一条逆向滚动弹幕',
+        reset_styles: true,
+        styles: {
+            life: 5000,
+            reverse: true
+        }
+}, 524); // 在524毫秒时刻添加一条弹幕
+demo_ins.list.addDm({
+    text: '这是一条蓝色弹幕',
+        styles: {
+            life: 7000,
+            color: 'blue',
+            reverse: false,
+            bottom_space: 2,
+            type: 'scroll'
+        }
+}, 1024); // 在1024毫秒时刻添加一条弹幕
+demo_ins.list.uncertainty(0); // 这里先设置时刻不确定度为0
+```
+
+通过调用`tick(time)`方法，程序会在列表中寻找对应时刻的弹幕进行创建：
+
+```javascript
+demo_ins.list.tick(1024); // 创建1024毫秒处的弹幕
+```
+
+<a href='javascript:void(0);' onclick="trigger_demo_7(1)">点此</a>尝试上面的语句。
+
+### 时刻不确定度
+
+`N.js`的弹幕相关时间/时刻都是**毫秒级**的，问题也出现在这里。  
+
+对于普通的视频/音频来说，通常秒级精度已经够用了。就算能精确到毫秒，也很难保证**每次播放时**程序都能完美地触发**每一毫秒**时刻的弹幕。  
+
+但是吧，如果我把创建弹幕的时刻扩大为**两个时刻之间的一段时间间隔**，那么程序命中的可能性就会大大增加，由此便引入了时刻不确定度：
+
+```javascript
+demo_ins.list.uncertainty(time); // 单位仍然是毫秒
+```
+
+------
+
+上面的例子中，咱们调用`tick(1024)`让程序生成了第`1024`毫秒处的弹幕。接下来咱们设置时间不确定度为 `±0.5s` （也就是500ms）  
+
+```javascript
+demo_ins.list.uncertainty(500);
+```
+
+接下来我们再调用`tick(1024)`，程序就会**在列表中搜索`[1024-500, 1024+500]`这个区间内的弹幕**，并加以创建。  
+
+也就是说，原本的单一时刻被拓宽成了一个时间搜索范围：`1024±500ms`。  
+
+<a href='javascript:void(0);' onclick="trigger_demo_7(2)">点我</a>尝试一下吧！
+
+## 到底啦
+
+至此这个简单的演示文档就结束了。这里咱只粗略地演示了一下相关功能，详细介绍一定要多看**README/文档**哦！
+
+![readme-2022-08-16](https://images.weserv.nl/?url=https://raw.githubusercontent.com/cat-note/bottleassets/main/img/readme-2022-08-16.png)

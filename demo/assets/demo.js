@@ -1,6 +1,6 @@
 'use strict';
 let demoBody = document.querySelector('.markdown-body'),
-    demo_1, demo_2, demo_3, demo_4, demo_5, demo_6,
+    demo_1, demo_2, demo_3, demo_4, demo_5, demo_6, demo_7,
     demo4Timer, demo6Timer;
 fetch('./demo.md').then(resp => resp.text())
     .then(text => {
@@ -42,6 +42,7 @@ fetch('./demo.md').then(resp => resp.text())
         demo_4 = new NDanmaku('demo-4');
         demo_5 = new NDanmaku('demo-5');
         demo_6 = new NDanmaku('demo-6');
+        demo_7 = new NDanmaku('demo-7');
         demo_4_timer();
         demo6Timer = setInterval(() => {
             demo_6.resetAttrs()
@@ -82,6 +83,37 @@ fetch('./demo.md').then(resp => resp.text())
                 })
                 .create('底部悬停弹幕')
         }, 5000);
+        demo_7.list.new('test'); // 新建名为'test'的列表
+        demo_7.list.use('test'); // 切换到'test'列表
+        demo_7.list.addDm({
+            text: '这是一条逆向滚动弹幕',
+            reset_styles: true,
+            styles: {
+                life: 5000,
+                reverse: true
+            }
+        }, 524); // 在524毫秒时刻添加一条弹幕
+        demo_7.list.addDm({
+            text: '这是一条蓝色弹幕',
+            styles: {
+                life: 7000,
+                color: 'blue',
+                reverse: false,
+                bottom_space: 2,
+                type: 'scroll'
+            }
+        }, 1024); // 在1024毫秒时刻添加一条弹幕
+        demo_7.list.addDm({
+            text: '这是一条无描边，底部悬停的绿色弹幕',
+            styles: {
+                color: 'green',
+                life: 4000,
+                outline: false,
+                type: 'bottom',
+                'bottom_space': 30
+            }
+        }, 2000); // 在2000毫秒时刻添加一条弹幕
+        demo_7.list.uncertainty(0);
     });
 
 // 滚动到demo
@@ -299,4 +331,18 @@ function trigger_demo_6(step) {
         }
     }, 500);
     scroll2demo(document.getElementById('demo-6'));
+}
+
+function trigger_demo_7(step) {
+    switch (step) {
+        case 1:
+            demo_7.list.uncertainty(0);
+            demo_7.list.tick(1024);
+            break;
+        case 2:
+            demo_7.list.uncertainty(500);
+            demo_7.list.tick(1024);
+            break;
+    }
+    scroll2demo(document.getElementById('demo-7'));
 }
