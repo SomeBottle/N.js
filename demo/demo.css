@@ -77,6 +77,11 @@ nav>h1 {
     max-width: 100%;
 }
 
+.tiny {
+    width: 500px;
+    height: 100px;
+}
+
 .small {
     width: 500px;
     height: 200px;

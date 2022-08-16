@@ -216,6 +216,7 @@ export default class Danmaku {
      * 按照CSS样式清除弹幕
      * @param {Object} styles CSS样式组成的对象 
      * @note 这个方法实际上是monitor中方法的套皮
+     * @note 支持取反(NOT)，在样式值前加上一个感叹号即可，比如color:!#FFF，表示color不等于#FFF
      */
     clearStyled(styles) {
         this.monitor.clearStyled(styles);

@@ -63,11 +63,19 @@ function output(text, type = 1) {
  * @param {Object} origin 目标对象
  * @param {Object} compare 待比较属性组成的对象
  * @returns {Boolean} 是否相等
+ * @note 支持取反(NOT)，在值前加上一个感叹号即可，比如color:!#FFF，表示color不等于#FFF
  */
 function matchProperties(origin, compare) {
     for (let key in compare) {
-        if (!origin[key] || origin[key] !== compare[key]) {
+        if (!origin[key]) {
             return false;
+        } else {
+            // 如果值的第一个字符是感叹号，则表示NOT
+            let not = (compare[key][0] === '!'),
+                compVal = not ? compare[key].slice(1) : compare[key];
+            if ((!not && origin[key] !== compVal) || // 正常比较，不相等则返回false
+                (not && origin[key] == compVal)) // 比较结果取反，相等则返回false
+                return false;
         }
     }
     return true;

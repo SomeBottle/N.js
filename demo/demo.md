@@ -14,7 +14,7 @@ const demo_ins = new NDanmaku(
 
 <!--Demo_1-->
 
-<div class="danmaku-container small" id="demo-1"></div>
+<div class="danmaku-container tiny" id="demo-1"></div>
 
 点击<a href='javascript:void(0);' onclick="trigger_demo_1()">这里</a>生成一条普通的<del>Disco</del>弹幕
 
@@ -36,9 +36,9 @@ demo_ins.create('普通的disco我们普通的摇~🎶');
 demo_ins.attrs('size','2em').create('Woah~我超大的啦~'); // 支持链式语法
 ```
 
-### 样式的继承
+### 属性的继承
 
-样式是**能够继承的**。 **假设**在执行上面这条语句后，咱加个粗体，再给弹幕涂上蓝色（<a href='javascript:void(0);' onclick="trigger_demo_2(2)">点我查看效果</a>）：
+属性是**能够继承的**。 **假设**在执行上面这条语句后，咱加个粗体，再给弹幕涂上蓝色（<a href='javascript:void(0);' onclick="trigger_demo_2(2)">点我查看效果</a>）：
 
 ```javascript
 demo_ins.attrs('size','2em').create('Woah~我超大的啦~');
@@ -183,10 +183,142 @@ demo_ins.attrs({
 
 弹幕量很多时，我们观赏原内容的体验会下降。<del>更不谈有些视频中存在着遮挡字幕的弹幕</del>
 
-因此，`N.js`有一个限定弹幕生成范围的功能，可以通过`NDanmaku`对象的`range`方法来进行设置：  
+因此，`N.js`有一个限定弹幕生成范围的功能，可以通过`NDanmaku`对象的`range`方法来进行设置。  
 
+比如，我可以设置让滚动弹幕**最多只占屏幕的50%**（<a href='javascript:void(0);' onclick="trigger_demo_3(1)">点击查看效果</a>）：  
 
+```javascript
+demo_ins.range('scroll', [0, 50]); // 生成范围从0%到50%
+for (let i = 0; i < 6; i++) demo_ins.create('测试弹幕');
+```
 
-当然，弹幕生成范围和弹幕属性一样能够通过一个方法进行**重置**：```resetRange()```
+------
+亦可以设置让底部弹幕只在**屏幕的20%至70%处**生成（<a href='javascript:void(0);' onclick="trigger_demo_3(2)">点击查看效果</a>）：
+
+```javascript
+demo_ins.range('bottom', [20, 70]).attrs('type','bottom');
+for (let i = 0; i < 6; i++) demo_ins.create('测试弹幕');
+```
+
+------
+和`attrs()`方法相同的地方是，你也可以直接给`range()`方法传入一个对象，以**同时设定**多个值：
+
+```javascript
+demo_ins.range({
+    'bottom':[20, 70],
+    'top':[0, 50]
+});
+```
+------
+
+当然，弹幕生成范围和弹幕属性一样能够通过一个方法进行**重置**：```resetRange()```，这里就不演示了。
+
+## 暂停和恢复
+
+<!--Demo_4-->
+
+<div class="danmaku-container tiny" id="demo-4"></div>
+
+### 暂停所有弹幕
+
+点击<a href='javascript:void(0);' onclick="trigger_demo_4(1)">这里</a>暂停上面容器内的所有弹幕。
+
+```javascript
+demo_ins.pause();
+```
+
+### 恢复所有弹幕
+
+点击<a href='javascript:void(0);' onclick="trigger_demo_4(2)">这里</a>恢复上面容器内的所有弹幕。
+
+```javascript
+demo_ins.resume();
+```
+
+### 暂停/恢复指定弹幕
+
+实际上`pause()`和`resume()`方法都可以接受一个**弹幕（在本容器内）的唯一ID**作为参数。
+
+```javascript
+demo_ins.pause(danmakuId);
+demo_ins.resume(danmakuId);
+```
+
+相关示例可以看[这里](#created)。
 
 ## create的回调函数
+
+<!--Demo_5-->
+
+<div class="danmaku-container tiny" id="demo-5"></div>
+
+用于创建弹幕的方法`create()`其实还能接受`2`个回调函数作为参数：
+
+```javascript
+create(text[, created[, callback]]);
+```
+
+### created
+
+这个回调函数在**弹幕刚刚被创建后**就会被调用，它会接收到两个参数：
+
+```javascript
+created(newElement,danmakuId);
+```
+
+* `newElement` - 新创建的弹幕元素对象(HTMLDivElement)
+* `danmakuId` - 新创建的弹幕(在本容器内)的唯一ID
+
+举个例子。利用这个回调函数，咱们可以实现一个**鼠标经过弹幕上方时让弹幕暂停**的效果（<a href='javascript:void(0);' onclick="trigger_demo_5(1)">点我查看</a>）：
+
+```javascript
+demo_ins.attrs('size', '1.2em')
+    .create('鼠标移动到我身上', (element, id) => {
+        element.onmouseover = () => {
+            demo_ins.pause(id);
+        };
+        element.onmouseout = () => {
+            demo_ins.resume(id);
+        }
+    });
+```
+
+### callback
+
+<del>懒得想形参名了，就定为callback啦</del>
+
+这个回调函数会在**弹幕正常消失**后被触发。它接收一个参数：
+
+```javascript
+callback(danmakuId);
+```
+
+* `danmakuId` - 新创建的弹幕(在本容器内)的唯一ID
+
+下面这个例子中的弹幕在**正常**消失后会通过`window.alert()`提醒咱们（<a href='javascript:void(0);' onclick="trigger_demo_5(2)">点我查看</a>）：
+
+```javascript
+demo_ins.attrs('size', '1.2em')
+    .create('我消失后会弹窗哦', null, (id) => {
+        alert(`ID为${id}的弹幕刚刚消失了！`)
+    });
+```
+
+为什么说是“正常消失”呢，因为实际上弹幕是可以被手动清除的（详情看下方）。  
+被手动清除的弹幕不会触发`callback()`回调。  
+
+## 清除弹幕
+
+<!--Demo_6-->
+
+<div class="danmaku-container small" id="demo-6"></div>
+
+<del>弹幕的非自然死亡</del>
+
+> 注：以下的演示在被触发后都会延迟一秒再清除相应弹幕，以便观察。
+
+### 清理所有弹幕
+
+
+
+## 简单的弹幕列表

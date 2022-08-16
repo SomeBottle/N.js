@@ -1,6 +1,6 @@
 // 弹幕默认配置
 export const danmakuDefaultAttrs = {
-    'color': '#FFF', // 颜色(同css)
+    'color': 'white', // 颜色(同css)
     'size': null, // 字体大小(同css的font-size，如果是null则自动计算)
     'scale': 1, // 文字放大尺寸(倍数，只有size为null时有效，比如0.5, 2)
     'opacity': 100, // 透明度（0-100%）

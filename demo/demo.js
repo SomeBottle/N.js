@@ -1,6 +1,7 @@
 'use strict';
 let demoBody = document.querySelector('.markdown-body'),
-    demo_1, demo_2;
+    demo_1, demo_2, demo_3, demo_4, demo_5, demo_6,
+    demo4Timer, demo6Timer;
 fetch('./demo.md').then(resp => resp.text())
     .then(text => {
         demoBody.innerHTML = window.markdownit({
@@ -37,7 +38,42 @@ fetch('./demo.md').then(resp => resp.text())
     }).then(res => {
         demo_1 = new NDanmaku('demo-1');
         demo_2 = new NDanmaku('demo-2');
+        demo_3 = new NDanmaku('demo-3');
+        demo_4 = new NDanmaku('demo-4');
+        demo_5 = new NDanmaku('demo-5');
+        demo_6 = new NDanmaku('demo-6');
+        demo_4_timer();
+        demo6Timer = setInterval(() => {
+            demo_6.resetAttrs()
+                .attrs({
+                    'size': '1.2em',
+                    'life': 4000
+                })
+                .create('普通滚动弹幕')
+                .create('逆向滚动弹幕')
+                .attrs({
+                    'reverse': true,
+                    'life': 6000,
+                    'color': 'blue'
+                })
+                .create('逆向滚动的随机弹幕')
+                .attrs({
+                    'type': 'midscroll',
+                    'color': '#FFF'
+                })
+                .create('逆向的中部滚动弹幕')
+                .attrs('reverse', false)
+                .attrs('type', 'random')
+                .create('滚动的随机弹幕')
+                .attrs('type', 'midscroll')
+                .create('中部滚动弹幕')
+        }, 5000);
     });
+
+// 滚动到demo
+function scroll2demo(element) {
+    scrollTo(0, element.offsetTop - element.offsetHeight / 2);
+}
 
 function trigger_demo_1() {
     demo_1.create('普通的disco我们普通的摇~🎶');
@@ -149,7 +185,65 @@ function trigger_demo_2(step) {
                 }).create('5秒的弹幕');
             break;
     }
-    document.getElementById('demo-2').scrollIntoView({
-        behavior: 'smooth'
-    });
+    scroll2demo(document.getElementById('demo-2'));
 }
+
+function trigger_demo_3(step) {
+    switch (step) {
+        case 1:
+            demo_3.resetAttrs().range('scroll', [0, 50]);
+            for (let i = 0; i < 6; i++) demo_3.create('测试弹幕');
+            break;
+        case 2:
+            demo_3.resetAttrs().range('bottom', [20, 70]).attrs('type', 'bottom');
+            for (let i = 0; i < 6; i++) demo_3.create('测试弹幕');
+            break;
+    }
+    scroll2demo(document.getElementById('demo-3'));
+}
+
+function demo_4_timer() {
+    clearInterval(demo4Timer);
+    demo4Timer = setInterval(() => {
+        demo_4.create('测试弹幕');
+    }, 1000);
+}
+
+function trigger_demo_4(step) {
+    switch (step) {
+        case 1:
+            demo_4.pause();
+            // 暂停的时候就不要再生成更多弹幕了
+            clearInterval(demo4Timer);
+            break;
+        case 2:
+            demo_4.resume();
+            demo_4_timer();
+            break;
+    }
+}
+
+
+function trigger_demo_5(step) {
+    switch (step) {
+        case 1:
+            demo_5.resetAttrs().attrs('size', '1.2em')
+                .create('鼠标移动到我身上', (element, id) => {
+                    element.onmouseover = () => {
+                        demo_5.pause(id);
+                    };
+                    element.onmouseout = () => {
+                        demo_5.resume(id);
+                    }
+                });
+            break;
+        case 2:
+            demo_5.resetAttrs().attrs('size', '1.2em')
+                .create('我消失后会弹窗哦', null, (id) => {
+                    alert(`ID为${id}的弹幕刚刚消失了！`)
+                });
+            break;
+    }
+    scroll2demo(document.getElementById('demo-5'));
+}
+
