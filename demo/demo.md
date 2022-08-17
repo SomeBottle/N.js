@@ -180,9 +180,9 @@ demo_ins.attrs({
 demo_ins.attrs('bottom_space','10px'); // 改为10px
 ```
 
-* <a href='javascript:void(0);' onclick="trigger_demo_2(13)">生成间距为12px的弹幕</a>
+* <a href='javascript:void(0);' onclick="trigger_demo_2(13)">生成间距为12px的滚动弹幕</a>
 
-* <a href='javascript:void(0);' onclick="trigger_demo_2(14)">生成间距为4px的弹幕</a>
+* <a href='javascript:void(0);' onclick="trigger_demo_2(14)">生成间距为4px的顶部弹幕</a>
 
 ### 弹幕是否能接受鼠标事件
 
