@@ -10,6 +10,7 @@ export const danmakuDefaultAttrs = {
     'reverse': false, // 是否逆向滚动(仅支持random/scroll/midscroll这类滚动类型)
     'type': 'scroll', // 弹幕类型，random / scroll / top / bottom / midscroll / midhang
     'life': 5000, // 弹幕生命时长（毫秒）
+    'pointer_events': true, // 弹幕是否接受鼠标事件，为false的话鼠标可以穿透弹幕
     'custom_css': {} // 自定义css样式，这里可以覆盖上面size,weight,color这些样式
 };
 

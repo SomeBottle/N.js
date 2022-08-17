@@ -103,7 +103,9 @@ export default class Danmaku {
             // 弹幕生命时间
             life = dmAttrs['life'],
             // 是否为逆向弹幕
-            reversed = dmAttrs['reverse'];
+            reversed = dmAttrs['reverse'],
+            // 弹幕是否接受鼠标事件
+            pointerEvents = dmAttrs['pointer_events'];
         // 记录本容器宽高
         this.height = this.target.offsetHeight;
         this.width = this.target.offsetWidth;
@@ -120,6 +122,7 @@ export default class Danmaku {
         // 设定弹幕样式
         utils.styling(newDm, {
             'position': 'absolute', // 所有弹幕都是绝对定位
+            'pointer-events': pointerEvents ? 'auto' : 'none', // 是否接受鼠标事件
             'font-size': textSize, // 弹幕字体大小
             'color': dmAttrs['color'], // 弹幕颜色
             'font-weight': dmAttrs['weight'], // 弹幕字体粗细

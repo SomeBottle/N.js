@@ -32,7 +32,6 @@
     position: absolute;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
-    pointer-events: auto;
     /* 弹幕仍然能成为鼠标事件的目标*/
 }
 
@@ -41,7 +40,6 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    pointer-events: auto;
     /* 弹幕仍然能成为鼠标事件的目标*/
 }
 
