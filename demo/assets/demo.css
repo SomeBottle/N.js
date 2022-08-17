@@ -17,8 +17,7 @@ body {
     z-index: 10;
 }
 
-.show-catalogue>span {
-    float: right;
+.show-catalogue span {
     margin-right: 10px;
     font-size: 1.2em;
     color: #8d8d8d;
@@ -33,6 +32,12 @@ body {
 .show-catalogue a:hover {
     color: #525252;
     text-decoration: underline;
+}
+
+.go-back {
+    display: none;
+    opacity: 0;
+    transition: .5s ease;
 }
 
 .hljs {
@@ -87,9 +92,13 @@ nav>h1 {
     height: 200px;
 }
 
+.video {
+    width: 600px;
+}
+
 .big {
     width: 600px;
-    height: 281px;
+    height: 338px;
 }
 
 footer {

@@ -1,7 +1,8 @@
 'use strict';
 let demoBody = document.querySelector('.markdown-body'),
-    demo_1, demo_2, demo_3, demo_4, demo_5, demo_6, demo_7,
-    demo4Timer, demo6Timer;
+    demo_1, demo_2, demo_2_video, demo_3, demo_4, demo_5, demo_6, demo_7,
+    demo4Timer, demo6Timer,
+    previousScrollTop = 0, jumpToScrollTop = 0;
 fetch('./demo.md').then(resp => resp.text())
     .then(text => {
         demoBody.innerHTML = window.markdownit({
@@ -15,11 +16,12 @@ fetch('./demo.md').then(resp => resp.text())
         }).render(text);
         hljs.highlightAll();
         Catalogue.init(demoBody);
-        let anchor = location.hash.slice(1); // 检查有没有锚点
-        if (anchor) {
+        let anchor = location.hash.slice(1), // 检查有没有锚点
+            anchorTarget;
+        if (anchor && (anchorTarget = document.getElementById(anchor))) {
             // 如果有锚点，滚动到锚点
             setTimeout(() => {
-                document.getElementById(anchor).scrollIntoView({
+                anchorTarget.scrollIntoView({
                     behavior: 'smooth'
                 });
             }, 500); // 可能页面有些内容需要加载，延迟一下
@@ -38,6 +40,7 @@ fetch('./demo.md').then(resp => resp.text())
     }).then(res => {
         demo_1 = new NDanmaku('demo-1');
         demo_2 = new NDanmaku('demo-2');
+        demo_2_video = new NDanmaku('demo-2-video');
         demo_3 = new NDanmaku('demo-3');
         demo_4 = new NDanmaku('demo-4');
         demo_5 = new NDanmaku('demo-5');
@@ -116,9 +119,45 @@ fetch('./demo.md').then(resp => resp.text())
         demo_7.list.uncertainty(0);
     });
 
+// 隐藏返回按钮
+function goBackBtnHide() {
+    let goBackBtn = document.querySelector('.go-back');
+    goBackBtn.style.opacity = 0;
+    previousScrollTop = 0;
+    jumpToScrollTop = 0;
+    setTimeout(() => {
+        goBackBtn.style.display = 'none';
+    }, 500);
+}
+
+// 滚动监听
+function scrollListener() {
+    // 如果滚动了一段距离，就取消监听，隐藏返回按钮
+    if (Math.abs(window.scrollY - jumpToScrollTop) > 500) {
+        goBackBtnHide();
+        window.removeEventListener('scroll', scrollListener);
+    }
+}
+
+// 回到刚刚浏览的位置
+function goBack() {
+    window.scrollTo(0, previousScrollTop);
+    goBackBtnHide();
+}
+
 // 滚动到demo
 function scroll2demo(element) {
-    scrollTo(0, element.offsetTop - element.offsetHeight / 2);
+    let targetTop = element.offsetTop - element.offsetHeight / 2,
+        goBackBtn = document.querySelector('.go-back');
+    previousScrollTop = window.scrollY; // 记录之前浏览的位置
+    jumpToScrollTop = targetTop; // 记录目标跳转位置
+    scrollTo(0, targetTop);
+    goBackBtn.style.display = 'inline-block';
+    setTimeout(() => {
+        goBackBtn.style.opacity = 1;
+    }, 200);
+    window.removeEventListener('scroll', scrollListener);
+    window.addEventListener('scroll', scrollListener);
 }
 
 function trigger_demo_1() {
@@ -230,8 +269,54 @@ function trigger_demo_2(step) {
                     life: 5000
                 }).create('5秒的弹幕');
             break;
+        case 13:
+            demo_2.resetAttrs()
+                .attrs({
+                    size: '1.2em',
+                    type: 'scroll',
+                    life: 4000,
+                    bottom_space: 12
+                });
+            for (let i = 0; i < 4; i++) demo_2.create('间距12px');
+            break;
+        case 14:
+            demo_2.resetAttrs()
+                .attrs({
+                    size: '1.2em',
+                    type: 'top',
+                    life: 4000,
+                    bottom_space: 4
+                });
+            for (let i = 0; i < 4; i++) demo_2.create('间距4px');
+            break;
     }
     scroll2demo(document.getElementById('demo-2'));
+}
+
+function trigger_demo_2_vid(step) {
+    switch (step) {
+        case 1:
+            demo_2_video.resetAttrs()
+                .attrs('size', '1.3em')
+                .create('本处原画：William Lee', (element, id) => {
+                    element.onclick = () => {
+                        alert(`你点击了ID为${id}的弹幕`);
+                    }
+                });
+            break;
+        case 2:
+            demo_2_video.resetAttrs()
+                .attrs({
+                    'size': '1.3em',
+                    'pointer_events': false
+                })
+                .create('你点不到我！', (element, id) => {
+                    element.onclick = () => {
+                        alert(`你点击了ID为${id}的弹幕`);
+                    }
+                });
+            break;
+    }
 }
 
 function trigger_demo_3(step) {

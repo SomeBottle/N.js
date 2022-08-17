@@ -170,6 +170,58 @@ demo_ins.attrs({
 }).create('5秒的弹幕');
 ```
 
+### 弹幕底部外边距
+
+这一项属性主要是为了调整弹幕之间的**间距**。
+
+默认情况下弹幕底部外边距是`2px`，如果需要变更的话，咱们可以调节弹幕属性中的`bottom_space`属性：
+
+```javascript
+demo_ins.attrs('bottom_space','10px'); // 改为10px
+```
+
+* <a href='javascript:void(0);' onclick="trigger_demo_2(13)">生成间距为12px的弹幕</a>
+
+* <a href='javascript:void(0);' onclick="trigger_demo_2(14)">生成间距为4px的弹幕</a>
+
+### 弹幕是否能接受鼠标事件
+
+有时候，咱们需要让弹幕能接受鼠标事件，比如这个[示例](#created)。
+
+但有的时候，咱们又并不需要。像弹幕过多的视频中，我们往往难以点击到视频以让其暂停。  
+<del>其实可以直接给整个div附上一个click的事件监听器</del>
+
+<!--Demo_2_video-->
+
+<div class="danmaku-container video" id="demo-2-video">
+    <video src="./videos/komi.mp4" style="width:100%" controls></video>
+</div>
+
+* 创建一条<a href='javascript:void(0);' onclick="trigger_demo_2_vid(1)">能接受鼠标事件的弹幕</a>
+
+    ```javascript
+    demo_ins.attrs('size', '1.3em')
+        .create('本处原画：William Lee', (element, id) => {
+            element.onclick = () => {
+                alert(`你点击了ID为${id}的弹幕`);
+            }
+        });
+    ```
+
+* 创建一条<a href='javascript:void(0);' onclick="trigger_demo_2_vid(2)">不接受鼠标事件的弹幕</a>
+
+    ```javascript
+    demo_ins.attrs({
+            'size': '1.3em',
+            'pointer_events': false // 不接受鼠标事件
+        })
+        .create('你点不到我！', (element, id) => {
+            element.onclick = () => {
+                alert(`你点击了ID为${id}的弹幕`);
+            }
+        });
+    ```
+
 
 -------
 
