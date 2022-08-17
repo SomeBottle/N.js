@@ -2,10 +2,6 @@
 
 ![Banner](https://ww2.sinaimg.cn/large/ed039e1fgy1fxzuvu16clj20m808cgpi)  
 
-## Demo
-
-[https://ndanmaku.xbottle.top](https://ndanmaku.xbottle.top)  
-
 ## 这是啥子嘞？ 
 
 这是一个简单的、用于创建弹幕的浏览器JavaScript组件。<del>咱绞尽脑汁想出的</del>特色如下：
@@ -16,6 +12,24 @@
 * 自带弹幕碰撞判断，充分利用屏幕空间
 * 链式语法
 * 自带简单的**弹幕列表**，可按时刻装载/创建弹幕
+
+## 目录
+
+- [Demo](#demo)
+- [使用它吧！](#使用它吧)  
+- [关于弹幕](#关于弹幕)  
+    - [弹幕属性](#弹幕属性)
+    - [弹幕类型](#弹幕类型)
+- [对象的方法和属性](#对象的方法和属性)  
+    - [NDanmaku对象](#ndanmaku对象)  
+    - [List对象](#list对象)
+- [FAQ](#faq)
+    - [每条弹幕对应的DOM元素有独一无二的 id 吗?](#弹幕dom元素有独一无二的id属性吗)
+- [感谢](#感谢)  
+
+## Demo
+
+[https://ndanmaku.xbottle.top](https://ndanmaku.xbottle.top)  
 
 ## 使用它吧！
 
@@ -130,10 +144,10 @@ Demo中有相应的[示例](https://ndanmaku.xbottle.top/#%E6%94%B9%E5%8F%98%E5%
 
 * 方法
 
-    | 文档 | 涵盖的方法 |主要内容|
-    |:---:|:---:|:---:|
-    |[构造方法](docs/constructor.md)|`constructor()`|构造方法的参数 / 弹幕DOM元素的`id`|
-    |[弹幕创建方法](docs/create.md)|`create()`| 弹幕创建相关 |
+    | 文档 | 涵盖的方法 |
+    |:---:|:---:|
+    |[构造方法](docs/constructor.md)|`constructor()`|
+    |[弹幕创建方法](docs/create.md)|`create()`|
   
 * 属性
 
@@ -142,4 +156,14 @@ Demo中有相应的[示例](https://ndanmaku.xbottle.top/#%E6%94%B9%E5%8F%98%E5%
 
 ### `List`对象
 
+## FAQ
 
+### 每条弹幕对应的DOM元素有独一无二的`id`属性吗?  
+
+有的！只不过需要在构造对象的时候**指定一下`prefix`参数**，详见[构造方法的文档](docs/constructor.md#prefix)。
+
+
+
+## 感谢
+
+* [@板砖猫](https://github.com/BanZhuan-CAT) - 提出了“中间”弹幕的想法

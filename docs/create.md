@@ -21,3 +21,5 @@ danmaku.create(text, created = null, callback = null)
 
 * 默认取值: `null` (默认无回调函数)
 
+
+
