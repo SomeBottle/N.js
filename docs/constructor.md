@@ -12,7 +12,9 @@ new NDanmaku(container, prefix = '', zIndex = 'auto')
 
 ## container
 
-取值为用于创建弹幕的**DOM元素对象**或者**DOM元素的id**。
+取值为**DOM元素对象**或者**DOM元素的id**。
+
+弹幕将会在这个元素内进行创建，因此咱们也称其为“弹幕的**容器**”。
 
 此参数已经在[README](https://github.com/SomeBottle/N.js/#readme)中说明过了，这里不再赘述。
 
