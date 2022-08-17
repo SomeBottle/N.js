@@ -26,7 +26,8 @@
     "LICENSE",
     "dist/*",
     "src/*",
-    "webpack/*"
+    "webpack/*",
+    "docs/*"
   ],
   "devDependencies": {
     "autoprefixer": "^10.4.8",

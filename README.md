@@ -10,7 +10,7 @@
 
 这是一个简单的、用于创建弹幕的浏览器JavaScript组件。
 
-## 使用方法
+## 使用它吧！
 
 1. 引入`N.min.js`  
 
@@ -31,14 +31,18 @@
     构造方法：
 
     ```javascript
-    new NDanmaku(container, zIndex = 'auto', prefix = '')
+    new NDanmaku(container, prefix = '', zIndex = 'auto')
     ```
 
     - `container` - 弹幕容器元素，可以是一个**字符串**(元素的`id`)，也可以是一个**DOM元素对象**。
-    
-    - `zIndex` - 上述容器将被设置的`z-index`值，默认为`auto`。
 
     - `prefix` - 容器弹幕的前缀，默认为空。
+
+    - `zIndex` - 上述容器将被设置的`z-index`值，默认为`auto`。
+
+    详情见[NDanmaku方法](#)
+
+    ------
 
     这里就说一下第一个参数`container`：
     
@@ -71,6 +75,11 @@
 
     其他更多方法详见下方~
 
+## `NDanmaku`对象的方法
+
+以下内容结合[Demo](#demo)食用更佳哦~(๑´ڡ`๑) 
+
+* [构造方法](docs/constructor.md)  
 
 
 

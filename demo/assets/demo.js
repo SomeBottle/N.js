@@ -38,7 +38,7 @@ fetch('./demo.md').then(resp => resp.text())
         });
         return Promise.resolve('done');
     }).then(res => {
-        demo_1 = new NDanmaku('demo-1');
+        demo_1 = new NDanmaku('demo-1', 'test');
         demo_2 = new NDanmaku('demo-2');
         demo_2_video = new NDanmaku('demo-2-video');
         demo_3 = new NDanmaku('demo-3');

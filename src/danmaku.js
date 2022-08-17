@@ -9,10 +9,10 @@ export default class Danmaku {
     /**
      * 以容器元素为单位构造弹幕实例
      * @param {String|Element} container 元素或者元素ID 
-     * @param {String|Number} zIndex 弹幕层的z-index
      * @param {String} prefix 弹幕标识的前缀
+     * @param {String|Number} zIndex 弹幕层的z-index
      */
-    constructor(container, zIndex = 'auto', prefix = '') {
+    constructor(container, prefix = '', zIndex = 'auto') {
         const target = (container instanceof Element) ? container : document.getElementById(container);
         if (!target) {
             utils.output('Error: container element not found', 3);
