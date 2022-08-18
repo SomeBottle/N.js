@@ -40,9 +40,9 @@ danmaku.attrs('size','2em')
 
 ```javascript
 danmaku.attrs({
-    outline: false, 
-    color: '#FE9A2E', 
-    size: '1.2em'
+    'outline': false, 
+    'color': '#FE9A2E', 
+    'size': '1.2em'
 })
 ```
 

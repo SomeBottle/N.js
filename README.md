@@ -151,7 +151,7 @@ Demo中有相应的[示例](https://ndanmaku.xbottle.top/#%E6%94%B9%E5%8F%98%E5%
     |[构造方法](docs/constructor.md)|`constructor()`|
     |[弹幕创建方法](docs/create.md)|`create()`|
     |[弹幕属性设置方法](docs/attributes.md)|`attrs()`, `resetAttrs()`|
-    |[弹幕生成范围设置方法](docs/ranges.md)|`ranges()`, 
+    |[弹幕生成范围设置方法](docs/ranges.md)|`ranges()`, `resetRanges()`|
   
 * 属性
 
@@ -182,8 +182,7 @@ Demo中有相应的[示例](https://ndanmaku.xbottle.top/#%E6%94%B9%E5%8F%98%E5%
 
 有的！只不过需要在构造对象的时候**指定一下`prefix`参数**，详见[构造方法的文档](docs/constructor.md#prefix)。
 
-
-
+------
 
 
 ## 感谢
