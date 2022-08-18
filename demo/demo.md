@@ -419,7 +419,7 @@ demo_ins.clearSome([type = '', [reversed = 'all']])
 * 第一个参数传入`'midscroll'`，第二个参数传入`true`，则<a href='javascript:void(0);' onclick="trigger_demo_6(6)">清除所有逆向且在中间滚动的弹幕</a>
 
     ```javascript
-    demo_ins.clearSome('midsroll', true);
+    demo_ins.clearSome('midscroll', true);
     ```
 
 * 第一个参数传入`'random'`，则<a href='javascript:void(0);' onclick="trigger_demo_6(7)">清除所有随机滚动弹幕</a>
@@ -460,8 +460,6 @@ demo_ins.clearStyled({
 ```javascript
 demo_ins.clearStyled({
     'color': '!white' // 默认情况下弹幕样式的color值为'white'
-    // 值得注意的是，一旦设置为了十六进制或者rgb值，这样就没效果了
-    // 所以才说clearStyled不太稳定
 });
 ```
 

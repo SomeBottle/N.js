@@ -154,6 +154,7 @@ Demo中有相应的[示例](https://ndanmaku.xbottle.top/#%E6%94%B9%E5%8F%98%E5%
     |[弹幕属性设置方法](docs/attributes.md)|`attrs()`, `resetAttrs()`|
     |[弹幕生成范围设置方法](docs/ranges.md)|`ranges()`, `resetRanges()`|
     |[弹幕运行状态控制方法](docs/danmakuState.md)|`pause()`, `resume()`|
+    |[弹幕清除相关方法](docs/clear.md)|`clear()`, `clearSome()`, `clearStyled()`|
   
 * 属性
 
