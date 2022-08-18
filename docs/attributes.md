@@ -1,16 +1,22 @@
 # 弹幕属性相关方法
 
-## 设置属性
+## 目录
+
+* [设置属性的方法](#设置属性的方法)  
+    - [方法特点](#方法特点)  
+    - [keyOrObject](#keyorobject)
+    - [value](#value)
+* [重置所有弹幕属性的方法](#重置所有弹幕属性的方法)
+
+## 设置属性的方法
 
 ```javascript
-danmaku.attrs(keyOrObject, value)
+danmaku.attrs(keyOrObject, value = null)
 ```
 
 * `keyOrObject` - 属性键 或 包含属性键值对的对象
 
 * `value` - 属性值（在第一个参数为**属性键**的情况下有效）  
-
-------
 
 弹幕属性及其值的说明请看[README](https://github.com/SomeBottle/N.js/#弹幕属性)哦~  
 
@@ -19,6 +25,8 @@ danmaku.attrs(keyOrObject, value)
 在设置弹幕属性的时候，**没有指定的**弹幕属性会默认**继承之前的属性**。  
 
 直观一点的话，可以看[这个示例](https://ndanmaku.xbottle.top/#属性的继承)。
+
+------
 
 ### keyOrObject  
 
@@ -46,6 +54,8 @@ danmaku.attrs({
 })
 ```
 
+-------
+
 ### value
 
 * 默认值: `null` (无值)
@@ -54,7 +64,9 @@ danmaku.attrs({
 
 当`keyOrObject`为**字符串**的时候，这个参数是必需的。
 
-## 重置所有弹幕属性
+------
+
+## 重置所有弹幕属性的方法
 
 ```javascript
 danmaku.resetAttrs()

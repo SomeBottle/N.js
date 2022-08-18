@@ -27,6 +27,7 @@
     - [弹幕容器container中可以有其他DOM元素吗？](#弹幕容器container中可以有其他dom元素吗)  
     - [如果container元素中有其他定位为absolute的元素遮挡了弹幕，怎么办？](#如果container元素中有其他定位为absolute的元素遮挡了弹幕怎么办)  
     - [每条弹幕对应的DOM元素都有独一无二的 id 吗?](#每条弹幕对应的dom元素都有独一无二的id属性吗)  
+    - [如何获得弹幕自身的唯一id?](#如何获得弹幕自身的唯一id)  
 - [感谢](#感谢)  
 
 ## Demo
@@ -152,6 +153,7 @@ Demo中有相应的[示例](https://ndanmaku.xbottle.top/#%E6%94%B9%E5%8F%98%E5%
     |[弹幕创建方法](docs/create.md)|`create()`|
     |[弹幕属性设置方法](docs/attributes.md)|`attrs()`, `resetAttrs()`|
     |[弹幕生成范围设置方法](docs/ranges.md)|`ranges()`, `resetRanges()`|
+    |[弹幕运行状态控制方法](docs/danmakuState.md)|`pause()`, `resume()`|
   
 * 属性
 
@@ -184,6 +186,13 @@ Demo中有相应的[示例](https://ndanmaku.xbottle.top/#%E6%94%B9%E5%8F%98%E5%
 
 ------
 
+### 如何获得弹幕自身的唯一`id`?  
+
+弹幕自身的唯一`id`（不是弹幕DOM元素的id属性）目前只能通过**对象构造方法**的`created`回调函数来获得。  
+
+详见[弹幕创建的文档](docs/create.md#created)。
+
+------
 
 ## 感谢
 
