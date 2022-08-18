@@ -26,7 +26,7 @@
 - [FAQ](#faq)
     - [弹幕容器container中可以有其他DOM元素吗？](#弹幕容器container中可以有其他dom元素吗)  
     - [如果container元素中有其他定位为absolute的元素遮挡了弹幕，怎么办？](#如果container元素中有其他定位为absolute的元素遮挡了弹幕怎么办)  
-    - [每条弹幕对应的DOM元素有独一无二的 id 吗?](#每条弹幕对应的dom元素有独一无二的id属性吗)  
+    - [每条弹幕对应的DOM元素都有独一无二的 id 吗?](#每条弹幕对应的dom元素都有独一无二的id属性吗)  
 - [感谢](#感谢)  
 
 ## Demo
@@ -150,7 +150,8 @@ Demo中有相应的[示例](https://ndanmaku.xbottle.top/#%E6%94%B9%E5%8F%98%E5%
     |:---:|:---:|
     |[构造方法](docs/constructor.md)|`constructor()`|
     |[弹幕创建方法](docs/create.md)|`create()`|
-    |[弹幕属性方法](docs/attributes.md)|`attrs()`, `resetAttrs()`|
+    |[弹幕属性设置方法](docs/attributes.md)|`attrs()`, `resetAttrs()`|
+    |[弹幕生成范围设置方法](docs/ranges.md)|`ranges()`, 
   
 * 属性
 
@@ -167,13 +168,17 @@ Demo中有相应的[示例](https://ndanmaku.xbottle.top/#%E6%94%B9%E5%8F%98%E5%
 
 值得注意的是，`container`对应的元素的定位属性会变更为`relative`(相对定位)。
 
+------
+
 ### 如果`container`元素中有其他定位为`absolute`的元素遮挡了弹幕，怎么办？
 
 你可以在**创建对象**的时候传入`zIndex`参数，调整**弹幕层**在`container`元素内的层级，以避免这种情况。  
 
 详见[构造方法的文档](docs/constructor.md#zindex)。  
 
-### 每条弹幕对应的DOM元素有独一无二的`id`属性吗?  
+------
+
+### 每条弹幕对应的DOM元素都有独一无二的`id`属性吗?  
 
 有的！只不过需要在构造对象的时候**指定一下`prefix`参数**，详见[构造方法的文档](docs/constructor.md#prefix)。
 

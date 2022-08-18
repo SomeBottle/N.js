@@ -74,7 +74,7 @@ export default class Danmaku {
      * 重置弹幕生成范围
      * @note 恢复成configs.js的配置
      */
-    resetRange() {
+    resetRanges() {
         this.hitBox.resetHitSets();
         return this;
     }
@@ -300,7 +300,7 @@ export default class Danmaku {
      * @param {Array} value 如果kbj是属性名，这一项就是属性名对应的范围
      * @note value类似于[min,max]
      */
-    range(types, value = null) {
+    ranges(types, value = null) {
         let maxHeight = this.hitBox.danmakuMaxHeight,
             minHeight = this.hitBox.danmakuMinHeight;
         if (types instanceof Object) { // 如果是对象

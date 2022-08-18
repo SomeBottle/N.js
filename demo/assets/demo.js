@@ -322,11 +322,11 @@ function trigger_demo_2_vid(step) {
 function trigger_demo_3(step) {
     switch (step) {
         case 1:
-            demo_3.resetAttrs().range('scroll', [0, 50]);
+            demo_3.resetAttrs().ranges('scroll', [0, 50]);
             for (let i = 0; i < 6; i++) demo_3.create('测试弹幕');
             break;
         case 2:
-            demo_3.resetAttrs().range('bottom', [20, 70]).attrs('type', 'bottom');
+            demo_3.resetAttrs().ranges('bottom', [20, 70]).attrs('type', 'bottom');
             for (let i = 0; i < 6; i++) demo_3.create('测试弹幕');
             break;
     }

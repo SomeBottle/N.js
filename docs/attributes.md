@@ -62,4 +62,6 @@ danmaku.resetAttrs()
 
 这个方法没有参数，会重置所有弹幕属性为默认值。  
 
+* [Demo](https://ndanmaku.xbottle.top/#重置弹幕属性)  
+
 默认值详见[README](https://github.com/SomeBottle/N.js/#弹幕属性)。

@@ -235,12 +235,12 @@ demo_ins.attrs('bottom_space','10px'); // 改为10px
 
 弹幕量很多时，我们观赏原内容的体验会下降。<del>更不谈有些视频中存在着遮挡字幕的弹幕</del>
 
-因此，`N.js`有一个限定弹幕生成范围的功能，可以通过`NDanmaku`对象的`range`方法来进行设置。  
+因此，`N.js`有一个限定弹幕生成范围的功能，可以通过`NDanmaku`对象的`ranges`方法来进行设置。  
 
 比如，我可以设置让滚动弹幕**最多只占屏幕的50%**（<a href='javascript:void(0);' onclick="trigger_demo_3(1)">点击查看效果</a>）：  
 
 ```javascript
-demo_ins.range('scroll', [0, 50]); // 生成范围从0%到50%
+demo_ins.ranges('scroll', [0, 50]); // 生成范围从0%到50%
 for (let i = 0; i < 6; i++) demo_ins.create('测试弹幕');
 ```
 
@@ -248,22 +248,22 @@ for (let i = 0; i < 6; i++) demo_ins.create('测试弹幕');
 亦可以设置让底部弹幕只在**屏幕的20%至70%处**生成（<a href='javascript:void(0);' onclick="trigger_demo_3(2)">点击查看效果</a>）：
 
 ```javascript
-demo_ins.range('bottom', [20, 70]).attrs('type','bottom');
+demo_ins.ranges('bottom', [20, 70]).attrs('type','bottom');
 for (let i = 0; i < 6; i++) demo_ins.create('测试弹幕');
 ```
 
 ------
-和`attrs()`方法相同的地方是，你也可以直接给`range()`方法传入一个对象，以**同时设定**多个值：
+和`attrs()`方法相同的地方是，你也可以直接给`ranges()`方法传入一个对象，以**同时设定**多个值：
 
 ```javascript
-demo_ins.range({
+demo_ins.ranges({
     'bottom':[20, 70],
     'top':[0, 50]
 });
 ```
 ------
 
-当然，弹幕生成范围和弹幕属性一样能够通过一个方法进行**重置**：```resetRange()```，这里就不演示了。
+当然，弹幕生成范围和弹幕属性一样能够通过一个方法进行**重置**：```resetRanges()```，这里就不演示了。
 
 ## 暂停和恢复
 
