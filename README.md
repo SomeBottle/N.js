@@ -24,7 +24,9 @@
     - [NDanmaku对象](#ndanmaku对象)  
     - [List对象](#list对象)
 - [FAQ](#faq)
-    - [每条弹幕对应的DOM元素有独一无二的 id 吗?](#每条弹幕对应的dom元素有独一无二的id属性吗)
+    - [弹幕容器container中可以有其他DOM元素吗？](#弹幕容器container中可以有其他dom元素吗)  
+    - [如果container元素中有其他定位为absolute的元素遮挡了弹幕，怎么办？](#如果container元素中有其他定位为absolute的元素遮挡了弹幕怎么办)  
+    - [每条弹幕对应的DOM元素有独一无二的 id 吗?](#每条弹幕对应的dom元素有独一无二的id属性吗)  
 - [感谢](#感谢)  
 
 ## Demo
@@ -61,11 +63,11 @@
 
     - `zIndex` - 上述容器将被设置的`z-index`值，默认为`auto`。
 
-    详情见[NDanmaku方法](#ndanmaku对象)  
+    详情见[构造方法文档](docs/constructor.md)  
 
     ------
 
-    这里就说一下第一个参数`container`：
+    这里就说一下第一个参数`container`，这个参数代表的DOM元素就是**弹幕的容器**，弹幕将会在其中被创建。
     
     1. 你可以这样创建对象：
 
@@ -148,6 +150,7 @@ Demo中有相应的[示例](https://ndanmaku.xbottle.top/#%E6%94%B9%E5%8F%98%E5%
     |:---:|:---:|
     |[构造方法](docs/constructor.md)|`constructor()`|
     |[弹幕创建方法](docs/create.md)|`create()`|
+    |[弹幕属性方法](docs/attributes.md)|`attrs()`, `resetAttrs()`|
   
 * 属性
 
@@ -158,9 +161,23 @@ Demo中有相应的[示例](https://ndanmaku.xbottle.top/#%E6%94%B9%E5%8F%98%E5%
 
 ## FAQ
 
+### 弹幕容器`container`中可以有其他DOM元素吗？
+
+是可以有的，在**创建对象**的时候虽然传入了`container`对应的元素对象，但实际上程序会在这个元素中**创建**一个`<div>`元素作为弹幕层，所有弹幕都是**在这个弹幕层**内被创建的，因此并不会影响`container`中的其他元素。
+
+值得注意的是，`container`对应的元素的定位属性会变更为`relative`(相对定位)。
+
+### 如果`container`元素中有其他定位为`absolute`的元素遮挡了弹幕，怎么办？
+
+你可以在**创建对象**的时候传入`zIndex`参数，调整**弹幕层**在`container`元素内的层级，以避免这种情况。  
+
+详见[构造方法的文档](docs/constructor.md#zindex)。  
+
 ### 每条弹幕对应的DOM元素有独一无二的`id`属性吗?  
 
 有的！只不过需要在构造对象的时候**指定一下`prefix`参数**，详见[构造方法的文档](docs/constructor.md#prefix)。
+
+
 
 
 

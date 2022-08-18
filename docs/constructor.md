@@ -22,7 +22,7 @@ new NDanmaku(container, prefix = '', zIndex = 'auto')
 
 - 默认值: `''`
 
-取值为**适用于DOM元素`id`的字符串**。
+取值为**可以用作DOM元素的`id`的**字符串。
 
 当`prefix`取值不为空时，程序将会给**每一条弹幕的DOM元素**设置一个**唯一的`id`**，这个`id`的格式如下：
 
