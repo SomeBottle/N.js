@@ -41,13 +41,13 @@
     在页面中引用位于本仓库`dist/`目录下的 [N.min.js](dist/N.min.js) 文件。
 
     ```html  
-    <script src='./N.min.js' charset='UTF-8'></script>  
+    <script src='./N.min.js'></script>  
     ```  
 
     或者如果`jsdelivr`仍然能使用的话：
 
     ```html
-    <script src='https://cdn.jsdelivr.net/npm/n-danmaku@latest/dist/N.min.js' charset='UTF-8'></script>  
+    <script src='https://cdn.jsdelivr.net/npm/n-danmaku@latest/dist/N.min.js'></script>  
     ```
 
 2. 创建`NDanmaku`对象
