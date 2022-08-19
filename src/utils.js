@@ -92,6 +92,75 @@ function rand(from, to) {
 }
 
 /**
+ * 将对象转换为字符串（支持函数）
+ * @param {Object} obj 待处理对象
+ * @param {Number} indent 缩进空格数
+ * @param {Number} currentIndent 当前缩进空格数(递归调用时使用，无需传入)
+ * @returns {String} 字符串
+ * @note 不支持处理其中数组内的对象，数组会直接通过JSON.stringify
+ */
+function objectString(obj, indent = 4, currentIndent = -1) {
+    if (currentIndent === -1)
+        currentIndent = indent; // 初始化当前缩进空格数
+    let result = '{', // 结果字符串
+        indentStr = ' '.repeat(currentIndent); // 缩进字符串
+    for (let key in obj) {
+        let value = obj[key], // 获得值
+            convertedVal = ''; // 值被转换后的字符串
+        if (typeof value == 'function') {
+            // 如果是函数，就调用函数的toString方法现出原形
+            convertedVal = value.toString();
+        } else if (value instanceof Array) {
+            convertedVal = JSON.stringify(value); // 如果遇到数组就开摆
+        } else {
+            switch (typeof value) {
+                case 'object':
+                    convertedVal = objectString(value, indent, currentIndent + indent); // 递归调用，处理对象
+                    break;
+                case 'number':
+                case 'boolean':
+                    convertedVal = value.toString(); // 如果是数字/布尔，就转换为字符串
+                    break;
+                default:
+                    convertedVal = `"${value.replaceAll('"', '\\"')}"`; // 其他类型，双引号括起来，注意转义
+                    break;
+            }
+        }
+        result += `\n${indentStr}${indentStr}"${key}": ${convertedVal},`; // 拼接结果字符串，缩进四个空格
+    }
+    result += `\n${indentStr}}`; // 最后闭合大括号
+    return result;
+}
+
+/**
+ * 创建文件下载链接并下载
+ * @param {String} fileName 文件名（包括后缀名）
+ * @param {String} fileMime 文件MIME类型，比如application/json
+ * @param {String} content 文件内容
+ */
+function dispatchDownload(fileName, fileMime, content) {
+    console.log('Hello');
+    let aElement = document.createElement('a'), // 创建a标签
+        fileBlob = new Blob([content], {
+            type: fileMime
+        }); // 创建文件blob对象
+    // 设置下载文件名
+    aElement.setAttribute('download', fileName);
+    // 创建Blob对象的URL
+    aElement.setAttribute('href', URL.createObjectURL(fileBlob));
+    // 设置元素为无显示
+    aElement.style.display = 'none';
+    // 添加到body中
+    document.body.appendChild(aElement);
+    // 激发下载事件
+    aElement.click();
+    // 删除URL
+    URL.revokeObjectURL(aElement.href);
+    // 移除元素
+    document.body.removeChild(aElement);
+}
+
+/**
  * 获得时间戳
  * @returns {Number} 毫秒级时间戳
  */
@@ -175,5 +244,7 @@ export {
     rand,
     timestamp,
     PTimer,
-    matchProperties
+    matchProperties,
+    objectString,
+    dispatchDownload
 };

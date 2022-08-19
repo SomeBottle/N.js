@@ -99,6 +99,8 @@
 
     其他更多方法详见下方~
 
+------
+
 ## 关于弹幕
 
 ### 弹幕属性
@@ -162,6 +164,16 @@ Demo中有相应的[示例](https://ndanmaku.xbottle.top/#%E6%94%B9%E5%8F%98%E5%
 
 
 ### `List`对象
+
+每个`NDanmaku`的对象中都自带一个`List`对象，包含着**弹幕-时刻列表**的相关操作：
+
+```javascript
+danmaku.list
+```
+
+`List`对象的方法详见[这个文档](docs/list.md)。
+
+-----
 
 ## FAQ
 

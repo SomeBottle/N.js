@@ -1,6 +1,6 @@
 // 弹幕列表模块
 'use strict';
-import { output } from './utils.js';
+import { output, objectString, dispatchDownload } from './utils.js';
 
 class List {
     /**
@@ -247,6 +247,54 @@ class List {
             }
         } else {
             output(`List ${listName} already exists!`, 3);
+        }
+    }
+    /**
+     * 导出正在操纵(use)的列表
+     * @param {String} outputName 输出名字（要求能当作变量名）
+     * @param {String} fileType 导出文件类型js/json
+     * @param {Boolean} download 是否触发下载
+     * @returns {String} 导出的文件内容，发生错误则为空字符串''
+     */
+    export(outputName, fileType = 'js', download = false) {
+        let list = this.usingList;
+        if (list) {
+            // 保证输出名合法
+            if (!/^[_$a-zA-Z][_$a-zA-Z0-9]*$/.test(outputName)) {
+                output('Illegal output name for List!', 3);
+                return '';
+            }
+            // 时间线打一开始就是升序的了
+            let timeLine = list['timeLine'],
+                jsStr = `const ${outputName} = [`, // 用于导出js的字符串
+                jsonArr = [], // 用于导出json的数组
+                outputStr = ''; // 最终导出的字符串
+            for (let i = 0, len = timeLine.length; i < len; i++) {
+                let [time, serial] = timeLine[i],
+                    // 这里浅复制一层，因为要加入time属性
+                    dmData = Object.assign({}, list['danmakuLine'][serial]);
+                dmData['time'] = time; // 新增时刻属性
+                // 手动构造一个JavaScript数组，每个元素是一个对象，缩进为4个空格
+                jsonArr.push(dmData);
+                jsStr += `\n    ${objectString(dmData)},`;
+            }
+            jsStr += '\n]';
+            if (fileType === 'json') {
+                outputStr = JSON.stringify(jsonArr, null, 4);
+            } else {
+                outputStr = jsStr;
+            }
+            if (download) {
+                let name = `${outputName}.${fileType}`,
+                    mime = (fileType === 'json' ? 'application/json' : 'application/javascript');
+                // 触发下载
+                dispatchDownload(name, mime, outputStr);
+            }
+            // 返回创建的字符串
+            return outputStr;
+        } else {
+            output('Use one list first.', 2);
+            return '';
         }
     }
     /**
