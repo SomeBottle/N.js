@@ -1,190 +1,284 @@
 # N.js
--------------------------------
-[![Banner](https://ww2.sinaimg.cn/large/ed039e1fgy1fxzuvu16clj20m808cgpi)](https://somebottle.gitee.io/bottlecos/n.js.mp4)  
 
-**可点击↑**
+![Banner](https://ww2.sinaimg.cn/large/ed039e1fgy1fxzuvu16clj20m808cgpi)  
 
-## Compatibility.
-  * The project is using CSS3 for scrolling barrages.Maybe there will be some compatibility problems.
+## 这是啥子嘞？ 
 
-## What the heck is this?  
-  * A simple JS to create some barrages (We also call it 'the bulletscreen' or 'danmu').  
+这是一个简单的、用于创建弹幕的浏览器JavaScript组件。<del>咱绞尽脑汁想出的</del>特色如下：
 
-## How to use ?  
-  * 引入JS：  
-  ```html  
-   <script src='./N.min.js' charset='UTF-8'></script>  
-  ```  
-  * 在页面中创建div，申明id：  
-  ```html  
-   <div id='container'><img src='./Dreamer.png'></img></div>  
-  ```  
-  * 初始化：**这条语句原js已经在末尾自带**  
-  ```javascript   
-   $N.i();   
-  ```  
-  * 选定要操纵的div：
-  ```javascript   
-   $N.x(div id);  
-  ```  
-   &nbsp;例如 **$N.x('container')** 便指定了操纵目标是id为container的div.  
-   &nbsp;**PS:这个DIV在之后CSS定位属性会有变更：**
-  ```css
-   position:relative;  
-  ```  
-  * 设置**该div内**发送弹幕的属性：  
-  ```javascript   
-   $N.p(property,value);  
-  ```  
+* 弹幕时间支持到**毫秒**级别
+* 支持在屏幕**中间**的弹幕
+* **尽量高**的弹幕可自定义度
+* 自带弹幕碰撞判断，充分利用屏幕空间
+* 链式语法
+* 自带简单的**弹幕列表**，可按时刻装载/创建弹幕
 
-   | 属性 | 值 | 内容 |
-   | ----- | ----- | ----- |
-   | color | 16进制颜色码 | 颜色 |
-   | opacity | 0~100 | 透明度0%~100% |
-   | time | 秒为单位的时间 | 设置一条弹幕的生命时间（调整速度） |
-   | md | normal,top,bottom,random | 设置弹幕的位置，normal为滚动,random是随机行滚动,top和bottom分别为顶部、底部 |
-   | bold | normal,100~900 | 设置弹幕css的font-weight(加粗)，normal则为400 |
-   | size | normal,0.5~2.0 | 设置弹幕尺寸倍数 |
+## 目录
 
-   例如设置在该div生成的弹幕颜色为蕾姆色: **$N.p('color','#91BEF0')**  
+- [Demo](#demo)
+- [使用它吧！](#使用它吧)  
+- [关于弹幕](#关于弹幕)  
+    - [弹幕属性](#弹幕属性)
+    - [弹幕类型](#弹幕类型)
+- [对象的方法和属性](#对象的方法和属性)  
+    - [NDanmaku对象](#ndanmaku对象)  
+    - [List对象](#list对象)
+- [FAQ](#faq)
+    - [弹幕容器container中可以有其他DOM元素吗？](#弹幕容器container中可以有其他dom元素吗)  
+    - [如果container元素中有其他定位为absolute的元素遮挡了弹幕，怎么办？](#如果container元素中有其他定位为absolute的元素遮挡了弹幕怎么办)  
+    - [每条弹幕对应的DOM元素都有独一无二的 id 吗?](#每条弹幕对应的dom元素都有独一无二的id属性吗)  
+    - [如何获得弹幕自身的唯一id?](#如何获得弹幕自身的唯一id)  
+- [感谢](#感谢)  
 
-  * 创建一条弹幕：  
-  ```javascript   
-  $N.c('text');    
-  ```  
-   这将会在当前的div内生成一条写着**text**的弹幕（继上面的，是蕾姆色的弹幕）  
+## Demo
 
-  * 暂停弹幕滚动：
-  ```javascript   
-   $N.theworld();   
-  ```  
-  **THE WORLD!** 这将会停止当前div内的弹幕.因此，建议和 **$N.x(div id)** 一同使用.   
-  什么？要暂停所有div内的弹幕？  
-  ```javascript   
-   $N.theworld(true);   
-  ```  
-  * 让弹幕重新滚动：  
-    **在已经暂停的前提下**  
-    1. 当前div:
-      ```javascript   
-       $N.theworld();   
-      ```  
-    2. 所有div:
-      ```javascript   
-       $N.theworld(true);   
-      ``` 
-  * 清除弹幕：
-    * 用法和theworld类似：
-      ```javascript
-      $N.clear();
-      ```
-      清除当前选择容器的弹幕.  
-      ```javascript
-      $N.clear(true);
-      ```
-      清除所有容器的弹幕.  
-      
-  * 弹幕列表功能：
-    1. 创建列表：
-      ```javascript
-      $N.createlist(ListId);
-      //listid可以是任何英文数字组合，不要出现奇怪的符号
-      ```
-    2. 删除列表:  
-      ```javascript
-      $N.dellist(ListId);
-      ```
-    3. 手动填装:   
-      ```javascript
-      $N.adtl(DanmakuData,MediaTime,Listid);
-      ```
-      其中DanmakuData: 
-      ```javascript
-       {
-  	     x: 'm',
-  	     color: '#5882FA',
-  	     opacity: 100,
-  	     time: 5,
-  	     md: 'normal',
-  	     bold: 200,
-  	     size: 1,
-  	     text: '灵能百分百赛高！'
-       }
-      ```
-      x项代表要操纵的容器，text项是弹幕文字，其他项目同$N.p()设置项.  
-      MediaTime是弹幕出现的时间，通常是秒.  
-      Listid，列表id.  
-      **另外,adtl会返回一个弹幕的id**  
-      
-    4. JSON填装： 
-      ```javascript
-      $N.json(DanmakuJson,Listid);
-      ```
-      弹幕Json格式示例：
-      ```json
-      {
-	"x": "m",
-	"color": "#6E6E6E",
-	"opacity": 100,
-	"time": 8,
-	"md": "random",
-	"bold": 200,
-	"size": 1,
-	"danmaku": {
-		"1": {
-			"color": "#6E6E6E",
-			"text": "\u8fd9\u6761\u5f39\u5e55\u662f\u901a\u8fc7json\u88c5\u8f7d\u7684\u54e6~",
-			"ts": 4
-		},
-		"2": {
-			"text": "\u8fd9\u6761\u5f39\u5e55\u4e5f\u662f\u901a\u8fc7json\u88c5\u8f7d\u7684\u54e6~",
-			"ts": 4
-		},
-		"3": {
-			"color": "#FE642E",
-			"text": "If everyone is not special.",
-			"ts": 3
-		}
-        }
-      }
-      ```  
-      文件开头必须要有**手动填装配置**的几项，但是不同的是，danmaku列表中的写法可以省略这些，直接**顺承**.  
-      每条弹幕可以只有text和ts两项，ts是弹幕出现的时间.  
-      但是每条弹幕又可以重新定义全局属性，例如第一条中更改了颜色，那么第二条默认就和第一条颜色相同了.  
-      具体看**demo2**
-      
-    5. 从弹幕列表中移除弹幕.   
-      ```javascript 
-      $N.rdfl(DanmakuId,Listid);
-      ``` 
-      DanmakuId即之前adtl中返回的id.  
-      
-    6. 检查时间创建弹幕.  
-      ```javascript 
-      $N.lc(time,Listid);
-      ``` 
-      该函数可以通过addEventListener绑定到媒体上，time即媒体的currentTime，由此实现媒体上的弹幕功能.  
-      详细可以看**demo2**
-     
-  * 示例  
-  ```html
-   <div class='p' id='p'><img src='pic.jpg' style='width:100%;'></img></div>
-  ```
+[https://ndanmaku.xbottle.top](https://ndanmaku.xbottle.top)  
+
+## 使用它吧！
+
+1. 引入`N.min.js`  
+
+    在页面中引用位于本仓库`dist/`目录下的 [N.min.js](dist/N.min.js) 文件。
+
+    ```html  
+    <script src='./N.min.js'></script>  
+    ```  
+
+    或者如果`jsdelivr`仍然能使用的话：
+
+    ```html
+    <script src='https://cdn.jsdelivr.net/npm/n-danmaku@latest/dist/N.min.js'></script>  
+    ```
+
+2. 创建`NDanmaku`对象
+
+    构造方法：
+
+    ```javascript
+    new NDanmaku(container, prefix = '', zIndex = 'auto')
+    ```
+
+    - `container` - 弹幕容器元素，可以是一个**字符串**(元素的`id`)，也可以是一个**DOM元素对象**。
+
+    - `prefix` - 容器弹幕的前缀，默认为空。
+
+    - `zIndex` - 上述容器将被设置的`z-index`值，默认为`auto`。
+
+    详情见[构造方法文档](docs/constructor.md)  
+
+    ------
+
+    这里就说一下第一个参数`container`，这个参数代表的DOM元素就是**弹幕的容器**，弹幕将会在其中被创建。
+    
+    1. 你可以这样创建对象：
+
+        ```javascript
+        const danmaku = new NDanmaku('test');
+        ```
+
+        在创建对象的时候，程序会寻找`id`为`test`的DOM元素。
+
+    2. 你也可以这样写：
+
+        ```javascript
+        const danmaku = new NDanmaku(document.querySelector('.test'));
+        ```
+
+        这样就是直接将一个**DOM元素**对象传给构造方法。
+
+    > ⚠ **注意：**在创建对象后，上面传入的**DOM元素**的样式的定位属性`position`会被自动设置为`relative`！
+
+3. 调用`NDanmaku`方法
+
+    你可以调用`NDanmaku`对象的`create()`方法来创建一条弹幕：
+
+    ```javascript
+    // danmaku就是上面创建的`NDanmaku`对象
+    danmaku.create('Hello N.js!');
+    ```
+
+    其他更多方法详见下方~
+
+------
+
+## 关于弹幕
+
+### 弹幕属性
+
+弹幕在创建的时候都会应用**当前设置**的弹幕属性。  
+
+现有的弹幕属性及其默认值如下：
+
+| 属性键 | 默认值 | 说明 |
+|:---:|:---:|:---:|
+| `color` | `'white'` | 弹幕颜色，和`CSS`中的`color`一致 |
+| `size` | `null` | 弹幕字体大小，和`CSS`中的`font-size`一致，为`null`则程序**自行计算** |
+| `scale` | `1` | 弹幕基于`size`的缩放倍数 (比如`0.5`, `2`) ，仅在`size`为`null`时有效 |
+| `opacity` | `100` | 弹幕透明度 (百分数) |
+| `weight` | `normal` | 弹幕字体粗细，和`CSS`中的`font-weight`一致 |
+| `bottom_space` | `2` | 弹幕纵向上的间距，单位是`px` |
+| `outline` | `true` | 是否给弹幕描黑边 |
+| `reverse` | `false` | 弹幕是否**逆向滚动**，仅对**滚动类**弹幕有效 |
+| `type` | `'scroll'` | 弹幕类型，详见[这里](#弹幕类型) |
+| `life` | `5000` | 弹幕生命时间，单位是`ms` |
+| `pointer_events` | `true` | 弹幕是否**接受鼠标事件** |
+| `custom_css` | `{}` | 自定义弹幕CSS样式 |
+
+设置属性的方法详见[下方](#ndanmaku对象)~
+
+### 弹幕类型
+
+Demo中有相应的[示例](https://ndanmaku.xbottle.top/#%E6%94%B9%E5%8F%98%E5%BC%B9%E5%B9%95%E7%B1%BB%E5%9E%8B)。
+
+> 注：对于**滚动弹幕**来说，滚动方向的正方向是**自右向左**。
+
+| 弹幕类型 | 说明 |
+|:---:|:---:|
+| `scroll` | 普通滚动弹幕 |
+| `midscroll` | 在中间滚动的弹幕 |
+| `random` | 随机高度的滚动弹幕 |
+| `top` | 顶部悬停弹幕 |
+| `bottom` | 底部悬停弹幕 |
+| `midhang` | 在中间悬停的弹幕 |
+
+## 对象的方法和属性
+
+以下内容结合[Demo](#demo)食用更佳哦~(๑´ڡ`๑) 
+
+### `NDanmaku`对象
+
+* 方法
+
+    | 文档 | 涵盖的方法 |
+    |:---:|:---:|
+    |[构造方法](docs/constructor.md)|`constructor()`|
+    |[弹幕创建方法](docs/create.md)|`create()`|
+    |[弹幕属性设置方法](docs/attributes.md)|`attrs()`, `resetAttrs()`|
+    |[弹幕生成范围设置方法](docs/ranges.md)|`ranges()`, `resetRanges()`|
+    |[弹幕运行状态控制方法](docs/danmakuState.md)|`pause()`, `resume()`|
+    |[弹幕清除相关方法](docs/clear.md)|`clear()`, `clearSome()`, `clearStyled()`|
   
-  ```javascript   
-   $N.x('p');   
-   $N.p('color','#F7FE2E');
-   $N.p('bold',700); 
-   $N.p('md','normal');
-   $N.p('opacity',60);
-   $N.p('time',10);
-   $N.c('是谁住在深海的大菠萝里？！');
-  ```   
-  效果：  
-  ![](https://ww2.sinaimg.cn/large/ed039e1fgy1fy7phwl73ij20a601adg8)  
-  
-  一条缓慢滚动着的浅黄色加粗弹幕。  
+* 属性
+
+    * `danmaku.state`
+
+        一串**字符串**，代表容器**全部**弹幕的**运行状态**：
+
+        * `'paused'` - 暂停状态 
+        * `'running'` - 运行状态
+
+    * `danmaku.statistics`
+
+        一个**对象**，是容器弹幕的**统计信息**。这里说明一下几个字段：
+        
+        | 属性 | 说明 |
+        | :---:|:---:|
+        | 有`total`字样 | 某种弹幕的总数 |
+        | 有`garbages`字样 | 某种弹幕的垃圾总数 |
+        | 有`reversed`字样 | 某类滚动弹幕之中的**逆向弹幕**的总数 |
+        | `global_state` | 全局弹幕状态（同`danmaku.state`）|
+
+        > `garbages` 垃圾数仅作参考。
+        > 弹幕元素在被删除后，程序中仍然会存留一些弹幕相关的对象，这些残留对象便被称为“垃圾”。
+        > 每次创建弹幕的时候都会触发垃圾回收器，无需担心。
+        
+        示例返回数据如下：
+
+        <details>
+        <summary>点我展开示例</summary>
+
+        ```javascript
+        {
+            'total': 0, // 所有弹幕的总数
+            'garbages': 0, // 所有弹幕垃圾的总数
+            'global_state': 'running', // 全局弹幕状态（同danmaku.state）
+            // 滚动类弹幕
+            'scrolling': {
+                'total': 0, // 总滚动弹幕数
+                'reversed': 0, // 反向滚动弹幕数
+                'garbages': 0, // 滚动弹幕垃圾数
+                'scroll': {
+                    'total': 0, // 滚动弹幕数
+                    'reversed': 0, // 反向滚动弹幕数
+                    'garbages': 0 // 反向滚动弹幕垃圾数
+                },
+                'random': {
+                    'total': 0, // 随机弹幕总数
+                    'reversed': 0, // 反向滚动随机弹幕数
+                    'garbages': 0 // 反向滚动随机弹幕垃圾数
+                },
+                'midscroll': {
+                    'total': 0, // 中部滚动弹幕总数
+                    'reversed': 0, // 反向滚动中部滚动弹幕数
+                    'garbages': 0 // 反向滚动中部滚动弹幕垃圾数
+                }
+            },
+            'hanging': {
+                'total': 0, // 总悬停弹幕数
+                'garbages': 0, // 悬停弹幕垃圾数
+                'top': {
+                    'total': 0, // 顶部悬停弹幕数
+                    'garbages': 0 // 顶部悬停弹幕垃圾数
+                },
+                'bottom': {
+                    'total': 0, // 底部悬停弹幕数
+                    'garbages': 0 // 底部悬停弹幕垃圾数
+                },
+                'midhang': {
+                    'total': 0, // 中部悬停弹幕数
+                    'garbages': 0 // 中部悬停弹幕垃圾数
+                }
+            }
+        };
+        ```
+
+        </details>
 
 
+### `List`对象
 
+每个`NDanmaku`的对象中都自带一个`List`对象，包含着**弹幕-时刻列表**的相关操作：
 
+```javascript
+danmaku.list
+```
+
+`List`对象的方法详见[这个文档](docs/list.md)。
+
+-----
+
+## FAQ
+
+### 弹幕容器`container`中可以有其他DOM元素吗？
+
+是可以有的，在**创建对象**的时候虽然传入了`container`对应的元素对象，但实际上程序会在这个元素中**创建**一个`<div>`元素作为弹幕层，所有弹幕都是**在这个弹幕层**内被创建的，因此并不会影响`container`中的其他元素。
+
+值得注意的是，`container`对应的元素的定位属性会变更为`relative`(相对定位)。
+
+------
+
+### 如果`container`元素中有其他定位为`absolute`的元素遮挡了弹幕，怎么办？
+
+你可以在**创建对象**的时候传入`zIndex`参数，调整**弹幕层**在`container`元素内的层级，以避免这种情况。  
+
+详见[构造方法的文档](docs/constructor.md#zindex)。  
+
+------
+
+### 每条弹幕对应的DOM元素都有独一无二的`id`属性吗?  
+
+有的！只不过需要在构造对象的时候**指定一下`prefix`参数**，详见[构造方法的文档](docs/constructor.md#prefix)。
+
+------
+
+### 如何获得弹幕自身的唯一`id`?  
+
+弹幕自身的唯一`id`（不是弹幕DOM元素的id属性）目前只能通过**对象构造方法**的`created`回调函数来获得。  
+
+详见[弹幕创建的文档](docs/create.md#created)。
+
+------
+
+## 感谢
+
+* [@板砖猫](https://github.com/BanZhuan-CAT) - 提出了“中间”弹幕的想法

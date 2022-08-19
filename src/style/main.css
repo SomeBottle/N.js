@@ -1,0 +1,75 @@
+/* 正向滚动动画*/
+@keyframes Ndm-forward {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: 0;
+        transform: translateX(-100%);
+    }
+}
+
+/* 逆向滚动动画*/
+@keyframes Ndm-reversed {
+    from {
+        right: 100%;
+    }
+
+    to {
+        right: 0;
+        transform: translateX(100%);
+    }
+}
+
+/* 弹幕描边效果*/
+.N-outline {
+    text-shadow: #000 0.5px 0 0, #000 0 0.5px 0, #000 -0.5px 0 0, #000 0 -0.5px 0;
+}
+
+/* 一条滚动弹幕的样式*/
+.N-scroll {
+    position: absolute;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    /* 弹幕仍然能成为鼠标事件的目标*/
+}
+
+/* 一条中间悬停弹幕的样式*/
+.N-hanging {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    /* 弹幕仍然能成为鼠标事件的目标*/
+}
+
+/* 正向滚动动画，和N-scroll联用*/
+.N-scroll-forward {
+    animation-name: Ndm-forward;
+}
+
+/* 逆向滚动动画，和N-scroll联用*/
+.N-scroll-reversed {
+    animation-name: Ndm-reversed;
+}
+
+/* 滚动弹幕动画播放的样式*/
+.N-scroll-playing {
+    animation-play-state: running;
+}
+
+/* 滚动弹幕动画暂停的样式，这个样式既可以附在弹幕层div上，亦可以附在每条弹幕div上*/
+.N-scroll-paused,
+.N-scroll-paused>.N-scroll {
+    animation-play-state: paused;
+}
+
+/* 弹幕浮层样式*/
+.N-dmLayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+    /* 穿透点击事件*/
+}

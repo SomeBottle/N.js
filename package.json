@@ -1,0 +1,47 @@
+{
+  "name": "n-danmaku",
+  "version": "2.0.0",
+  "description": "SomeBottle's danmaku package",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-cli serve --config webpack/webpack.dev.js",
+    "build": "webpack-cli --config webpack/webpack.pro.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SomeBottle/N.js.git"
+  },
+  "keywords": [
+    "danmaku",
+    "component"
+  ],
+  "author": "SomeBottle",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/SomeBottle/N.js/issues"
+  },
+  "homepage": "https://github.com/SomeBottle/N.js#readme",
+  "files": [
+    "README.md",
+    "LICENSE",
+    "dist/*",
+    "src/*",
+    "webpack/*",
+    "docs/*"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^10.4.8",
+    "css-loader": "^6.7.1",
+    "cssnano": "^5.1.13",
+    "postcss-loader": "^7.0.1",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.3"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 3 versions",
+    "not ie <= 10"
+  ]
+}
