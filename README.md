@@ -160,7 +160,79 @@ Demo中有相应的[示例](https://ndanmaku.xbottle.top/#%E6%94%B9%E5%8F%98%E5%
   
 * 属性
 
+    * `danmaku.state`
+
+        一串**字符串**，代表容器**全部**弹幕的**运行状态**：
+
+        * `'paused'` - 暂停状态 
+        * `'running'` - 运行状态
+
     * `danmaku.statistics`
+
+        一个**对象**，是容器弹幕的**统计信息**。这里说明一下几个字段：
+        
+        | 属性 | 说明 |
+        | :---:|:---:|
+        | 有`total`字样 | 某种弹幕的总数 |
+        | 有`garbages`字样 | 某种弹幕的垃圾总数 |
+        | 有`reversed`字样 | 某类滚动弹幕之中的**逆向弹幕**的总数 |
+        | `global_state` | 全局弹幕状态（同`danmaku.state`）|
+
+        > `garbages` 垃圾数仅作参考。
+        > 弹幕元素在被删除后，程序中仍然会存留一些弹幕相关的对象，这些残留对象便被称为“垃圾”。
+        > 每次创建弹幕的时候都会触发垃圾回收器，无需担心。
+        
+        示例返回数据如下：
+
+        <details>
+        <summary>点我展开示例</summary>
+
+        ```javascript
+        {
+            'total': 0, // 所有弹幕的总数
+            'garbages': 0, // 所有弹幕垃圾的总数
+            'global_state': 'running', // 全局弹幕状态（同danmaku.state）
+            // 滚动类弹幕
+            'scrolling': {
+                'total': 0, // 总滚动弹幕数
+                'reversed': 0, // 反向滚动弹幕数
+                'garbages': 0, // 滚动弹幕垃圾数
+                'scroll': {
+                    'total': 0, // 滚动弹幕数
+                    'reversed': 0, // 反向滚动弹幕数
+                    'garbages': 0 // 反向滚动弹幕垃圾数
+                },
+                'random': {
+                    'total': 0, // 随机弹幕总数
+                    'reversed': 0, // 反向滚动随机弹幕数
+                    'garbages': 0 // 反向滚动随机弹幕垃圾数
+                },
+                'midscroll': {
+                    'total': 0, // 中部滚动弹幕总数
+                    'reversed': 0, // 反向滚动中部滚动弹幕数
+                    'garbages': 0 // 反向滚动中部滚动弹幕垃圾数
+                }
+            },
+            'hanging': {
+                'total': 0, // 总悬停弹幕数
+                'garbages': 0, // 悬停弹幕垃圾数
+                'top': {
+                    'total': 0, // 顶部悬停弹幕数
+                    'garbages': 0 // 顶部悬停弹幕垃圾数
+                },
+                'bottom': {
+                    'total': 0, // 底部悬停弹幕数
+                    'garbages': 0 // 底部悬停弹幕垃圾数
+                },
+                'midhang': {
+                    'total': 0, // 中部悬停弹幕数
+                    'garbages': 0 // 中部悬停弹幕垃圾数
+                }
+            }
+        };
+        ```
+
+        </details>
 
 
 ### `List`对象
