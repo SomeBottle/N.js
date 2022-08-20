@@ -538,6 +538,14 @@ demo_ins.list.uncertainty(500);
 
 <a href='javascript:void(0);' onclick="trigger_demo_7(2)">点我</a>尝试一下吧！
 
+### 实战
+
+通过监听`timeupdate`事件，将**弹幕-时刻列表**和媒体结合起来：
+
+<a href="./summer-time.html" target="_blank">![summertime-preview-2022-08-20](https://images.weserv.nl/?url=https://raw.githubusercontent.com/cat-note/bottleassets/main/img/summertime-preview-2022-08-20.jpeg)</a>  
+
+↑ 点我点我
+
 ## 到底啦
 
 至此这个简单的演示文档就结束了。这里咱只粗略地演示了一下相关功能，详细介绍一定要多看**README/文档**哦！

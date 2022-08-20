@@ -10,13 +10,26 @@
     <div class="loadingDiv" id="loadingDiv">
         <p id="loadingText">弹幕装填中...</p>
     </div>
-    <div class="player">
-        <video id="mainVideo" controls="controls">
-            <source
-                src="https://bos.nj.bpc.baidu.com/tieba-movideo/58391171_589edb01ebc5b3e45ecf7abe052b7540_4f1a112a273f.mp4"
-                type="video/mp4">
-            </source> Your browser does not support the video element.
-        </video>
+    <div class="view">
+        <div class="player">
+            <video id="mainVideo" controls="controls">
+                <source
+                    src="https://bos.nj.bpc.baidu.com/tieba-movideo/58391171_589edb01ebc5b3e45ecf7abe052b7540_4f1a112a273f.mp4"
+                    type="video/mp4">
+                </source> Your browser does not support the video element.
+            </video>
+        </div>
+        <div class="info">
+            <span style="display:block"><input type="button" value="全屏展示" onclick="reqFullScreen()"></input></span>
+            <h2>来源</h2>
+            <p>视频：<a href="https://bgm.tv/subject/326895" target="_blank">夏日重现</a> NCOP2</p>
+            <p>弹幕来自：<a href="https://www.bilibili.com/video/BV17V4y1n7v5" target="_blank">夏日重现 OP2&ED2【MCE汉化组】</a> - P1
+            </p>
+            <h2>参考文献</h2>
+            <p>[1] <a href="https://www.bilibili.com/read/cv6189156" target="_blank">【备忘笔记】弹幕文件xml格式分析</a></p>
+            <p>[2] <a href="https://blog.csdn.net/lyshark_lyshark/article/details/125848570" target="_blank">b站
+                    实时弹幕和历史弹幕 Protobuf 格式解析</a></p>
+        </div>
     </div>
     <!--引入N.js-->
     <script src="./N.min.js"></script>
@@ -24,8 +37,10 @@
         const loadingText = document.getElementById('loadingText');
         const loadingDiv = document.getElementById('loadingDiv');
         const mainVideo = document.getElementById('mainVideo');
-        const danmaku = new NDanmaku(document.querySelector('.player')); // 创建NDanmaku对象
+        const container = document.querySelector('.player');
+        const danmaku = new NDanmaku(container); // 创建NDanmaku对象
         var timeHandling = true; // 标记正在处理timeupdate事件
+        var fullScreen = false; // 标记是否全屏
         danmaku.list.new('summer-time'); // 创建新列表
         danmaku.list.use('summer-time'); // 切换到列表
         danmaku.list.uncertainty(400);
@@ -41,6 +56,21 @@
                 //console.log(currentTime - previous);
                 previous = currentTime;
                 danmaku.list.tick(currentTime);
+            }
+        }
+        // 请求全屏
+        function reqFullScreen() {
+            let funcList = [ // 全屏方法列表
+                container.requestFullscreen,
+                container.mozRequestFullScreen,
+                container.webkitRequestFullScreen,
+                container.msRequestFullscreen
+            ];
+            for (let i = 0, len = funcList.length; i < len; i++) {
+                if (typeof funcList[i] === 'function') {
+                    funcList[i].call(container);
+                    break;
+                }
             }
         }
         fetch('./assets/summer-time-danmaku.json')
