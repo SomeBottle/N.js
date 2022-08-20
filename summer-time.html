@@ -7,13 +7,74 @@
 </head>
 
 <body>
-    <div class="player">
-        <video id="mainVideo" controls="controls"> 
-        <source src="https://bos.nj.bpc.baidu.com/tieba-movideo/58391171_589edb01ebc5b3e45ecf7abe052b7540_4f1a112a273f.mp4" type="video/mp4"></source> Your browser does not support the video element. 
-    </video>
+    <div class="loadingDiv" id="loadingDiv">
+        <p id="loadingText">弹幕装填中...</p>
     </div>
+    <div class="player">
+        <video id="mainVideo" controls="controls">
+            <source
+                src="https://bos.nj.bpc.baidu.com/tieba-movideo/58391171_589edb01ebc5b3e45ecf7abe052b7540_4f1a112a273f.mp4"
+                type="video/mp4">
+            </source> Your browser does not support the video element.
+        </video>
+    </div>
+    <!--引入N.js-->
+    <script src="./N.min.js"></script>
     <script>
-        
+        const loadingText = document.getElementById('loadingText');
+        const loadingDiv = document.getElementById('loadingDiv');
+        const mainVideo = document.getElementById('mainVideo');
+        const danmaku = new NDanmaku(document.querySelector('.player')); // 创建NDanmaku对象
+        var timeHandling = true; // 标记正在处理timeupdate事件
+        danmaku.list.new('summer-time'); // 创建新列表
+        danmaku.list.use('summer-time'); // 切换到列表
+        danmaku.list.uncertainty(400);
+        // 停止loadingText闪烁
+        function stopFlashing() {
+            loadingText.style.animation = 'none';
+        }
+        var previous = 0;
+        // timeupdate事件处理
+        function timeUpdate(e) {
+            if (timeHandling) {
+                let currentTime = Math.round(e.target.currentTime * 1000);
+                //console.log(currentTime - previous);
+                previous = currentTime;
+                danmaku.list.tick(currentTime);
+            }
+        }
+        fetch('./assets/summer-time-danmaku.json')
+            .then(res => res.json())
+            .then(list => {
+                let success = danmaku.list.load(list); // 加载弹幕
+                if (success) {
+                    stopFlashing();
+                    loadingText.innerText = '弹幕载入完成(๑•̀ㅂ•́)و✧';
+                    loadingDiv.style.opacity = 0;
+                    setTimeout(() => {
+                        loadingDiv.style.display = 'none';
+                    }, 1000);
+                    mainVideo.addEventListener('timeupdate', timeUpdate);
+                    mainVideo.addEventListener('pause', () => {
+                        danmaku.pause(); // 暂停弹幕
+                    });
+                    mainVideo.addEventListener('play', () => {
+                        danmaku.resume(); // 恢复弹幕
+                    });
+                    mainVideo.addEventListener('seeking', () => {
+                        timeHandling = false; // 拖动进度条的时候不处理timeupdate事件
+                    });
+                    mainVideo.addEventListener('seeked', () => {
+                        danmaku.clear();
+                        timeHandling = true; // 进度条拖动结束再处理timeupdate事件
+                    })
+                } else {
+                    return Promise.reject('Failed to load danmaku');
+                }
+            }).catch(e => {
+                stopFlashing();
+                loadingText.innerText = '载入弹幕失败 :(';
+            })
     </script>
 </body>
 
