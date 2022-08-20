@@ -2,7 +2,7 @@
   "name": "n-danmaku",
   "version": "2.0.0",
   "description": "SomeBottle's danmaku package",
-  "main": "index.js",
+  "main": "dist/N.min.js",
   "scripts": {
     "dev": "webpack-cli serve --config webpack/webpack.dev.js",
     "build": "webpack-cli --config webpack/webpack.pro.js"
@@ -24,10 +24,7 @@
   "files": [
     "README.md",
     "LICENSE",
-    "dist/*",
-    "src/*",
-    "webpack/*",
-    "docs/*"
+    "dist/*"
   ],
   "devDependencies": {
     "autoprefixer": "^10.4.8",

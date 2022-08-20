@@ -17,6 +17,8 @@ List对象的方法调用暂**不支持**链式语法。
 - [根据时刻从当前列表中创建弹幕](#根据时刻从当前列表中创建弹幕) `tick()`  
 - [调整当前列表的时刻不确定度](#调整当前列表的时刻不确定度) `uncertainty()`
     - [图解](#图解)  
+    - [顾虑](#顾虑)
+    - [建议](#建议)
 - [往当前列表中载入一批弹幕](#往当前列表中载入一批弹幕) `load()`
     - [danmakuArr](#danmakuarr)  
     - [使用技巧：载入弹幕js文件](#使用技巧载入弹幕js文件)  
@@ -196,7 +198,38 @@ danmaku.list.tick(200);
 
 这个时候搜索的是**一段时间范围内**（ `200 ± 45 ms` ）的弹幕，图中的**弹幕2**、**弹幕3**会被创建：
 
-![danmakuTickUncertainty2-2022-08-19](https://images.weserv.nl/?url=https://raw.githubusercontent.com/cat-note/bottleassets/main/img/danmakuTickUncertainty2-2022-08-19.png)
+![danmakuTickUncertainty2-2022-08-19](https://images.weserv.nl/?url=https://raw.githubusercontent.com/cat-note/bottleassets/main/img/danmakuTickUncertainty2-2022-08-19.png)  
+
+-------
+
+### 顾虑
+
+骚年，你是否在顾虑这种情况？  
+
+![searchRangeOverlap1-2022-08-20](https://images.weserv.nl/?url=https://raw.githubusercontent.com/cat-note/bottleassets/main/img/searchRangeOverlap1-2022-08-20.png)  
+
+我超，两次`tick`过近了，但`uncertainty`指定的弹幕搜索范围比较大，两次的搜索范围发送了**重叠**！这怎么整？  
+
+哈哈，实际上咱考虑到了这点，发生重叠情况的时候会**自动调整搜索范围**，所以不用担心的啦~  
+
+![searchRangeOverlap2-2022-08-20](https://images.weserv.nl/?url=https://raw.githubusercontent.com/cat-note/bottleassets/main/img/searchRangeOverlap2-2022-08-20.png)
+
+### 建议
+
+在网页媒体中使用弹幕列表时，你可能会用到`timeupdate`事件：
+
+```javascript
+video.addEventListener('timeupdate', function(e) {
+    let currentMilli = Math.round(e.target.currentTime * 1000);
+    danmaku.list.tick(currentMilli);
+});
+```
+
+按照[MDN文档](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/timeupdate_event)的说明，基本上能保证该事件每秒被触发`4-66`次，大概每两次事件触发之间是`15ms-250ms`的时间间隔。  
+
+因此咱建议在这里设置时刻不确定度为`300ms-500ms`，这样能最大程度上保证弹幕的创建。  
+
+如果`timeupdate`实在不确定性太大了，你其实可以使用`setInterval()`来**定时**`tick()`，只不过需要手动处理**暂停/播放**相关的事件。
 
 -----
 

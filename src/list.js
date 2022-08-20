@@ -15,6 +15,8 @@ class List {
         this.lists = {};
         // 当前操纵的列表
         this.usingList = null;
+        // 记录上一次调用tick时的搜寻范围，用于tick防撞
+        this.lastTickRange = [0, 0];
     }
     /**
      * 设置正在操纵(use)的列表的时刻不确定度(ms)
@@ -77,6 +79,44 @@ class List {
             timeLine = list.timeLine, // 时间线
             uncertainty = list.uncertainty; // 时刻不确定度(ms)
         if (list) {
+            // 等下搜索完后还要考虑偏差
+            let leftDest = time - uncertainty, // 左边的新时间边界
+                rightDest = time + uncertainty, // 右边的新时间边界
+                rightStart = time, // 右边的起点
+                leftLap = this.lastTickRange[1] - leftDest, // 左边与上次搜索范围的交叠部分
+                rightLap = this.lastTickRange[1] - rightDest; // 右边与上次搜索范围的交叠部分
+            /* 接下来这一部分是防弹幕重复创建的处理
+                (上一次搜寻的右边界-这次搜索的左边界>=0)，说明有重复部分
+                然而这还不够，要保证(上一次搜寻的右边界-这次搜索的右边界<0)，这样这次搜索的部分才不是被上次搜索范围所包含了
+                不满足上述条件的话，不会作弹幕防撞处理。
+                不作处理的原因通常是：
+                    1. 半途修改uncertainty（我想没人会这样做吧，你是来找茬的吧！）
+                    2. 这次搜索弹幕的范围整个都在上次搜索的后面，无交叠部分
+                    3. 往回拖动进度条，这次搜索弹幕的范围在上次搜索的前面，无交叠部分
+                    4. 往回拖动进度条，这次搜索弹幕的范围相对上次搜索范围较前，有交叠部分
+             */
+            if (leftLap >= 0 && rightLap < 0) {
+                let addition = leftLap + 1; // 从左边界开始要加上多长时间以修正范围
+                /* 值得注意的是这里的搜寻规则：
+                    首先，弹幕时间线的元素是按时刻升序排列的，当二分查找结束后，
+                    索引end和start是一左一右，接下来继续左移end、右移start，
+                    根据索引分别寻找time到leftDest、time+1到rightDest的范围内的弹幕
+                    (
+                        如果二分查找在time处找到了弹幕，那么就相当于寻找：
+                            time-1到leftDest、time+1到rightDest的范围内的弹幕
+                    )
+                   那么问题就来了，当leftDest+addition后，很有可能addition>uncertainty，这种情况下实际上是越过了中间的time时刻进入了右半边，必须还要额外处理
+                   - SomeBottle
+                 */
+                if (addition > uncertainty) {
+                    // 增加的部分超过了uncertainty，先切出多余部分
+                    let redundance = addition - uncertainty;
+                    rightStart += redundance; // 把多余的部分加到右边起点上
+                    leftDest = rightStart; // 左边边界移到rightStart处，不搜寻左边内容
+                } else {
+                    leftDest += addition; // 左边边界右移至没有交叠
+                }
+            }
             // 利用二分查找找出这个时刻需要创建的弹幕
             let start = 0,
                 end = timeLine.length - 1,
@@ -86,8 +126,14 @@ class List {
                     currentTime = timeLine[mid][0], // 获得当前搜寻项的时刻
                     currentSerial = timeLine[mid][1]; // 获得当前搜寻项的弹幕代号
                 if (currentTime == time) {
-                    // 如果能相等，那当然最好了！
-                    meet.push(currentSerial); // 记录此弹幕代号
+                    /* 我滴个老天，这是一个非常极端的情况！
+                       当上面处理交叠后，可能左边界会被设置为rightStart，
+                       此时会导致leftDest>time，意思就是说，因为uncertainty的设置，
+                       上一次tick已经创建了time处的弹幕，这回就需要忽略掉。
+                       - SomeBottle
+                     */
+                    if (leftDest <= time) // 前提：time处的弹幕还未被创建过
+                        meet.push(currentSerial); // 记录此弹幕代号
                     // 为了后续偏差处理，找到后让start和end于mid交叉一下
                     start = mid + 1;
                     end = mid - 1;
@@ -98,13 +144,14 @@ class List {
                     end = mid - 1;
                 }
             }
-            // 搜索完后还要考虑偏差
-            let leftDest = time - uncertainty, // 左边的新边界
-                rightDest = time + uncertainty; // 右边的新边界
+
             // 继续右移start指针，把时刻不确定范围内的弹幕都找出来
             for (let len = timeLine.length;
                 start < len && timeLine[start][0] <= rightDest;
                 start++) {
+                // 要等时间>=右边起点后再作处理
+                if (timeLine[start][0] < rightStart)
+                    continue;
                 meet.push(timeLine[start][1]);
             }
             // 继续左移end指针，把时刻不确定范围内的弹幕都找出来
@@ -112,6 +159,8 @@ class List {
                 // 这里用unshift是为了确保弹幕载入的顺序
                 meet.unshift(timeLine[end][1]);
             }
+            // 记入搜索范围
+            this.lastTickRange = [leftDest, rightDest];
             // 创建弹幕
             let danmakuLine = list.danmakuLine;
             for (let i = 0, len = meet.length; i < len; i++) {
@@ -165,6 +214,8 @@ class List {
             }
             // 生成列表中的弹幕代号
             let serial = `ld${list['dmSerial']}`;
+            // 保证time是整数
+            time = Math.round(time);
             // danmakuLine中储存弹幕信息，通过弹幕代号访问
             list.danmakuLine[serial] = dmData;
             // 要保证timeLine的有序性，以便使用二分查找，这里升序插入

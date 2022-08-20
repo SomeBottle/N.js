@@ -61,6 +61,14 @@ export default class Danmaku {
         return report;
     }
     /**
+     * 重置统计信息
+     * @param {String} type 重置的统计信息类型 
+     */
+    resetStatistics(type = '') {
+        this.monitor.resetStatistics(type);
+        return this;
+    }
+    /**
      * 重置容器发送弹幕的样式
      * @note 恢复成configs.js的配置
      */

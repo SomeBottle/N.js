@@ -92,6 +92,20 @@ function rand(from, to) {
 }
 
 /**
+ * 将对象中所有值置0
+ * @param {Object} obj 待处理对象
+ */
+function zeroObject(obj) {
+    for (let i in obj) {
+        if (typeof obj[i] === 'object' && !(obj[i] instanceof Array)) {
+            zeroObject(obj[i]); // 递归处理
+        } else {
+            obj[i] = 0;
+        }
+    }
+}
+
+/**
  * 将对象转换为字符串（支持函数）
  * @param {Object} obj 待处理对象
  * @param {Number} indent 缩进空格数
@@ -246,5 +260,6 @@ export {
     PTimer,
     matchProperties,
     objectString,
-    dispatchDownload
+    dispatchDownload,
+    zeroObject
 };

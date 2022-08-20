@@ -1,7 +1,7 @@
 // 弹幕运动监视模块
 'use strict';
 
-import { cssEndEvents, output, PTimer, matchProperties } from "./utils.js";
+import { cssEndEvents, output, PTimer, matchProperties, zeroObject } from "./utils.js";
 
 // 暂停滚动弹幕的class
 const scrollPauseClass = 'N-scroll-paused';
@@ -127,6 +127,45 @@ class Monitor {
         this.hanging = [];
         // 正在监视的滚动弹幕
         this.scrolling = [];
+        // 创建数量统计报告
+        this.createdReport = {
+            'total': 0, // 目前为止总创建弹幕数量
+            'scrolling': {
+                'total': 0, // 目前为止创建的总滚动弹幕数量
+                'scroll': {
+                    'total': 0, // 目前为止创建的总滚动弹幕数
+                },
+                'random': {
+                    'total': 0, // 目前为止创建的总随机弹幕总数
+                },
+                'midscroll': {
+                    'total': 0, // 目前为止创建的总中部滚动弹幕总数
+                }
+            },
+            'hanging': {
+                'total': 0, // 目前为止创建的总悬停弹幕数量
+                'top': {
+                    'total': 0 // 目前为止创建的总顶部悬停弹幕数
+                },
+                'bottom': {
+                    'total': 0 // 目前为止创建的总底部悬停弹幕数
+                },
+                'midhang': {
+                    'total': 0 // 目前为止创建的总中部悬停弹幕数
+                }
+            }
+        };
+    }
+    /**
+     * 重置统计信息（目前仅限created）
+     * @param {String} type 重置的类型
+     */
+    resetStatistics(type = '') {
+        switch (type) {
+            case 'created':
+                zeroObject(this.createdReport);
+                break;
+        }
     }
     /**
      * 获得当前的弹幕情况
@@ -198,7 +237,10 @@ class Monitor {
                 report[category][type]['garbages']++;
             }
         }
-        return report;
+        return {
+            'current': report,
+            'created': this.createdReport
+        };
     }
     /**
      * 垃圾回收，清除掉hanging/scrolling中已经完成的弹幕
@@ -243,7 +285,8 @@ class Monitor {
      * @returns {Number} 弹幕唯一id
      */
     newScroll(element, type, reversed, callback = null) {
-        let endEvent = '';
+        let endEvent = '',
+            createdReport = this.createdReport;
         // 寻找对应的动画结束事件
         for (let cssKey in cssEndEvents) {
             if (cssKey in element.style) {
@@ -289,6 +332,9 @@ class Monitor {
         }, this.allDanmaku);
         scrollingList.push(newData); // 将弹幕添加到滚动监视列表
         this.dmSerial++;
+        createdReport['total']++;
+        createdReport['scrolling']['total']++;
+        createdReport['scrolling'][type]['total']++;
         return serial; // 返回弹幕唯一id
     }
     /**
@@ -308,7 +354,8 @@ class Monitor {
                 // 回调
                 if (callback) callback(serial);
             }, life),
-            hangingList = this.hanging;
+            hangingList = this.hanging,
+            createdReport = this.createdReport;
         // （垃圾处理）检查悬停列表，清除已经完成的计时器
         this.garbageCollect('hanging');
         let newData = new DanmakuData(serial, element, {
@@ -318,6 +365,9 @@ class Monitor {
         // 将计时器添加到悬停监视列表
         hangingList.push(newData);
         this.dmSerial++;
+        createdReport['total']++;
+        createdReport['hanging']['total']++;
+        createdReport['hanging'][type]['total']++;
         return serial;
     }
     /**
