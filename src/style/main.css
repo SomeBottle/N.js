@@ -29,16 +29,14 @@
 
 /* 一条滚动弹幕的样式*/
 .N-scroll {
-    position: absolute;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
     z-index: 1;
     /* 弹幕仍然能成为鼠标事件的目标*/
 }
 
-/* 一条中间悬停弹幕的样式*/
+/* 一条悬停弹幕的样式*/
 .N-hanging {
-    position: absolute;
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;

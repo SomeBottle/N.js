@@ -24,12 +24,6 @@ class DanmakuData {
         // 将data中的属性展开到本实例上
         for (let key in data)
             this[key] = data[key];
-        // 标记弹幕分类为悬停/滚动
-        if (this.timer) {
-            this.category = 'hanging';
-        } else {
-            this.category = 'scrolling';
-        }
         // 自行加入总弹幕列表
         allDanmaku[id] = this;
     }
@@ -42,6 +36,7 @@ class DanmakuData {
         let target = this.element;
         switch (this.category) {
             case 'hanging':
+            case 'freeing':
                 // 先暂停计时器
                 this.timer.pause();
                 // 后移除元素
@@ -69,6 +64,7 @@ class DanmakuData {
         let target = this.element;
         switch (this.category) {
             case 'hanging':
+            case 'freeing':
                 // 暂停计时器
                 this.timer.pause();
                 return true;
@@ -90,6 +86,7 @@ class DanmakuData {
         let target = this.element;
         switch (this.category) {
             case 'hanging':
+            case 'freeing':
                 // 暂停计时器
                 this.timer.resume();
                 return true;
@@ -107,7 +104,7 @@ class DanmakuData {
      * 一个Boolean值，true/false代表该弹幕是/否运行完毕
      */
     get finished() {
-        if (this.category === 'hanging') { // 悬停弹幕检查计时器是否运行完成
+        if (['hanging', 'freeing'].includes(this.category)) { // 悬停弹幕检查计时器是否运行完成
             if (this.timer.state === 'done')
                 return true;
         } else if (this.element.offsetWidth <= 0 || this.element.parentNode == null) { // 滚动弹幕检查元素是否已经被移除
@@ -127,6 +124,8 @@ class Monitor {
         this.hanging = [];
         // 正在监视的滚动弹幕
         this.scrolling = [];
+        // 正在监视的自由弹幕
+        this.freeing = [];
         // 创建数量统计报告
         this.createdReport = {
             'total': 0, // 目前为止总创建弹幕数量
@@ -153,6 +152,9 @@ class Monitor {
                 'midhang': {
                     'total': 0 // 目前为止创建的总中部悬停弹幕数
                 }
+            },
+            'freeing': {
+                'total': 0, // 目前为止创建的总自由弹幕数量
             }
         };
     }
@@ -176,6 +178,11 @@ class Monitor {
         let report = {
             'total': 0, // 弹幕总数
             'garbages': 0, // 弹幕垃圾总数
+            // 自由类弹幕
+            'freeing': {
+                'total': 0, // 自由类弹幕数
+                'garbages': 0 // 自由类弹幕垃圾数
+            },
             // 滚动类弹幕
             'scrolling': {
                 'total': 0, // 总滚动弹幕数
@@ -225,7 +232,8 @@ class Monitor {
             if (!dmObj.finished) {
                 report['total']++;
                 report[category]['total']++;
-                report[category][type]['total']++;
+                if (dmObj.type)
+                    report[category][type]['total']++;
                 if (dmObj.reversed) {
                     report['scrolling']['reversed']++;
                     report['scrolling'][type]['reversed']++;
@@ -234,7 +242,8 @@ class Monitor {
                 // 无效弹幕就是残留垃圾
                 report['garbages']++;
                 report[category]['garbages']++;
-                report[category][type]['garbages']++;
+                if (dmObj.type)
+                    report[category][type]['garbages']++;
             }
         }
         return {
@@ -243,38 +252,36 @@ class Monitor {
         };
     }
     /**
-     * 垃圾回收，清除掉hanging/scrolling中已经完成的弹幕
-     * @param {String} type 检查类型: 留空/scrolling/hanging
+     * 垃圾回收，清除掉hanging/scrolling/freeing中已经完成的弹幕
+     * @param {String} type 检查类型: 留空/scrolling/hanging/freeing
      */
     garbageCollect(type = '') {
-        let scrollingList = this.scrolling,
-            hangingList = this.hanging;
-        if (!type || type === 'scrolling') {
-            // （垃圾处理）检查滚动列表
-            for (let i = 0, len = scrollingList.length; i < len; i++) {
-                if (scrollingList[i].finished) { // 如果已经完成
+        let collector = (list) => {
+            // 垃圾处理者
+            for (let i = 0, len = list.length; i < len; i++) {
+                if (list[i].finished) { // 如果已经完成
                     // 元素自行销毁
-                    scrollingList[i].revoke();
-                    // 从滚动列表中移除
-                    scrollingList.splice(i, 1);
+                    list[i].revoke();
+                    // 从列表中移除
+                    list.splice(i, 1);
                     i--;
                     len--;
                 }
             }
+        };
+        if (!type || type === 'scrolling') {
+            // （垃圾处理）检查滚动列表
+            collector(this.scrolling);
         }
         if (!type || type === 'hanging') {
             // （垃圾处理）检查悬停列表
-            for (let i = 0, len = hangingList.length; i < len; i++) {
-                if (hangingList[i].finished) {
-                    // 元素自行销毁
-                    hangingList[i].revoke();
-                    // 从滚动列表中移除
-                    hangingList.splice(i, 1);
-                    i--;
-                    len--;
-                }
-            }
+            collector(this.hanging);
         }
+        if (!type || type === 'freeing') {
+            // （垃圾处理）检查自由列表
+            collector(this.freeing);
+        }
+        collector = undefined;
     }
     /**
      * 监视滚动弹幕
@@ -325,6 +332,7 @@ class Monitor {
         // （垃圾处理）检查滚动列表，清除已经完成的元素
         this.garbageCollect('scrolling');
         let newData = new DanmakuData(serial, element, {
+            category: 'scrolling', // 弹幕分类：滚动类
             type: type,
             reversed: reversed,
             endEvent: endEvent, // 记录滚动弹幕结束事件
@@ -359,6 +367,7 @@ class Monitor {
         // （垃圾处理）检查悬停列表，清除已经完成的计时器
         this.garbageCollect('hanging');
         let newData = new DanmakuData(serial, element, {
+            category: 'hanging', // 弹幕分类：悬停类
             timer: timer,
             type: type // 顺带记录一下类型
         }, this.allDanmaku);
@@ -368,6 +377,38 @@ class Monitor {
         createdReport['total']++;
         createdReport['hanging']['total']++;
         createdReport['hanging'][type]['total']++;
+        return serial;
+    }
+    /**
+     * 监视自由弹幕
+     * @param {Element} element 弹幕元素
+     * @param {Number} life 弹幕生命时长(ms) 
+     * @param {Function} callback 弹幕消失后的回调函数，可以不传入
+     * @returns {Number} 弹幕的唯一id
+     */
+    newFree(element, life, callback = null) {
+        // 添加倒计时器
+        let serial = this.dmSerial,
+            timer = new PTimer(() => {
+                // 移除元素
+                element.parentNode.removeChild(element);
+                // 回调
+                if (callback) callback(serial);
+            }, life),
+            freeingList = this.freeing,
+            createdReport = this.createdReport;
+        // 垃圾处理
+        this.garbageCollect('freeing');
+        let newData = new DanmakuData(serial, element, {
+            category: 'freeing', // 弹幕分类：自由类
+            timer: timer,
+            type: null // 自由类没有弹幕细分种类
+        }, this.allDanmaku);
+        // 将计时器添加到自由监视列表
+        freeingList.push(newData);
+        this.dmSerial++;
+        createdReport['total']++;
+        createdReport['freeing']['total']++;
         return serial;
     }
     /**
@@ -411,8 +452,6 @@ class Monitor {
             if (!type || type == 'all' ||
                 // 清除符合type的弹幕
                 dmItem['type'] == type) {
-                // 暂停计时器
-                dmItem['timer'].pause();
                 // 实例自行销毁
                 dmItem.revoke(true);
                 // 从悬停列表中移除
@@ -423,31 +462,40 @@ class Monitor {
         }
     }
     /**
+     * 清除容器内的自由弹幕
+     */
+    clearFreeing() {
+        let freeingList = this.freeing;
+        for (let i = 0, len = freeingList.length; i < len; i++) {
+            freeingList[i].revoke(true);
+            freeingList.splice(i, 1);
+            i--;
+            len--;
+        }
+    }
+    /**
      * 按照CSS样式清除弹幕
      * @param {Object} styles CSS样式组成的对象 
      */
     clearStyled(styles) {
         // 获得两种弹幕列表
-        let hangingList = this.hanging,
-            scrollingList = this.scrolling;
+        let cleaner = (list) => {
+            for (let i = 0, len = list.length; i < len; i++) {
+                if (matchProperties(list[i]['element'].style, styles)) {
+                    list[i].revoke(true);
+                    list.splice(i, 1);
+                    i--;
+                    len--;
+                }
+            }
+        };
         // 先检查悬停弹幕
-        for (let i = 0, len = hangingList.length; i < len; i++) {
-            if (matchProperties(hangingList[i]['element'].style, styles)) {
-                hangingList[i].revoke(true);
-                hangingList.splice(i, 1);
-                i--;
-                len--;
-            }
-        }
+        cleaner(this.hanging);
         // 再检查滚动弹幕
-        for (let i = 0, len = scrollingList.length; i < len; i++) {
-            if (matchProperties(scrollingList[i]['element'].style, styles)) {
-                scrollingList[i].revoke(true);
-                scrollingList.splice(i, 1);
-                i--;
-                len--;
-            }
-        }
+        cleaner(this.scrolling);
+        // 最后检查自由弹幕
+        cleaner(this.freeing);
+        cleaner = undefined;
     }
     /**
      * 按照id删除单个弹幕
@@ -502,20 +550,24 @@ class Monitor {
     }
     /**
      * 暂停容器内所有悬停弹幕的运行
+     * @param {String} type 暂停的类型：hanging/freeing
      */
-    pauseAllHanging() {
-        // 暂停悬停弹幕
-        for (let i = 0, len = this.hanging.length; i < len; i++) {
-            this.hanging[i].pause();
+    pauseAll(type = 'hanging') {
+        // 暂停弹幕
+        let list = this[type];
+        for (let i = 0, len = list.length; i < len; i++) {
+            list[i].pause();
         }
     }
     /**
      * 恢复容器内所有悬停弹幕的运行
+     * @param {String} type 恢复的类型：hanging/freeing
      */
-    resumeAllHanging() {
-        // 恢复悬停弹幕
-        for (let i = 0, len = this.hanging.length; i < len; i++) {
-            this.hanging[i].resume();
+    resumeAll(type = 'hanging') {
+        // 恢复弹幕
+        let list = this[type];
+        for (let i = 0, len = list.length; i < len; i++) {
+            list[i].resume();
         }
     }
 }

@@ -108,6 +108,8 @@ export default class Danmaku {
             dmText = document.createTextNode(text),
             // 先获得配置的弹幕文字大小
             textSize = dmAttrs['size'],
+            // 弹幕携带样式表
+            carrySheet = dmAttrs['carry_sheet'],
             // 弹幕生命时间
             life = dmAttrs['life'],
             // 是否为逆向弹幕
@@ -136,12 +138,17 @@ export default class Danmaku {
             'font-weight': dmAttrs['weight'], // 弹幕字体粗细
             'opacity': (dmAttrs['opacity'] * 0.01), // 弹幕透明度
             'word-break': 'keep-all', // 弹幕不换行
-            'white-space': 'pre', // 保留空格
-            'animation-duration': `${life}ms`, // 弹幕动画时间
-            '-webkit-animation-duration': `${life}ms`,
-            '-moz-animation-duration': `${life}ms`,
-            '-o-animation-duration': `${life}ms`
+            'white-space': 'pre' // 保留空格
         });
+        // 自由弹幕不添加动画相关样式
+        if (dmAttrs['type'] !== 'free') {
+            utils.styling(newDm, {
+                'animation-duration': `${life}ms`, // 弹幕动画时间
+                '-webkit-animation-duration': `${life}ms`,
+                '-moz-animation-duration': `${life}ms`,
+                '-o-animation-duration': `${life}ms`
+            });
+        }
         // 如果开了描边，添加样式组
         if (dmAttrs['outline']) {
             // 通过classList API添加描边样式组
@@ -173,6 +180,10 @@ export default class Danmaku {
                 // 添加到生命监视
                 dmSerial = this.monitor.newHang(newDm, dmAttrs['type'], dmAttrs['life'], callback);
                 break;
+            case 'free': // 自由弹幕（全靠用户自定义）
+                // 添加到生命监视
+                dmSerial = this.monitor.newFree(newDm, dmAttrs['life'], callback);
+                break;
             default:
                 // 未知弹幕类型
                 utils.output('Error: Unknown danmaku type.', 3);
@@ -182,11 +193,24 @@ export default class Danmaku {
         // 让碰撞模块来设定弹幕在容器中的位置
         this.hitBox.setDanmakuPos(newDm, dmAttrs);
         // 设置新弹幕的id（前提是设定了前缀）
+        let danmakuDomId = '';
         if (this.prefix) {
-            newDm.id = `N-danmaku-${this.prefix}-${dmSerial}`;
+            danmakuDomId = `N-danmaku-${this.prefix}-${dmSerial}`;
+            newDm.id = danmakuDomId;
+        }
+        // 如果弹幕有携带样式表
+        if (carrySheet) {
+            let styleElement = document.createElement('style');
+            // 替换掉[selfId]为弹幕DOM元素id，前提是容器设置了prefix，这样弹幕才有唯一id
+            if (danmakuDomId)
+                carrySheet = carrySheet.replace(/\[selfId\]/g, danmakuDomId);
+            // 创建文本节点，把样式表放进去，附给<style>元素
+            styleElement.appendChild(document.createTextNode(carrySheet));
+            // 让弹幕DOM元素随身携带样式表
+            newDm.appendChild(styleElement);
         }
         // 刚创建后调用函数
-        if (created)
+        if (typeof created === 'function')
             created(newDm, dmSerial);
         return this; // 链式语法
     }
@@ -218,6 +242,10 @@ export default class Danmaku {
                 break;
             case 'hanging':
                 this.monitor.clearSomeHanging();
+                break;
+            case 'free':
+            case 'freeing':
+                this.monitor.clearFreeing();
                 break;
             default:
                 this.monitor.clearSomeScrolling();
@@ -260,7 +288,9 @@ export default class Danmaku {
             // 暂停所有滚动弹幕
             this.dmLayer.classList.add('N-scroll-paused');
             // 暂停所有悬停弹幕
-            this.monitor.pauseAllHanging();
+            this.monitor.pauseAll('hanging');
+            // 暂停所有自由弹幕
+            this.monitor.pauseAll('freeing');
             // 标记为暂停
             this.state = 'paused';
         }
@@ -279,7 +309,9 @@ export default class Danmaku {
             // 恢复所有滚动弹幕
             this.dmLayer.classList.remove('N-scroll-paused');
             // 恢复所有悬停弹幕
-            this.monitor.resumeAllHanging();
+            this.monitor.resumeAll('hanging');
+            // 恢复所有自由弹幕
+            this.monitor.resumeAll('freeing');
             // 标记为播放
             this.state = 'running';
         }
