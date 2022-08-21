@@ -268,7 +268,7 @@ export default class Danmaku {
      * @param {Number} id 弹幕ID
      */
     clear(id = null) {
-        if (id) {
+        if (typeof id === 'number') {
             this.monitor.clearSingle(id);
         } else {
             this.clearSome();
@@ -280,7 +280,7 @@ export default class Danmaku {
      * @param {Number} id 弹幕ID，如果传入，则单独暂停该弹幕
      */
     pause(id = null) {
-        if (id) {
+        if (typeof id === 'number') {
             this.monitor.pauseSingle(id);
             return this;
         }
@@ -301,7 +301,7 @@ export default class Danmaku {
      * @param {Number} id 弹幕ID，如果传入，则单独恢复该弹幕（前提：是单独被暂停了）
      */
     resume(id = null) {
-        if (id) {
+        if (typeof id === 'number') {
             this.monitor.resumeSingle(id);
             return this;
         }
