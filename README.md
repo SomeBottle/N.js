@@ -21,7 +21,9 @@
     - [与模块打包器一起使用](#与模块打包器一起使用)
 - [关于弹幕](#关于弹幕)  
     - [弹幕属性](#弹幕属性)
+        - [关于carry_sheet](#关于carry_sheet)
     - [弹幕类型](#弹幕类型)
+        - [关于自由弹幕](#关于自由弹幕)
 - [对象的方法和属性](#对象的方法和属性)  
     - [NDanmaku对象](#ndanmaku对象)  
     - [List对象](#list对象)
@@ -145,6 +147,46 @@
 | `life` | `5000` | 弹幕生命时间，单位是`ms` |
 | `pointer_events` | `true` | 弹幕是否**接受鼠标事件** |
 | `custom_css` | `{}` | 自定义弹幕CSS样式 |
+| `carry_sheet` | `''` | 弹幕随身携带`<style>`元素包含的**CSS样式内容**，留空则弹幕不会随身携带样式元素 |
+
+> `custom_css`和`carry_sheet`不同的地方就在于，`custom_css`是直接应用到**弹幕DOM元素**上的；而`carry_sheet`是在弹幕DOM元素中创建了一个子元素`<style>`，并将**CSS样式内容**写入到该子元素中。  
+
+#### 关于`carry_sheet`
+
+* [Demo](https://ndanmaku.xbottle.top/#弹幕携带style元素)  
+
+`carry_sheet`和`custom_css`的区别上面已经提到了。这里提一下`carry_sheet`中的特殊占位字符串。
+
+在[创建对象时设置了`prefix`](docs/constructor.md#prefix)的前提下，`carry_sheet`中所有的占位：
+
+```
+[selfId]
+```
+
+都会被替换为**弹幕DOM元素的id**。
+
+举个栗子：
+
+```javascript
+const danmaku = new NDanmaku(container, 'vid'); // prefix为vid
+danmaku.attrs('carry_sheet',`
+    #[selfId] {
+        color: red!important;
+    }
+`);
+// 比如这条弹幕DOM元素的id是 N-danmaku-vid-0
+danmaku.create('test'); 
+```
+
+实际上这里的CSS样式文本会被替换为：
+
+```css
+#N-danmaku-vid-0 {
+    color: red!important;
+}
+```
+
+------
 
 设置属性的方法详见[下方](#ndanmaku对象)~
 
@@ -154,14 +196,25 @@ Demo中有相应的[示例](https://ndanmaku.xbottle.top/#%E6%94%B9%E5%8F%98%E5%
 
 > 注：对于**滚动弹幕**来说，滚动方向的正方向是**自右向左**。
 
-| 弹幕类型 | 说明 |
-|:---:|:---:|
-| `scroll` | 普通滚动弹幕 |
-| `midscroll` | 在中间滚动的弹幕 |
-| `random` | 随机高度的滚动弹幕 |
-| `top` | 顶部悬停弹幕 |
-| `bottom` | 底部悬停弹幕 |
-| `midhang` | 在中间悬停的弹幕 |
+| 弹幕类型 | 说明 | 是否参与碰撞检测 |
+|:---:|:---:| :---: | 
+| `scroll` | 普通滚动弹幕 | 参与 |
+| `midscroll` | 在中间滚动的弹幕 | 不参与 |
+| `random` | 随机高度的滚动弹幕 | 不参与 |
+| `top` | 顶部悬停弹幕 | 参与 |
+| `bottom` | 底部悬停弹幕 | 参与 |
+| `midhang` | 在中间悬停的弹幕 | 不参与 |
+| `free` | 自由弹幕 | 不参与 |
+
+#### 关于自由弹幕
+
+自由弹幕与其他类型弹幕最大的不同就在于，自由弹幕除了[弹幕属性](#弹幕属性)的配置之外，**不会被附上任何其他样式**（如`animation`、`transform`、`top`、`bottom`等）。  
+
+你可以结合`custom_css`和`carry_sheet`自由发挥。
+
+* [Demo](https://ndanmaku.xbottle.top/#改变弹幕类型-自由弹幕)  
+
+> 注：所有弹幕元素全都是`absolute`绝对定位。**自由弹幕**的生命期仍然受属性`life`控制。
 
 ## 对象的方法和属性
 
@@ -243,12 +296,20 @@ Demo中有相应的[示例](https://ndanmaku.xbottle.top/#%E6%94%B9%E5%8F%98%E5%
                     'midhang': {
                         'total': 0 // 目前为止创建的总中部悬停弹幕数
                     }
+                },
+                'freeing': {
+                    'total': 0, // 目前为止创建的总自由弹幕数量
                 }
             },
             'current': { // 实时弹幕情况
                 'total': 0, // 所有弹幕的总数
                 'garbages': 0, // 所有弹幕垃圾的总数
                 'global_state': 'running', // 全局弹幕状态（同danmaku.state）
+                // 自由类弹幕
+                'freeing': {
+                    'total': 0, // 自由类弹幕数
+                    'garbages': 0 // 自由类弹幕垃圾数
+                },
                 // 滚动类弹幕
                 'scrolling': {
                     'total': 0, // 总滚动弹幕数

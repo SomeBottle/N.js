@@ -58,6 +58,7 @@ danmaku.clearSome(type = '', reversed = 'all')
 |`'all'` | 代表所有的弹幕 |
 |`'scrolling'`| 代表所有滚动弹幕 (包括`random`, `scroll`, `midscroll`) |
 |`'hanging'`| 代表所有悬停弹幕 (包括`top`, `bottom`, `midhang`) |
+|`'freeing'`/`'free'`| 代表所有自由弹幕 |
 
 ### reversed
 
