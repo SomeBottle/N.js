@@ -250,6 +250,7 @@ export default class Danmaku {
             default:
                 this.monitor.clearSomeScrolling();
                 this.monitor.clearSomeHanging();
+                this.monitor.clearFreeing();
                 break;
         }
         return this;
