@@ -1,45 +1,5 @@
 [
     {
-        "time": 0,
-        "text": "一股命运石之门的味",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 0,
-        "text": "新寒蝉的感觉",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 862,
-        "text": "一股石味",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 318,
         "text": "サ，反撃開始！",
         "reset_styles": true,
         "styles": {
@@ -49,62 +9,10 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 318
     },
     {
-        "time": 561,
-        "text": "丁真?（幻视）",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 779,
-        "text": "欧耶！",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 0,
-        "text": "丁真",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 719,
-        "text": "每日一遍",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 339,
         "text": "我去好帅！！",
         "reset_styles": true,
         "styles": {
@@ -114,11 +22,11 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 339
     },
     {
-        "time": 1608,
-        "text": "根津 真砂人 窗 艾伦 澪 潮 凸村 朱鹭子 慎平 波稻",
+        "text": "丁真?（幻视）",
         "reset_styles": true,
         "styles": {
             "color": "#ffffff",
@@ -127,257 +35,10 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 561
     },
     {
-        "time": 1605,
-        "text": "这前奏一起我就知道肯定是志仓的歌",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 1819,
-        "text": "验影丁真鉴定为砸中",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 1880,
-        "text": "异眼丁真",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 1000,
-        "text": "dz",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 1219,
-        "text": "屏蔽“st味”食用更佳",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 2839,
-        "text": "艾伦耶格尔",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 2682,
-        "text": "yydz",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 2982,
-        "text": "反击开始！战斗！",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 3437,
-        "text": "听前奏识志仓千代丸",
-        "reset_styles": true,
-        "styles": {
-            "color": "#e70012",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 3364,
-        "text": "一眼寒蝉解",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 3088,
-        "text": "这不顶真吗",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 3179,
-        "text": "帅爆",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 3619,
-        "text": "这首真的太顶了",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 3930,
-        "text": "一股石头门味",
-        "reset_styles": true,
-        "styles": {
-            "color": "#cd00",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 4021,
-        "text": "我也觉得有石头门op的味道",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 5443,
-        "text": "志仓写的肯定一股石头门味儿啊",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 6659,
-        "text": "哪里都有泥马的塔塔开？",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 6036,
-        "text": "志仓老贼我一听就知道是你",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 6579,
-        "text": "这个OP太帅了",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 7579,
         "text": "每日一遍",
         "reset_styles": true,
         "styles": {
@@ -387,11 +48,11 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 719
     },
     {
-        "time": 7901,
-        "text": "踏踏开",
+        "text": "欧耶！",
         "reset_styles": true,
         "styles": {
             "color": "#ffffff",
@@ -400,10 +61,300 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 779
     },
     {
-        "time": 7019,
+        "text": "一股石味",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 862
+    },
+    {
+        "text": "dz",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 1000
+    },
+    {
+        "text": "屏蔽“st味”食用更佳",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 1219
+    },
+    {
+        "text": "这前奏一起我就知道肯定是志仓的歌",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 1605
+    },
+    {
+        "text": "根津 真砂人 窗 艾伦 澪 潮 凸村 朱鹭子 慎平 波稻",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 1608
+    },
+    {
+        "text": "验影丁真鉴定为砸中",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 1819
+    },
+    {
+        "text": "异眼丁真",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 1880
+    },
+    {
+        "text": "yydz",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 2682
+    },
+    {
+        "text": "夏日重现",
+        "reset_styles": true,
+        "styles": {
+            "type": "free",
+            "size": "3em",
+            "color": "#F4FA58",
+            "opacity": 70,
+            "outline": false,
+            "custom_css": {
+                "animation": "1s ease forwards slideIn",
+                "text-shadow": "#00BFFF 0 0 10px"
+            },
+            "carry_sheet": "\n                    @keyframes slideIn{\n                        0% {\n                            top: 100%;\n                            left: 100%;\n                            transform: translate(100%, -50%) scale(0.5);\n                        }\n                        \n                        100% {\n                            top: 50%;\n                            left: 50%;\n                            transform: translate(-50%, -50%) scale(1);\n                        }\n                    }\n                "
+        },
+        "time": 2724
+    },
+    {
+        "text": "艾伦耶格尔",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 2839
+    },
+    {
+        "text": "反击开始！战斗！",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 2982
+    },
+    {
+        "text": "这不顶真吗",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 3088
+    },
+    {
+        "text": "帅爆",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 3179
+    },
+    {
+        "text": "一眼寒蝉解",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 3364
+    },
+    {
+        "text": "听前奏识志仓千代丸",
+        "reset_styles": true,
+        "styles": {
+            "color": "#e70012",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 3437
+    },
+    {
+        "text": "这首真的太顶了",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 3619
+    },
+    {
+        "text": "一股石头门味",
+        "reset_styles": true,
+        "styles": {
+            "color": "#cd00",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 3930
+    },
+    {
+        "text": "我也觉得有石头门op的味道",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 4021
+    },
+    {
+        "text": "志仓写的肯定一股石头门味儿啊",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 5443
+    },
+    {
+        "text": "志仓老贼我一听就知道是你",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 6036
+    },
+    {
+        "text": "这个OP太帅了",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 6579
+    },
+    {
+        "text": "哪里都有泥马的塔塔开？",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 6659
+    },
+    {
         "text": "帅的一比！",
         "reset_styles": true,
         "styles": {
@@ -413,11 +364,11 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 7019
     },
     {
-        "time": 8471,
-        "text": "kksk",
+        "text": "每日一遍",
         "reset_styles": true,
         "styles": {
             "color": "#ffffff",
@@ -426,24 +377,11 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 7579
     },
     {
-        "time": 8419,
-        "text": "千代丸对味了√",
-        "reset_styles": true,
-        "styles": {
-            "color": "#e70012",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 8385,
-        "text": "前面那个说人名的，到底是纸垂还是真砂人不好说",
+        "text": "踏踏开",
         "reset_styles": true,
         "styles": {
             "color": "#ffffff",
@@ -452,10 +390,10 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 7901
     },
     {
-        "time": 8098.000000000001,
         "text": "假面骑士龙骑",
         "reset_styles": true,
         "styles": {
@@ -465,10 +403,10 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 8098
     },
     {
-        "time": 8336,
         "text": "op2预示着从推理解密走向战斗",
         "reset_styles": true,
         "styles": {
@@ -478,10 +416,10 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 8336
     },
     {
-        "time": 8339,
         "text": "好听",
         "reset_styles": true,
         "styles": {
@@ -491,11 +429,11 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 8339
     },
     {
-        "time": 9129,
-        "text": "海猫，寒蝉，石头门",
+        "text": "前面那个说人名的，到底是纸垂还是真砂人不好说",
         "reset_styles": true,
         "styles": {
             "color": "#ffffff",
@@ -504,11 +442,11 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 8385
     },
     {
-        "time": 9899,
-        "text": "这个op今井有文有参与",
+        "text": "千代丸对味了√",
         "reset_styles": true,
         "styles": {
             "color": "#e70012",
@@ -517,11 +455,11 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 8419
     },
     {
-        "time": 9153,
-        "text": "听这首歌就想起了助手",
+        "text": "kksk",
         "reset_styles": true,
         "styles": {
             "color": "#ffffff",
@@ -530,10 +468,10 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 8471
     },
     {
-        "time": 9099,
         "text": "这个真的好好听",
         "reset_styles": true,
         "styles": {
@@ -543,10 +481,36 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 9099
     },
     {
-        "time": 9679,
+        "text": "海猫，寒蝉，石头门",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 9129
+    },
+    {
+        "text": "听这首歌就想起了助手",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 9153
+    },
+    {
         "text": "亚咲花牛掰",
         "reset_styles": true,
         "styles": {
@@ -556,23 +520,23 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 9679
     },
     {
-        "time": 10476,
-        "text": "燃爆了",
+        "text": "这个op今井有文有参与",
         "reset_styles": true,
         "styles": {
-            "color": "#ffffff",
+            "color": "#e70012",
             "life": 5000,
-            "type": "scroll",
+            "type": "top",
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 9899
     },
     {
-        "time": 10459,
         "text": "哈哈哈哈",
         "reset_styles": true,
         "styles": {
@@ -582,10 +546,23 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 10459
     },
     {
-        "time": 10659,
+        "text": "燃爆了",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 10476
+    },
+    {
         "text": "op2好好听哦",
         "reset_styles": true,
         "styles": {
@@ -595,36 +572,10 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 10659
     },
     {
-        "time": 11908,
-        "text": "kksk",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 11899,
-        "text": "老熟悉了",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 11795,
         "text": "开始战斗！",
         "reset_styles": true,
         "styles": {
@@ -634,10 +585,36 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 11795
     },
     {
-        "time": 11939,
+        "text": "老熟悉了",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 11899
+    },
+    {
+        "text": "kksk",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 11908
+    },
+    {
         "text": "帅爆了",
         "reset_styles": true,
         "styles": {
@@ -647,10 +624,10 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 11939
     },
     {
-        "time": 12119,
         "text": "志仓NB",
         "reset_styles": true,
         "styles": {
@@ -660,10 +637,10 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 12119
     },
     {
-        "time": 12264,
         "text": "我还想着为什么有石头门的味道，原来是你啊老丸",
         "reset_styles": true,
         "styles": {
@@ -673,10 +650,10 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 12264
     },
     {
-        "time": 13827,
         "text": "确实是战斗番，你说对了",
         "reset_styles": true,
         "styles": {
@@ -686,23 +663,10 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 13827
     },
     {
-        "time": 13919,
-        "text": "你的话语，即便至今",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 13863,
         "text": "噢耶",
         "reset_styles": true,
         "styles": {
@@ -712,10 +676,23 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 13863
     },
     {
-        "time": 14218,
+        "text": "你的话语，即便至今",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 13919
+    },
+    {
         "text": "志仓千代丸 逮到",
         "reset_styles": true,
         "styles": {
@@ -725,75 +702,10 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 14218
     },
     {
-        "time": 14888,
-        "text": "志仓千代丸",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 14599,
-        "text": "战斗番既视感",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 14973,
-        "text": "志仓感拉满",
-        "reset_styles": true,
-        "styles": {
-            "color": "#e70012",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 14821,
-        "text": "志仓千代丸！",
-        "reset_styles": true,
-        "styles": {
-            "color": "#e70012",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 14661,
-        "text": "志仓千代丸",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 14259,
         "text": "你的话语，即便至今",
         "reset_styles": true,
         "styles": {
@@ -803,10 +715,23 @@
             "reverse": false,
             "size": null,
             "scale": 0.7
-        }
+        },
+        "time": 14259
     },
     {
-        "time": 15259,
+        "text": "战斗番既视感",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 14599
+    },
+    {
         "text": "志仓千代丸",
         "reset_styles": true,
         "styles": {
@@ -816,11 +741,24 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 14661
     },
     {
-        "time": 15519,
-        "text": "好耶",
+        "text": "志仓千代丸！",
+        "reset_styles": true,
+        "styles": {
+            "color": "#e70012",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 14821
+    },
+    {
+        "text": "志仓千代丸",
         "reset_styles": true,
         "styles": {
             "color": "#ffffff",
@@ -829,10 +767,23 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 14888
     },
     {
-        "time": 15141,
+        "text": "志仓感拉满",
+        "reset_styles": true,
+        "styles": {
+            "color": "#e70012",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 14973
+    },
+    {
         "text": "这下真石头门了",
         "reset_styles": true,
         "styles": {
@@ -842,11 +793,11 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 15141
     },
     {
-        "time": 16916,
-        "text": "莫名石头门哈哈哈",
+        "text": "志仓千代丸",
         "reset_styles": true,
         "styles": {
             "color": "#ffffff",
@@ -855,2792 +806,10 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 15259
     },
     {
-        "time": 16288,
-        "text": "是智斗番我蟹蟹你",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 16139,
-        "text": "轮回系歌手",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 17619,
-        "text": "开口石头门",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 17039,
-        "text": "我仍想听更多",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 17917,
-        "text": "一股石头味",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 17940,
-        "text": "感觉op有石头门哪味里",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 18187,
-        "text": "石味太浓了啊喂",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 18639,
-        "text": "我仍想听更多",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 18462,
-        "text": "我仍想聆听更多",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 18235,
-        "text": "有那味了",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 19463,
-        "text": "志仓千代丸哈哈哈哈哈",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 19022,
-        "text": "我仍想聆听更多",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 20000,
-        "text": "因为就连旅途中的指引与涂鸦",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 20164,
-        "text": "有石头门内味了",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 20569,
-        "text": "后半确实变成战斗番了，因为密都解的差不多了，就剩下打了",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 20884,
-        "text": "社长还就那个逮到",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 21579,
-        "text": "石头门",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 21222,
-        "text": "社长",
-        "reset_styles": true,
-        "styles": {
-            "color": "#e70012",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 21428,
-        "text": "不愧是非实在社长（）",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 22822,
-        "text": "御坂美琴（狗头）",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 22940,
-        "text": "社长写的歌",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 22568,
-        "text": "这op怎么跟石头门一个味",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 23019,
-        "text": "也都至关重要",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 24095,
-        "text": "这里真的帅啊，帅到我了",
-        "reset_styles": true,
-        "styles": {
-            "color": "#a0ea",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 24309,
-        "text": "味太正了，爱死，梦回零几年",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 24261,
-        "text": "帅帅帅",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 25503,
-        "text": "kksk",
-        "reset_styles": true,
-        "styles": {
-            "color": "#e70012",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 25711,
-        "text": "kksk",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 25833,
-        "text": "碎片之海",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 25682,
-        "text": "这里可以接龙骑的op",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 25839,
-        "text": "画上去，再擦去",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 25925,
-        "text": "kksk",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 26395,
-        "text": "有石头门那味了",
-        "reset_styles": true,
-        "styles": {
-            "color": "#a0ea",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 26053,
-        "text": "这张好帅啊",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 26007,
-        "text": "kksk",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 26825,
-        "text": "味儿太对了",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 26921,
-        "text": "太帅了",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 26255,
-        "text": "每个碎片都是曾经的回忆",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 26175,
-        "text": "这段真的好像寒蝉",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 26448,
-        "text": "记忆碎片",
-        "reset_styles": true,
-        "styles": {
-            "color": "#e70012",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 26391,
-        "text": "画上后，再擦去",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 26739,
-        "text": "澪————————————————————————————",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 27710,
-        "text": "这个地方好好看",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 27259,
-        "text": "这个OP不仅有石头门的味道还有超自然九人组",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 27275,
-        "text": "有镜子，可接龙骑op",
-        "reset_styles": true,
-        "styles": {
-            "color": "#e70012",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 28393,
-        "text": "太帅了",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 29585,
-        "text": "喜欢这里的画面风格!",
-        "reset_styles": true,
-        "styles": {
-            "color": "#a0ea",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 29031,
-        "text": "右眼和女主一样",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 29971,
-        "text": "为觉醒知乎代价的",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 30160,
-        "text": "帅啊",
-        "reset_styles": true,
-        "styles": {
-            "color": "#e70012",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 30511,
-        "text": "那么代价是什么呢",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 31625,
-        "text": "都是社长作曲的肯定像啊",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 31566,
-        "text": "这也是主角团的一员，确信",
-        "reset_styles": true,
-        "styles": {
-            "color": "#f0ab2a",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 32070.999999999996,
-        "text": "因为已经解开影子的悬疑，正式开始战斗了",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 32378.999999999996,
-        "text": "石头门味儿真的好有既视感",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 33160,
-        "text": "四只手你也是lancer？",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 33254,
-        "text": "那白日梦的诡计",
-        "reset_styles": true,
-        "styles": {
-            "color": "#683a7b",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 33254,
-        "text": "那白日梦的诡计",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 33548,
-        "text": "四手同学不只是可怕而已",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 34185,
-        "text": "让我想吐的纸锤",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 35305,
-        "text": "太帅啦",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 35659,
-        "text": "有那味儿了",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 35843,
-        "text": "十三号机（bushi",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 35119,
-        "text": "对于未知只感到，迷茫",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 36803,
-        "text": "四手，我的四手   嘶哈",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 36212,
-        "text": "让我想吐的纸锤",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 36805,
-        "text": "这里是刀",
-        "reset_styles": true,
-        "styles": {
-            "color": "#e70012",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 37179,
-        "text": "四手霸王",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 37636,
-        "text": "好喜欢这里",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 37359,
-        "text": "对于未知只感迷茫",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 38632,
-        "text": "社长啊那没事了 我说怎么那么熟悉",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 38679,
-        "text": "在月光的照耀下",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 38027,
-        "text": "在月光的照耀下",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 38499,
-        "text": "在月光的照耀下",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 39859,
-        "text": "怎么突然热血番了",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 40867,
-        "text": "咉射出你的影子",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 41099,
-        "text": "映射出你的影子",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 42305,
-        "text": "出现了，轮回坠",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 42151,
-        "text": "会团灭吗",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 43779,
-        "text": "那轮廓下产生的",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 43859,
-        "text": "那轮廓廓下产生的，微微晃动",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 43020,
-        "text": "这影子就很妙",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 44347,
-        "text": "那轮廓所产生的，微微晃动",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 46219,
-        "text": "要开始跑了吗",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 46076,
-        "text": "kksk",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 47729,
-        "text": "这里老师没跟大家一起走",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 47026,
-        "text": "25集应该能拍完吧",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 47806,
-        "text": "打团了兄弟萌",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 47218,
-        "text": "决战开始了",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 48609,
-        "text": "攻守转换",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 48370,
-        "text": "注意这里老师是和大家分开走的",
-        "reset_styles": true,
-        "styles": {
-            "color": "#683a7b",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 48436,
-        "text": "就以那信号",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 49264,
-        "text": "这段太有命运石之门味道了",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 50151,
-        "text": "NB",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 50113,
-        "text": "燃爆了！！！！！",
-        "reset_styles": true,
-        "styles": {
-            "color": "#e70012",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 51129,
-        "text": "最右边那个皮鞋不就是老师吗？",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 51974,
-        "text": "若知晓祈愿只是虚构出的缓慢动作",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 52030,
-        "text": "我超，亚咲花！！！",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 52434,
-        "text": "若知晓祈愿只是虚构出的缓慢动作",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 52074,
-        "text": "若知晓祈愿只是虚构出的缓慢动作",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 53094,
-        "text": "6666",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 53833,
-        "text": "朱鹭子好帅",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 53419,
-        "text": "朱鹭子真帅啊",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 53794,
-        "text": "若知晓祈愿只是虚构出的缓慢动作！",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 54459,
-        "text": "嗷嗷，志仓千代丸，那对了",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 54675,
-        "text": "歌  亚咲花 ",
-        "reset_styles": true,
-        "styles": {
-            "color": "#e70012",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 54675,
-        "text": "“歌 亚咲花   作词／作曲 志仓千代丸”这没石头门味都不正常",
-        "reset_styles": true,
-        "styles": {
-            "color": "#e70012",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 57867,
-        "text": "那无法忘却的温暖与残影",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 57638,
-        "text": "那无法忘却的温度与残影！",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 57818,
-        "text": "那无法忘却的温度与残影！",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 58578,
-        "text": "那无法忘却的温度与残影",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 58759,
-        "text": "大啵稻唉",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 59090,
-        "text": "前方高能，小心被影子澪吓到",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 59242,
-        "text": "kksk",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 59014,
-        "text": "那无法忘却的温度与残影",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 60659,
-        "text": "战斗番？？？",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 61193,
-        "text": "龙之介",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 61521,
-        "text": "南雲老师我的超人！！！",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fe0302",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 61302,
-        "text": "颜值很重要",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 61822,
-        "text": "24差不多了",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 61479,
-        "text": "轮回番必备蝴蝶",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 61929,
-        "text": "龙之介！！",
-        "reset_styles": true,
-        "styles": {
-            "color": "#e70012",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 62224,
-        "text": "让我想起了经典日漫op那个真人表演",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 62179,
-        "text": "龙之介！！！！",
-        "reset_styles": true,
-        "styles": {
-            "color": "#e70012",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 62215,
-        "text": "我靠龙之介和老师这个站位。。。怎么感觉会变OP？",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 63085,
-        "text": "有刀救命",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 64649,
-        "text": "根爺，我的狙神",
-        "reset_styles": true,
-        "styles": {
-            "color": "#e70012",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 65536,
-        "text": "那就驱身身做战士",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 65117.99999999999,
-        "text": "就躯身做战士",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 66253,
-        "text": "真的有这么丝滑吗？",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 66579,
-        "text": "龙之介大长腿真的帅",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 67547,
-        "text": "看的一身鸡皮疙瘩",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 67610,
-        "text": "那就屈身做战士",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 67260,
-        "text": "特级咒灵",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 69727,
-        "text": "就以悔恨和悲伤",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 69306,
-        "text": "就以悔恨与悲伤",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 69986,
-        "text": "就以悔恨与悲伤",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 70679,
-        "text": "影mio！",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 71763,
-        "text": "已经快被影澪弄出ptsd了",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 71867,
-        "text": "就以悔恨与悲伤",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 72947,
-        "text": "斩断畏惧",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 72846,
-        "text": "斩断畏惧",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 74786,
-        "text": "斩断畏惧",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 74274,
-        "text": "斩断畏惧！",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 74274,
-        "text": "斩断畏惧！",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 74779,
-        "text": "影澪都白了还是这副鬼脸",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 75939,
-        "text": "这段好听",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 75708,
-        "text": "石头门op即视感",
-        "reset_styles": true,
-        "styles": {
-            "color": "#e70012",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 75687,
-        "text": "生命的悖论",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 75661,
-        "text": "这一句简直不要太太石头门",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 75742,
-        "text": "命运悖论",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 76814,
-        "text": "悖论 神明 算法 老千代了",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 76680,
-        "text": "这里是延续op1的结尾啊",
-        "reset_styles": true,
-        "styles": {
-            "color": "#a0ea",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 76086,
-        "text": "生命的悖论",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 77188,
-        "text": "这一句的旋律和节奏太石头门了！",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 77126,
-        "text": "南云走位",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 77947,
-        "text": "kksk",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 78903,
-        "text": "看见“神明”两个字就犯寒蝉ptsd了",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 79906,
-        "text": "轮回是有极限的",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 79617,
-        "text": "石头门op既视感",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 79018,
-        "text": "界线",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 79166,
-        "text": "笑死，痔仓老贼经典英文单词",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 79247,
-        "text": "神明的运算法则",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 79081,
-        "text": "生命悖论，神明法则，穷途末路，一笑置之。",
-        "reset_styles": true,
-        "styles": {
-            "color": "#e70012",
-            "life": 5000,
-            "type": "bottom",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 79351,
-        "text": "神明的运算法则",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 79462,
-        "text": "kksk",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 80906,
-        "text": "这段，果然是志仓千代丸的曲子啊",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 81747,
-        "text": "有石头门的味了",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 81847,
-        "text": "所谓战略，便是陷入窘境",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 81132,
-        "text": ".0",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 83085,
-        "text": "比起石头门还是更像寒蝉",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 84366,
-        "text": "我的战场不在这里，拜拜。",
-        "reset_styles": true,
-        "styles": {
-            "color": "#a0ea",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 84120,
-        "text": "磕晕了",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffff00",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 84422,
-        "text": "俊男靓女",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 84950,
-        "text": "其实这张图里有三个人（",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffff00",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 84146,
-        "text": "慎潮纯爱坠吊！！！",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 84732,
-        "text": "般配",
-        "reset_styles": true,
-        "styles": {
-            "color": "#a0ea",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 84142,
-        "text": "穷途末路，一笑置之",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 84142,
-        "text": "穷途末路，一笑置之",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 84142,
-        "text": "穷途末路，一笑置之",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 0.7
-        }
-    },
-    {
-        "time": 84094,
-        "text": "这里有点像yuno",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 85163,
-        "text": "磕死了！",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 85659,
-        "text": "夫妻相",
-        "reset_styles": true,
-        "styles": {
-            "color": "#f0ab2a",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 85609,
-        "text": "般配",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 85048,
-        "text": "好般配！！！锁死",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 85180,
-        "text": "般配",
-        "reset_styles": true,
-        "styles": {
-            "color": "#cc0273",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 85118,
-        "text": "kdl！！！",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 85674,
-        "text": "龙之介因为语言过激已被踢出",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 85345,
-        "text": "般配",
-        "reset_styles": true,
-        "styles": {
-            "color": "#cc0273",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 85461,
-        "text": "结婚！",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 86910,
-        "text": "磕晕了",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 86121,
-        "text": "孤独的观测者",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 86282,
-        "text": "磕死我了",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 86619,
-        "text": "纯爱拯救世界",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 86297,
-        "text": "磕昏了",
-        "reset_styles": true,
-        "styles": {
-            "color": "#e2027f",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 86739,
-        "text": "阻止他！！！",
-        "reset_styles": true,
-        "styles": {
-            "color": "#e70012",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 86659,
-        "text": "般配",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 86215,
-        "text": "磕晕了",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 86813,
-        "text": "夫妻照！",
-        "reset_styles": true,
-        "styles": {
-            "color": "#e2027f",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 86827,
-        "text": "般配",
-        "reset_styles": true,
-        "styles": {
-            "color": "#e70012",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 86931,
-        "text": "到位",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 86998,
-        "text": "般配般配般配般配",
-        "reset_styles": true,
-        "styles": {
-            "color": "#e2027f",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 86454,
-        "text": "般配般配般配般配般配般配",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 86394,
-        "text": "夫妻相啊！",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 86119,
-        "text": "别让他开枪！！！！！！？",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 86126,
-        "text": "纯爱赛高",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 87656,
-        "text": "紧握手手",
-        "reset_styles": true,
-        "styles": {
-            "color": "#e2027f",
-            "life": 5000,
-            "type": "top",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 87351,
-        "text": "磕磕磕磕磕！",
-        "reset_styles": true,
-        "styles": {
-            "color": "#fef102",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 87230,
-        "text": "夫妻相太帅了太美了！",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 87433,
-        "text": "结婚生子！！",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 87634,
-        "text": "嗑死了",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 87655,
-        "text": "结婚照",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 87579,
-        "text": "我就是纯爱战士！！！",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 87763,
-        "text": "抱歉了，我的战场不在这里",
-        "reset_styles": true,
-        "styles": {
-            "color": "#ffffff",
-            "life": 5000,
-            "type": "scroll",
-            "reverse": false,
-            "size": null,
-            "scale": 1
-        }
-    },
-    {
-        "time": 88876,
         "text": "好耶",
         "reset_styles": true,
         "styles": {
@@ -3650,11 +819,11 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 15519
     },
     {
-        "time": 88882,
-        "text": "结婚照！",
+        "text": "轮回系歌手",
         "reset_styles": true,
         "styles": {
             "color": "#ffffff",
@@ -3663,24 +832,2481 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 16139
     },
     {
-        "time": 88379,
+        "text": "是智斗番我蟹蟹你",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 16288
+    },
+    {
+        "text": "莫名石头门哈哈哈",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 16916
+    },
+    {
+        "text": "我仍想听更多",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 17039
+    },
+    {
+        "text": "开口石头门",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 17619
+    },
+    {
+        "text": "一股石头味",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 17917
+    },
+    {
+        "text": "感觉op有石头门哪味里",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 17940
+    },
+    {
+        "text": "石味太浓了啊喂",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 18187
+    },
+    {
+        "text": "有那味了",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 18235
+    },
+    {
+        "text": "我仍想聆听更多",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 18462
+    },
+    {
+        "text": "我仍想听更多",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 18639
+    },
+    {
+        "text": "我仍想聆听更多",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 19022
+    },
+    {
+        "text": "志仓千代丸哈哈哈哈哈",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 19463
+    },
+    {
+        "text": "因为就连旅途中的指引与涂鸦",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 20000
+    },
+    {
+        "text": "有石头门内味了",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 20164
+    },
+    {
+        "text": "后半确实变成战斗番了，因为密都解的差不多了，就剩下打了",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 20569
+    },
+    {
+        "text": "社长还就那个逮到",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 20884
+    },
+    {
+        "text": "社长",
+        "reset_styles": true,
+        "styles": {
+            "color": "#e70012",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 21222
+    },
+    {
+        "text": "不愧是非实在社长（）",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 21428
+    },
+    {
+        "text": "石头门",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 21579
+    },
+    {
+        "text": "这op怎么跟石头门一个味",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 22568
+    },
+    {
+        "text": "御坂美琴（狗头）",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 22822
+    },
+    {
+        "text": "社长写的歌",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 22940
+    },
+    {
+        "text": "也都至关重要",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 23019
+    },
+    {
+        "text": "这里真的帅啊，帅到我了",
+        "reset_styles": true,
+        "styles": {
+            "color": "#a0ea",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 24095
+    },
+    {
+        "text": "帅帅帅",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 24261
+    },
+    {
+        "text": "味太正了，爱死，梦回零几年",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 24309
+    },
+    {
+        "text": "kksk",
+        "reset_styles": true,
+        "styles": {
+            "color": "#e70012",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 25503
+    },
+    {
+        "text": "这里可以接龙骑的op",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 25682
+    },
+    {
+        "text": "kksk",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 25711
+    },
+    {
+        "text": "碎片之海",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 25833
+    },
+    {
+        "text": "画上去，再擦去",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 25839
+    },
+    {
+        "text": "kksk",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 25925
+    },
+    {
+        "text": "kksk",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 26007
+    },
+    {
+        "text": "这张好帅啊",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 26053
+    },
+    {
+        "text": "这段真的好像寒蝉",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 26175
+    },
+    {
+        "text": "每个碎片都是曾经的回忆",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 26255
+    },
+    {
+        "text": "画上后，再擦去",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 26391
+    },
+    {
+        "text": "有石头门那味了",
+        "reset_styles": true,
+        "styles": {
+            "color": "#a0ea",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 26395
+    },
+    {
+        "text": "记忆碎片",
+        "reset_styles": true,
+        "styles": {
+            "color": "#e70012",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 26448
+    },
+    {
+        "text": "澪————————————————————————————",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 26739
+    },
+    {
+        "text": "味儿太对了",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 26825
+    },
+    {
+        "text": "太帅了",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 26921
+    },
+    {
+        "text": "这个OP不仅有石头门的味道还有超自然九人组",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 27259
+    },
+    {
+        "text": "有镜子，可接龙骑op",
+        "reset_styles": true,
+        "styles": {
+            "color": "#e70012",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 27275
+    },
+    {
+        "text": "这个地方好好看",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 27710
+    },
+    {
+        "text": "太帅了",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 28393
+    },
+    {
+        "text": "右眼和女主一样",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 29031
+    },
+    {
+        "text": "喜欢这里的画面风格!",
+        "reset_styles": true,
+        "styles": {
+            "color": "#a0ea",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 29585
+    },
+    {
+        "text": "为觉醒知乎代价的",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 29971
+    },
+    {
+        "text": "帅啊",
+        "reset_styles": true,
+        "styles": {
+            "color": "#e70012",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 30160
+    },
+    {
+        "text": "那么代价是什么呢",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 30511
+    },
+    {
+        "text": "这也是主角团的一员，确信",
+        "reset_styles": true,
+        "styles": {
+            "color": "#f0ab2a",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 31566
+    },
+    {
+        "text": "都是社长作曲的肯定像啊",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 31625
+    },
+    {
+        "text": "因为已经解开影子的悬疑，正式开始战斗了",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 32071
+    },
+    {
+        "text": "石头门味儿真的好有既视感",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 32379
+    },
+    {
+        "text": "四只手你也是lancer？",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 33160
+    },
+    {
+        "text": "那白日梦的诡计",
+        "reset_styles": true,
+        "styles": {
+            "color": "#683a7b",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 33254
+    },
+    {
+        "text": "那白日梦的诡计",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 33254
+    },
+    {
+        "text": "四手同学不只是可怕而已",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 33548
+    },
+    {
+        "text": "让我想吐的纸锤",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 34185
+    },
+    {
+        "text": "对于未知只感到，迷茫",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 35119
+    },
+    {
+        "text": "太帅啦",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 35305
+    },
+    {
+        "text": "有那味儿了",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 35659
+    },
+    {
+        "text": "十三号机（bushi",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 35843
+    },
+    {
+        "text": "让我想吐的纸锤",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 36212
+    },
+    {
+        "text": "四手，我的四手   嘶哈",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 36803
+    },
+    {
+        "text": "这里是刀",
+        "reset_styles": true,
+        "styles": {
+            "color": "#e70012",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 36805
+    },
+    {
+        "text": "四手霸王",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 37179
+    },
+    {
+        "text": "对于未知只感迷茫",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 37359
+    },
+    {
+        "text": "好喜欢这里",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 37636
+    },
+    {
+        "text": "在月光的照耀下",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 38027
+    },
+    {
+        "text": "在月光的照耀下",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 38499
+    },
+    {
+        "text": "社长啊那没事了 我说怎么那么熟悉",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 38632
+    },
+    {
+        "text": "在月光的照耀下",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 38679
+    },
+    {
+        "text": "怎么突然热血番了",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 39859
+    },
+    {
+        "text": "咉射出你的影子",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 40867
+    },
+    {
+        "text": "映射出你的影子",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 41099
+    },
+    {
+        "text": "会团灭吗",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 42151
+    },
+    {
+        "text": "出现了，轮回坠",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 42305
+    },
+    {
+        "text": "这影子就很妙",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 43020
+    },
+    {
+        "text": "那轮廓下产生的",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 43779
+    },
+    {
+        "text": "那轮廓廓下产生的，微微晃动",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 43859
+    },
+    {
+        "text": "那轮廓所产生的，微微晃动",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 44347
+    },
+    {
+        "text": "kksk",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 46076
+    },
+    {
+        "text": "要开始跑了吗",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 46219
+    },
+    {
+        "text": "25集应该能拍完吧",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 47026
+    },
+    {
+        "text": "决战开始了",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 47218
+    },
+    {
+        "text": "这里老师没跟大家一起走",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 47729
+    },
+    {
+        "text": "打团了兄弟萌",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 47806
+    },
+    {
+        "text": "注意这里老师是和大家分开走的",
+        "reset_styles": true,
+        "styles": {
+            "color": "#683a7b",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 48370
+    },
+    {
+        "text": "就以那信号",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 48436
+    },
+    {
+        "text": "攻守转换",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 48609
+    },
+    {
+        "text": "这段太有命运石之门味道了",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 49264
+    },
+    {
+        "text": "燃爆了！！！！！",
+        "reset_styles": true,
+        "styles": {
+            "color": "#e70012",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 50113
+    },
+    {
+        "text": "NB",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 50151
+    },
+    {
+        "text": "最右边那个皮鞋不就是老师吗？",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 51129
+    },
+    {
+        "text": "若知晓祈愿只是虚构出的缓慢动作",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 51974
+    },
+    {
+        "text": "我超，亚咲花！！！",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 52030
+    },
+    {
+        "text": "若知晓祈愿只是虚构出的缓慢动作",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 52074
+    },
+    {
+        "text": "若知晓祈愿只是虚构出的缓慢动作",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 52434
+    },
+    {
+        "text": "6666",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 53094
+    },
+    {
+        "text": "朱鹭子真帅啊",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 53419
+    },
+    {
+        "text": "若知晓祈愿只是虚构出的缓慢动作！",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 53794
+    },
+    {
+        "text": "朱鹭子好帅",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 53833
+    },
+    {
+        "text": "嗷嗷，志仓千代丸，那对了",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 54459
+    },
+    {
+        "text": "歌  亚咲花 ",
+        "reset_styles": true,
+        "styles": {
+            "color": "#e70012",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 54675
+    },
+    {
+        "text": "“歌 亚咲花   作词／作曲 志仓千代丸”这没石头门味都不正常",
+        "reset_styles": true,
+        "styles": {
+            "color": "#e70012",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 54675
+    },
+    {
+        "text": "那无法忘却的温度与残影！",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 57638
+    },
+    {
+        "text": "那无法忘却的温度与残影！",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 57818
+    },
+    {
+        "text": "那无法忘却的温暖与残影",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 57867
+    },
+    {
+        "text": "那无法忘却的温度与残影",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 58578
+    },
+    {
+        "text": "大啵稻唉",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 58759
+    },
+    {
+        "text": "那无法忘却的温度与残影",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 59014
+    },
+    {
+        "text": "前方高能，小心被影子澪吓到",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 59090
+    },
+    {
+        "text": "kksk",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 59242
+    },
+    {
+        "text": "战斗番？？？",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 60659
+    },
+    {
+        "text": "龙之介",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 61193
+    },
+    {
+        "text": "颜值很重要",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 61302
+    },
+    {
+        "text": "轮回番必备蝴蝶",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 61479
+    },
+    {
+        "text": "南雲老师我的超人！！！",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fe0302",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 61521
+    },
+    {
+        "text": "24差不多了",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 61822
+    },
+    {
+        "text": "龙之介！！",
+        "reset_styles": true,
+        "styles": {
+            "color": "#e70012",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 61929
+    },
+    {
+        "text": "龙之介！！！！",
+        "reset_styles": true,
+        "styles": {
+            "color": "#e70012",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 62179
+    },
+    {
+        "text": "我靠龙之介和老师这个站位。。。怎么感觉会变OP？",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 62215
+    },
+    {
+        "text": "让我想起了经典日漫op那个真人表演",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 62224
+    },
+    {
+        "text": "有刀救命",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 63085
+    },
+    {
+        "text": "根爺，我的狙神",
+        "reset_styles": true,
+        "styles": {
+            "color": "#e70012",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 64649
+    },
+    {
+        "text": "就躯身做战士",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 65118
+    },
+    {
+        "text": "那就驱身身做战士",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 65536
+    },
+    {
+        "text": "真的有这么丝滑吗？",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 66253
+    },
+    {
+        "text": "龙之介大长腿真的帅",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 66579
+    },
+    {
+        "text": "特级咒灵",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 67260
+    },
+    {
+        "text": "看的一身鸡皮疙瘩",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 67547
+    },
+    {
+        "text": "那就屈身做战士",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 67610
+    },
+    {
+        "text": "就以悔恨与悲伤",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 69306
+    },
+    {
+        "text": "就以悔恨和悲伤",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 69727
+    },
+    {
+        "text": "就以悔恨与悲伤",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 69986
+    },
+    {
+        "text": "影mio！",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 70679
+    },
+    {
+        "text": "已经快被影澪弄出ptsd了",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 71763
+    },
+    {
+        "text": "就以悔恨与悲伤",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 71867
+    },
+    {
+        "text": "斩断畏惧",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 72846
+    },
+    {
+        "text": "斩断畏惧",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 72947
+    },
+    {
+        "text": "斩断畏惧！",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 74274
+    },
+    {
+        "text": "斩断畏惧！",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 74274
+    },
+    {
+        "text": "影澪都白了还是这副鬼脸",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 74779
+    },
+    {
+        "text": "斩断畏惧",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 74786
+    },
+    {
+        "text": "这一句简直不要太太石头门",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 75661
+    },
+    {
+        "text": "生命的悖论",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 75687
+    },
+    {
+        "text": "石头门op即视感",
+        "reset_styles": true,
+        "styles": {
+            "color": "#e70012",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 75708
+    },
+    {
+        "text": "命运悖论",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 75742
+    },
+    {
+        "text": "这段好听",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 75939
+    },
+    {
+        "text": "生命的悖论",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 76086
+    },
+    {
+        "text": "这里是延续op1的结尾啊",
+        "reset_styles": true,
+        "styles": {
+            "color": "#a0ea",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 76680
+    },
+    {
+        "text": "悖论 神明 算法 老千代了",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 76814
+    },
+    {
+        "text": "南云走位",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 77126
+    },
+    {
+        "text": "这一句的旋律和节奏太石头门了！",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 77188
+    },
+    {
+        "text": "kksk",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 77947
+    },
+    {
+        "text": "看见“神明”两个字就犯寒蝉ptsd了",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 78903
+    },
+    {
+        "text": "界线",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 79018
+    },
+    {
+        "text": "生命悖论，神明法则，穷途末路，一笑置之。",
+        "reset_styles": true,
+        "styles": {
+            "color": "#e70012",
+            "life": 5000,
+            "type": "bottom",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 79081
+    },
+    {
+        "text": "笑死，痔仓老贼经典英文单词",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 79166
+    },
+    {
+        "text": "神明的运算法则",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 79247
+    },
+    {
+        "text": "神明的运算法则",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 79351
+    },
+    {
+        "text": "kksk",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 79462
+    },
+    {
+        "text": "石头门op既视感",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 79617
+    },
+    {
+        "text": "轮回是有极限的",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 79906
+    },
+    {
+        "text": "这段，果然是志仓千代丸的曲子啊",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 80906
+    },
+    {
+        "text": ".0",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 81132
+    },
+    {
+        "text": "有石头门的味了",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 81747
+    },
+    {
+        "text": "所谓战略，便是陷入窘境",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 81847
+    },
+    {
+        "text": "比起石头门还是更像寒蝉",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 83085
+    },
+    {
+        "text": "这里有点像yuno",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 84094
+    },
+    {
+        "text": "磕晕了",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffff00",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 84120
+    },
+    {
+        "text": "穷途末路，一笑置之",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 84142
+    },
+    {
+        "text": "穷途末路，一笑置之",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 84142
+    },
+    {
+        "text": "穷途末路，一笑置之",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 0.7
+        },
+        "time": 84142
+    },
+    {
+        "text": "慎潮纯爱坠吊！！！",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 84146
+    },
+    {
+        "text": "我的战场不在这里，拜拜。",
+        "reset_styles": true,
+        "styles": {
+            "color": "#a0ea",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 84366
+    },
+    {
+        "text": "俊男靓女",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 84422
+    },
+    {
+        "text": "般配",
+        "reset_styles": true,
+        "styles": {
+            "color": "#a0ea",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 84732
+    },
+    {
+        "text": "其实这张图里有三个人（",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffff00",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 84950
+    },
+    {
+        "text": "好般配！！！锁死",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 85048
+    },
+    {
+        "text": "kdl！！！",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 85118
+    },
+    {
+        "text": "磕死了！",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 85163
+    },
+    {
+        "text": "般配",
+        "reset_styles": true,
+        "styles": {
+            "color": "#cc0273",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 85180
+    },
+    {
+        "text": "般配",
+        "reset_styles": true,
+        "styles": {
+            "color": "#cc0273",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 85345
+    },
+    {
+        "text": "结婚！",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 85461
+    },
+    {
+        "text": "般配",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 85609
+    },
+    {
         "text": "夫妻相",
         "reset_styles": true,
         "styles": {
-            "color": "#ffffff",
+            "color": "#f0ab2a",
             "life": 5000,
-            "type": "scroll",
+            "type": "top",
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 85659
     },
     {
-        "time": 88394,
-        "text": "美死我了",
+        "text": "龙之介因为语言过激已被踢出",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 85674
+    },
+    {
+        "text": "别让他开枪！！！！！！？",
         "reset_styles": true,
         "styles": {
             "color": "#ffffff",
@@ -3689,11 +3315,63 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 86119
     },
     {
-        "time": 88459,
-        "text": "慎潮锁死",
+        "text": "孤独的观测者",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 86121
+    },
+    {
+        "text": "纯爱赛高",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 86126
+    },
+    {
+        "text": "磕晕了",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 86215
+    },
+    {
+        "text": "磕死我了",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 86282
+    },
+    {
+        "text": "磕昏了",
         "reset_styles": true,
         "styles": {
             "color": "#e2027f",
@@ -3702,11 +3380,11 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 86297
     },
     {
-        "time": 88528,
-        "text": "可恶啊",
+        "text": "夫妻相啊！",
         "reset_styles": true,
         "styles": {
             "color": "#ffffff",
@@ -3715,10 +3393,75 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 86394
     },
     {
-        "time": 88252,
+        "text": "般配般配般配般配般配般配",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 86454
+    },
+    {
+        "text": "纯爱拯救世界",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 86619
+    },
+    {
+        "text": "般配",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 86659
+    },
+    {
+        "text": "阻止他！！！",
+        "reset_styles": true,
+        "styles": {
+            "color": "#e70012",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 86739
+    },
+    {
+        "text": "夫妻照！",
+        "reset_styles": true,
+        "styles": {
+            "color": "#e2027f",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 86813
+    },
+    {
         "text": "般配",
         "reset_styles": true,
         "styles": {
@@ -3728,10 +3471,244 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 86827
     },
     {
-        "time": 89110,
+        "text": "磕晕了",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 86910
+    },
+    {
+        "text": "到位",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 86931
+    },
+    {
+        "text": "般配般配般配般配",
+        "reset_styles": true,
+        "styles": {
+            "color": "#e2027f",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 86998
+    },
+    {
+        "text": "夫妻相太帅了太美了！",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 87230
+    },
+    {
+        "text": "磕磕磕磕磕！",
+        "reset_styles": true,
+        "styles": {
+            "color": "#fef102",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 87351
+    },
+    {
+        "text": "结婚生子！！",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 87433
+    },
+    {
+        "text": "我就是纯爱战士！！！",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 87579
+    },
+    {
+        "text": "嗑死了",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 87634
+    },
+    {
+        "text": "结婚照",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 87655
+    },
+    {
+        "text": "紧握手手",
+        "reset_styles": true,
+        "styles": {
+            "color": "#e2027f",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 87656
+    },
+    {
+        "text": "抱歉了，我的战场不在这里",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 87763
+    },
+    {
+        "text": "般配",
+        "reset_styles": true,
+        "styles": {
+            "color": "#e70012",
+            "life": 5000,
+            "type": "top",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 88252
+    },
+    {
+        "text": "夫妻相",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 88379
+    },
+    {
+        "text": "美死我了",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 88394
+    },
+    {
+        "text": "慎潮锁死",
+        "reset_styles": true,
+        "styles": {
+            "color": "#e2027f",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 88459
+    },
+    {
+        "text": "可恶啊",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 88528
+    },
+    {
+        "text": "好耶",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 88876
+    },
+    {
+        "text": "结婚照！",
+        "reset_styles": true,
+        "styles": {
+            "color": "#ffffff",
+            "life": 5000,
+            "type": "scroll",
+            "reverse": false,
+            "size": null,
+            "scale": 1
+        },
+        "time": 88882
+    },
+    {
         "text": "结婚！结婚！结婚！",
         "reset_styles": true,
         "styles": {
@@ -3741,6 +3718,7 @@
             "reverse": false,
             "size": null,
             "scale": 1
-        }
+        },
+        "time": 89110
     }
 ]

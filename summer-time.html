@@ -40,7 +40,7 @@
         const loadingDiv = document.getElementById('loadingDiv');
         const mainVideo = document.getElementById('mainVideo');
         const container = document.querySelector('.player');
-        const danmaku = new NDanmaku(container); // 创建NDanmaku对象
+        const danmaku = new NDanmaku(container, 'vid'); // 创建NDanmaku对象
         var timeHandling = true; // 标记正在处理timeupdate事件
         var fullScreen = false; // 标记是否全屏
         danmaku.list.new('summer-time'); // 创建新列表
@@ -106,7 +106,7 @@
             }).catch(e => {
                 stopFlashing();
                 loadingText.innerText = '载入弹幕失败 :(';
-            })
+            });
     </script>
 </body>
 

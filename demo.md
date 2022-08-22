@@ -84,12 +84,35 @@ demo_ins.attrs({
 实际上，`N.js`也在弹幕属性中提供了**自定义样式**来实现这些额外的效果。接下来，咱们发一条<a href='javascript:void(0);' onclick="trigger_demo_2(5)">带有蓝色边框的弹幕</a>：
 
 ```javascript
-demo_2.attrs({
+demo_ins.attrs({
     size: '1.5em',
     custom_css: {
         border: '1px solid #2ECCFA'
     }
 }).create('2333333333');
+```
+
+### 弹幕携带style元素
+
+除了上面的自定义弹幕样式，你还可以选择让弹幕携带一个`<style>`元素，这样也可以实现自定义样式的效果。  
+
+值得注意的是，这里的样式文本`carry_sheet`中的 `[selfId]` 会被替换为**弹幕DOM元素的id**（前提是创建对象的时候设置了`prefix`）。
+
+这里，我们创建一条<a href='javascript:void(0);' onclick="trigger_demo_2(15)">带有红色边框的顶端弹幕</a>：
+
+> 注：创建示例NDanmaku对象时我给`prefix`传入了`demo`  
+
+```javascript
+demo_ins.attrs({
+    size: '1.2em',
+    type: 'top',
+    color: '#0080FF',
+    carry_sheet: `
+        #[selfId]{
+            border: 1px solid #FE2E2E
+        }
+    `
+}).create('SA→KA→NA↗');
 ```
 
 ### 改变弹幕类型
@@ -130,6 +153,99 @@ demo_2.attrs({
     ```
 
 中部弹幕来自于[@板砖猫](https://github.com/BanZhuan-CAT)的建议。
+
+### 改变弹幕类型-自由弹幕
+
+自由弹幕除了**弹幕属性**的配置之外，**不会被附上任何其他样式**（如`animation`、`transform`、`top`、`bottom`等）。  
+
+咱们可以结合弹幕的`custom_css`和`carry_sheet`属性来充分自定义这条弹幕，甚至可以实现“高级弹幕”的效果。  
+
+比如说，可以是接下来的这条在容器里<a href='javascript:void(0);' onclick="trigger_demo_2(16)">来回翻转的自由弹幕</a>：
+
+```javascript
+demo_ins.attrs({
+    'type': 'free',
+    'size': '1.5em',
+    'custom_css': {
+        animation: '2s ease infinite myRotate',
+        left: '50%',
+        top: '50%'
+    },
+    'carry_sheet': `
+    @keyframes myRotate{
+        0% {
+            transform: rotate3d(0, 1, 1, 0deg);
+        }
+        
+        50% {
+            transform: rotate3d(0, 1, 1, 360deg);
+        }
+        
+        100% {
+            transform: rotate3d(0, 1, 1, 0deg);
+        }
+    }
+    #[selfId]{
+        color: #FA58AC!important;
+    }
+` // 要用!important是因为弹幕属性里包括了color，而其优先级比较高
+}).create('转啊转啊转啊');
+```
+
+也可以是接下来这条从屏幕边弹出，鼠标点击后弹射起飞的自由弹幕：
+
+(<a href='javascript:void(0);' onclick="trigger_demo_2(17)">点我查看效果</a>)
+
+```javascript
+demo_ins.attrs({
+    'type': 'free',
+    'size': '2em',
+    'opacity': 70,
+    'custom_css': {
+        animation: '1s ease forwards slideIn'
+    },
+    'carry_sheet': `
+        @keyframes slideIn{
+            0% {
+                top: 50%;
+                left: 100%;
+                transform: translate(100%, -50%) scale(0.5);
+            }
+            
+            100% {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+        @keyframes slideOut{
+            0% {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            100% {
+                top: -50%;
+                left: 0;
+                transform: translate(-50%, -100%) scale(3);
+            }
+        }
+        #[selfId]{
+            color: red!important;
+        }
+    `
+}).create('点我点我', (element, id) => {
+    demo_ins.pause(id);
+    element.onclick = () => {
+        element.onclick = null;
+        element.style.animation = '1.5s ease forwards slideOut';
+        element.onanimationend = (e) => {
+            demo_ins.clear(id);
+        }
+    }
+});
+```
 
 ### 弹幕滚动方向
 

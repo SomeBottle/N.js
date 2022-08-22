@@ -1,5 +1,5 @@
 /* 注：这个不是油猴脚本，是可以直接在页面中通过<script>引入的
-   快捷生成文章目录 - By SomeBottle
+   快捷生成文章目录 
    使用方法
     在文章页面中引入该js文件
     Catalogue.init(文章所在容器元素Element[,['h2', 'h3', 'h4', 'a']])  <--第二个参数可选，默认是识别'h2', 'h3', 'h4', 'a'
@@ -118,7 +118,13 @@ const Catalogue = {
                 aTitle = anchorElement.getAttribute('title'), // a标签标题写在title属性里
                 aId = anchorElement.getAttribute('id'),
                 forAnchor = anchorElement.getAttribute('for-anchor'),
-                hTitle = anchorElement.innerText; // h1-h6标题元素标题就在innerText里
+                hTitles = anchorElement.childNodes, // h1-h6标题元素标题，需要从子节点过滤出来
+                hTitle = '';
+            hTitles.forEach((node) => {
+                if (node.nodeType === 3) { // 是文字节点
+                    hTitle += node.nodeValue; // 加入标题内容
+                }
+            });
             if (!aTitle && hTitle.match(/^\s*$/)) { // 既没有title属性也没有innerText属性，这个元素不是锚点
                 continue; // 跳过
             } else if (aTitle && aId && forAnchor) { // 如果有title，是a标签
@@ -174,14 +180,24 @@ const Catalogue = {
         */
         this.reindent(anchors);
         this.anchors = anchors; // 储存锚点
-        let rendered = '',
+        let rendered = document.createElement('div'), // 创建一个容器,
             cataTarget = document.getElementById('catalogueContainer');
+        rendered.className = 'content';
         for (let i = 0, len = anchors.length; i < len; i++) {
             let anchor = anchors[i],
                 indent = 10 + (anchor[2] - maxPriority) * 20, // 根据权重计算缩进
                 testSize = 1.3 - (anchor[2] - maxPriority) * 0.2, // 根据权重计算字体大小 
-                fontSize = testSize > 0 ? testSize : 0.2;
-            rendered += `<p style="margin-left:${indent}px;font-size:${fontSize}em"><a href="javascript:void(0);" cata-id="${i}" onclick="Catalogue.jump(this);">${anchor[0]}</a></p>`;
+                fontSize = testSize > 0 ? testSize : 0.2,
+                pElement = document.createElement('p'),
+                aElement = document.createElement('a');
+            pElement.style['margin-left'] = `${indent}px`;
+            pElement.style['font-size'] = `${fontSize}em`;
+            aElement.setAttribute('href', 'javascript:void(0);');
+            aElement.setAttribute('cata-id', i);
+            aElement.setAttribute('onclick', 'Catalogue.jump(this);');
+            aElement.appendChild(document.createTextNode(anchor[0]));
+            pElement.appendChild(aElement);
+            rendered.appendChild(pElement);
         }
         if (!cataTarget) {
             let div = document.createElement('div'); // 创建一个div，用于渲染目录
@@ -212,12 +228,12 @@ const Catalogue = {
         }
         
         .floatCatalogue span {
-            position: fixed;
-            display: block;
-            color: #484848;
-            font-size: 1.5em;
-            font-weight: bolder;
-            margin: .5em;
+            position: fixed!important;
+            display: block!important;
+            color: #484848!important;
+            font-size: 1.5em!important;
+            font-weight: bolder!important;
+            margin: .5em!important;
         }
         
         .floatCatalogue .content {
@@ -269,13 +285,15 @@ const Catalogue = {
         <button class="close" onclick="Catalogue.close()">×</button>
         <div class="head">
             <span class="title">目录</span>
-        </div>
-        <div class="content">
-            ${rendered}
         </div>`;
             target.appendChild(div);
+            div.appendChild(rendered);
         } else {
-            cataTarget.querySelector('.content').innerHTML = rendered;
+            // 看看有没有残留元素，有的话删除
+            let previous = cataTarget.querySelector('.content');
+            if (previous)
+                cataTarget.removeChild(previous);
+            cataTarget.appendChild(rendered);
         }
     }
 };

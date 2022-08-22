@@ -39,7 +39,7 @@ fetch('./demo.md').then(resp => resp.text())
         return Promise.resolve('done');
     }).then(res => {
         demo_1 = new NDanmaku('demo-1');
-        demo_2 = new NDanmaku('demo-2');
+        demo_2 = new NDanmaku('demo-2', 'demo');
         demo_2_video = new NDanmaku('demo-2-video');
         demo_3 = new NDanmaku('demo-3');
         demo_4 = new NDanmaku('demo-4');
@@ -288,6 +288,103 @@ function trigger_demo_2(step) {
                     bottom_space: 4
                 });
             for (let i = 0; i < 4; i++) demo_2.create('间距4px');
+            break;
+        case 15:
+            demo_2.resetAttrs()
+                .attrs({
+                    size: '1.2em',
+                    type: 'top',
+                    color: '#0080FF',
+                    carry_sheet: `
+                        #[selfId]{
+                            border: 1px solid #FE2E2E
+                        }
+                    `
+                }).create('SA→KA→NA↗');
+            break;
+        case 16:
+            demo_2.resetAttrs()
+                .attrs({
+                    'type': 'free',
+                    'size': '1.5em',
+                    'custom_css': {
+                        animation: '2s ease infinite myRotate',
+                        left: '50%',
+                        top: '50%'
+                    },
+                    'carry_sheet': `
+                    @keyframes myRotate{
+                        0% {
+                            transform: rotate3d(0, 1, 1, 0deg);
+                        }
+                        
+                        50% {
+                            transform: rotate3d(0, 1, 1, 360deg);
+                        }
+                        
+                        100% {
+                            transform: rotate3d(0, 1, 1, 0deg);
+                        }
+                    }
+                    #[selfId]{
+                        color: #FA58AC!important;
+                    }
+                ` // 要用!important是因为弹幕属性里包括了color，而其优先级比较高
+                }).create('转啊转啊转啊');
+            break;
+        case 17:
+            demo_2.resetAttrs()
+                .attrs({
+                    'type': 'free',
+                    'size': '2em',
+                    'opacity': 70,
+                    'custom_css': {
+                        animation: '1s ease forwards slideIn'
+                    },
+                    'carry_sheet': `
+                        @keyframes slideIn{
+                            0% {
+                                top: 50%;
+                                left: 100%;
+                                transform: translate(100%, -50%) scale(0.5);
+                            }
+                            
+                            100% {
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%) scale(1);
+                            }
+                        }
+                        @keyframes slideOut{
+                            0% {
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%) scale(1);
+                            }
+    
+                            100% {
+                                top: -50%;
+                                left: 0;
+                                transform: translate(-50%, -100%) scale(3);
+                            }
+                        }
+                        #[selfId]{
+                            color: red!important;
+                        }
+                    `
+                });
+            setTimeout(() => {
+                demo_2.create('点我点我', (element, id) => {
+                    demo_2.pause(id);
+                    element.onclick = () => {
+                        element.onclick = null;
+                        element.style.animation = '1.5s ease forwards slideOut';
+                        element.onanimationend = (e) => {
+                            demo_2.clear(id);
+                        }
+                    }
+                });
+            }, 500);
             break;
     }
     scroll2demo(document.getElementById('demo-2'));
