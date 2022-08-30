@@ -1,6 +1,6 @@
 {
   "name": "n-danmaku",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "SomeBottle's danmaku package",
   "main": "dist/N.min.js",
   "scripts": {
@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/SomeBottle/N.js#readme",
   "files": [
-	"N.banner.png",
+    "N.banner.png",
     "README.md",
     "LICENSE",
     "dist/*"
