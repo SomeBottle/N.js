@@ -658,7 +658,7 @@ demo_ins.list.uncertainty(500);
 
 通过监听`timeupdate`事件，将**弹幕-时刻列表**和媒体结合起来：
 
-<a href="./summer-time.html" target="_blank">![summertime-preview-2022-08-20](https://images.weserv.nl/?url=https://raw.githubusercontent.com/cat-note/bottleassets/main/img/summertime-preview-2022-08-20.jpeg)</a>  
+<a href="./summer-time.html" target="_blank">![summertime-preview-2022-08-20](https://assets.xbottle.top/img/summertime-preview-2022-08-20.jpeg)</a>  
 
 ↑ 点我点我
 
@@ -666,4 +666,4 @@ demo_ins.list.uncertainty(500);
 
 至此这个简单的演示文档就结束了。这里咱只粗略地演示了一下相关功能，详细介绍一定要多看**README/文档**哦！
 
-![readme-2022-08-16](https://images.weserv.nl/?url=https://raw.githubusercontent.com/cat-note/bottleassets/main/img/readme-2022-08-16.png)
+![readme-2022-08-16](https://assets.xbottle.top/img/readme-2022-08-16.png)
