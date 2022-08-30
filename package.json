@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/SomeBottle/N.js#readme",
   "files": [
+	"N.banner.png",
     "README.md",
     "LICENSE",
     "dist/*"
